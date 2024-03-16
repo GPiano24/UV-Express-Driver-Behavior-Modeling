@@ -1,0 +1,73 @@
+Warning: Unequal lengths of bidi lane ':34012402_0_0' and lane ':34012402_3_0' (22.94 != 22.90).
+Warning: Unequal lengths of bidi lane ':4202412299_2_0' and lane ':4202412299_1_0' (14.52 != 14.40).
+Warning: Unequal lengths of bidi lane ':4202412300_0_0' and lane ':4202412300_3_0' (13.45 != 13.38).
+Warning: Unequal lengths of bidi lane ':4202412311_2_0' and lane ':4202412311_1_0' (12.97 != 12.93).
+Warning: Unequal lengths of bidi lane ':4202412315_0_0' and lane ':4202412315_7_0' (21.53 != 21.51).
+Warning: At actuated tlLogic '156670624', actuated phase 3 has no controlling detector.
+Warning: At actuated tlLogic '25584085', actuated phase 2 has no controlling detector.
+Warning: At actuated tlLogic 'cluster_1020278319_21720760_804812209_9971994191_#1more', actuated phase 6 has no controlling detector.
+Warning: At actuated tlLogic 'cluster_1075636058_1075636099_3159878106_3159878107_#4more', linkIndex 24 has no controlling detector.
+Warning: At actuated tlLogic 'cluster_1075636058_1075636099_3159878106_3159878107_#4more', linkIndex 25 has no controlling detector.
+Warning: At actuated tlLogic 'cluster_1075636058_1075636099_3159878106_3159878107_#4more', linkIndex 26 has no controlling detector.
+Warning: At actuated tlLogic 'cluster_1075636058_1075636099_3159878106_3159878107_#4more', linkIndex 27 has no controlling detector.
+Warning: At actuated tlLogic 'cluster_10823836008_21674740_25495241_274460339_#6more', actuated phase 6 has no controlling detector.
+Warning: At actuated tlLogic 'cluster_11274015915_11274015916_11274015921_5437734333_#4more', actuated phase 3 has no controlling detector.
+Warning: At actuated tlLogic 'cluster_117101805_1380268674_1380268675_191593025_#15more', linkIndex 17 has no controlling detector.
+Warning: Program '0' at tlLogic 'joinedS_1075708597_1075708598_11438211652_11438211653_#1more' is incompatible with logic at junction '1075708598' (mutual conflict between link indices 5,8 tl indices 14,17 phase 3).
+  To avoid deadlock/collisions, either: rebuild the signal plan with a newer version of netconvert/netedit
+  or rebuild the network with option '--tls.ignore-internal-junction-jam' or include the program when building.
+Warning: Program '0' at tlLogic 'joinedS_1543829256_5263360697_cluster_10093671413_10093671414_10093671415_5263360696' is incompatible with logic at junction 'cluster_10093671413_10093671414_10093671415_5263360696' (mutual conflict between link indices 3,8 tl indices 24,29 phase 6).
+  To avoid deadlock/collisions, either: rebuild the signal plan with a newer version of netconvert/netedit
+  or rebuild the network with option '--tls.ignore-internal-junction-jam' or include the program when building.
+Warning: Program '0' at tlLogic 'joinedS_3202651584_3202651965_3202752604_cluster_1038058848_1038058856_11524478697_3199833787' is incompatible with logic at junction 'cluster_1038058848_1038058856_11524478697_3199833787' (mutual conflict between link indices 2,6 tl indices 37,41 phase 9).
+  To avoid deadlock/collisions, either: rebuild the signal plan with a newer version of netconvert/netedit
+  or rebuild the network with option '--tls.ignore-internal-junction-jam' or include the program when building.
+Warning: Program '0' at tlLogic 'joinedS_7208478651_7208478652_7208478655_cluster_312272333_5813898176_6631066410_7208478656_#6more' is incompatible with logic at junction 'cluster_312272333_5813898176_6631066410_7208478656_#6more' (mutual conflict between link indices 0,36 tl indices 11,47 phase 11).
+  To avoid deadlock/collisions, either: rebuild the signal plan with a newer version of netconvert/netedit
+  or rebuild the network with option '--tls.ignore-internal-junction-jam' or include the program when building.
+Warning: busStop '5355789162' on lane '328132258#4_1' is too short for vehicle '1_bus_27J:0'.
+Warning: busStop '5520537026' on lane '583653441_0' is too short for vehicle '2_bus_NDTSC_Jeepney:_DBB-C_→_Downtown/Bayan:0'.
+Warning: Vehicle '35_bus_T326:0' is not allowed to stop on lane '28724490#4_0'.
+Warning: No connection between edge '564378177#0' and edge '1054692374' found.
+Warning: Vehicle '12_bus_T427:0' has no valid route from edge '564378177#0' to stop edge '1054692374'.
+Warning: No connection between edge '1075241343' and edge '658739766' found.
+Warning: No route for vehicle '24_bus_DA:1' found.
+Warning: No connection between edge '564378177#0' and edge '1054692374' found.
+Warning: Vehicle '23_bus_DA:0' has no valid route from edge '564378177#0' to stop edge '1054692374'.
+Warning: Vehicle '35_bus_T326:0' is not allowed to stop on lane '28724490#4_0'.
+Warning: Vehicle '39_ferry_PRFS_Guadelupe_→_Escolta:0' is not allowed to stop on lane '1009724795_0'.
+Warning: Vehicle '39_ferry_PRFS_Guadelupe_→_Escolta:0' is not allowed to stop on lane '1009724123_0'.
+Warning: Vehicle '39_ferry_PRFS_Guadelupe_→_Escolta:0' is not allowed to stop on lane '1174906184_0'.
+Warning: Vehicle '39_ferry_PRFS_Guadelupe_→_Escolta:0' is not allowed to stop on lane '1008893904_0'.
+Warning: Vehicle '40_ferry_PRFS_Pinagbuhatan_→_Escolta:0' is not allowed to stop on lane '1009724795_0'.
+Warning: Vehicle '40_ferry_PRFS_Pinagbuhatan_→_Escolta:0' is not allowed to stop on lane '1009724123_0'.
+Warning: Vehicle '40_ferry_PRFS_Pinagbuhatan_→_Escolta:0' is not allowed to stop on lane '1174906184_0'.
+Warning: Vehicle '40_ferry_PRFS_Pinagbuhatan_→_Escolta:0' is not allowed to stop on lane '1008893904_0'.
+Warning: Vehicle '48_bus_T326:1' is not allowed to stop on lane '28724490#4_0'.
+Warning: Vehicle '48_bus_T326:1' is not allowed to stop on lane '28724490#4_0'.
+Warning: No connection between edge '-635697023' and edge '591284449#0' found.
+Warning: Vehicle '55_bus_PASIJODAI/MPTC/ZIDGPPTC_Jeepney:_Paliparan_Site_→_Downtown/Bayan:0' has no valid route from edge '-635697023' to stop edge '591284449#0'.
+Warning: Vehicle '39_ferry_PRFS_Guadelupe_→_Escolta:0' is not allowed to depart on any lane of edge '1009724795'.
+Warning: Vehicle '40_ferry_PRFS_Pinagbuhatan_→_Escolta:0' is not allowed to depart on any lane of edge '1009724795'.
+Warning: Teleporting vehicle '12_bus_T427:0'; waited too long (wrong lane), lane='564378177#0_1', time=367.00.
+Warning: Vehicle '12_bus_T427:0' ends teleporting on edge '1054692374', time=367.00.
+Warning: Vehicle '68_ferry_PRFS_Escolta_→_Pinagbuhatan:0' is not allowed to stop on lane '1008893904_0'.
+Warning: Vehicle '68_ferry_PRFS_Escolta_→_Pinagbuhatan:0' is not allowed to stop on lane '1174906184_0'.
+Warning: Vehicle '68_ferry_PRFS_Escolta_→_Pinagbuhatan:0' is not allowed to stop on lane '1009724123_0'.
+Warning: Vehicle '68_ferry_PRFS_Escolta_→_Pinagbuhatan:0' is not allowed to stop on lane '1009724795_0'.
+Warning: No connection between edge '656424152#0' and edge '591284449#0' found.
+Warning: Vehicle '69_bus_PASIJODAI/MPTC/ZIDGPPTC_Jeepney:_Downtown/Bayan_→_Paliparan_Site:0' has no valid route from edge '656424152#0' to stop edge '591284449#0'.
+Warning: Vehicle '68_ferry_PRFS_Escolta_→_Pinagbuhatan:0' is not allowed to depart on any lane of edge '1008893904'.
+Warning: Teleporting vehicle '23_bus_DA:0'; waited too long (wrong lane), lane='564378177#0_2', time=442.00.
+Warning: Vehicle '23_bus_DA:0' ends teleporting on edge '1054692374', time=442.00.
+Warning: Teleporting vehicle '24_bus_DA:1'; waited too long (wrong lane), lane='544473026_1', time=528.00.
+Warning: Vehicle '24_bus_DA:1' ends teleporting on edge '1075241343', time=528.00.
+Warning: Teleporting vehicle '8_bus_1:0'; waited too long (wrong lane), lane='643308211#0_4', time=701.00.
+Warning: Vehicle '8_bus_1:0' ends teleporting on edge '567601664', time=701.00.
+Warning: Teleporting vehicle '69_bus_PASIJODAI/MPTC/ZIDGPPTC_Jeepney:_Downtown/Bayan_→_Paliparan_Site:0'; waited too long (wrong lane), lane='656424152#0_2', time=816.00.
+Warning: Vehicle '69_bus_PASIJODAI/MPTC/ZIDGPPTC_Jeepney:_Downtown/Bayan_→_Paliparan_Site:0' ends teleporting on edge '591284449#0', time=816.00.
+Warning: 21 total messages of type: At actuated tlLogic '%', actuated phase % has no controlling detector.
+Warning: 240 total messages of type: At actuated tlLogic '%', linkIndex % has no controlling detector.
+Warning: 18 total messages of type: Teleporting vehicle '%'; waited too long (wrong lane), lane='%', time=%.
+Warning: 12 total messages of type: Unequal lengths of bidi lane '%' and lane '%' (% != %).
+Warning: 18 total messages of type: Vehicle '%' ends teleporting on edge '%', time=%.
