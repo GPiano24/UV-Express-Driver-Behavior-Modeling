@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2024-03-25 15:59:12.875763 by osmWebWizard.py v1_19_0+0000-baa66a0f364
+<configuration>
+    <net-file value="C:\Users\Gabe Piano\Sumo\2024-03-25-15-59-08\osm.net.xml.gz"/>
+    <output-trip-file value="C:\Users\Gabe Piano\Sumo\2024-03-25-15-59-08\osm.bicycle.trips.xml"/>
+    <route-file value="C:\Users\Gabe Piano\Sumo\2024-03-25-15-59-08\osm.bicycle.rou.xml"/>
+    <prefix value="bike"/>
+    <trip-attributes value="departLane=&quot;best&quot;"/>
+    <fringe-start-attributes value="departSpeed=&quot;max&quot;"/>
+    <vehicle-class value="bicycle"/>
+    <fringe-factor value="2"/>
+    <vclass value="bicycle"/>
+    <via-edge-types value="highway.motorway,highway.motorway_link,highway.trunk_link,highway.primary_link,highway.secondary_link,highway.tertiary_link"/>
+    <max-distance value="8000.0"/>
+    <remove-loops value="True"/>
+    <validate value="True"/>
+    <insertion-density value="6.0"/>
+</configuration>
+-->
+
+<!-- generated on 2024-03-25 15:59:12 by Eclipse SUMO duarouter Version 1.19.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/duarouterConfiguration.xsd">
+
+    <input>
+        <net-file value="C:\Users\Gabe Piano\Sumo\2024-03-25-15-59-08\osm.net.xml.gz"/>
+        <route-files value="C:\Users\Gabe Piano\Sumo\2024-03-25-15-59-08\osm.bicycle.trips.xml"/>
+    </input>
+
+    <output>
+        <output-file value="C:\Users\Gabe Piano\Sumo\2024-03-25-15-59-08\osm.bicycle.trips.xml.tmp"/>
+        <alternatives-output value="NUL"/>
+        <write-trips value="true"/>
+    </output>
+
+    <processing>
+        <remove-loops value="true"/>
+    </processing>
+
+    <time>
+        <begin value="0.0"/>
+        <end value="3600.0"/>
+    </time>
+
+    <report>
+        <no-warnings value="true"/>
+        <ignore-errors value="true"/>
+        <no-step-log value="true"/>
+    </report>
+
+</configuration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="bike_bicycle" vClass="bicycle"/>
+    <trip id="bike0" type="bike_bicycle" depart="0.00" departLane="best" departSpeed="max" from="-775239749" to="-163260371#0"/>
+    <trip id="bike1" type="bike_bicycle" depart="1080.52" departLane="best" departSpeed="max" from="-163260371#1" to="-163260371#0"/>
+    <trip id="bike2" type="bike_bicycle" depart="2161.03" departLane="best" departSpeed="max" from="775239750" to="163260371#1"/>
+    <trip id="bike3" type="bike_bicycle" depart="3241.55" departLane="best" departSpeed="max" from="775239750" to="-163260371#0"/>
+</routes>

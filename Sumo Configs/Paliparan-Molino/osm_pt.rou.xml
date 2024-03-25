@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2024-03-25 15:56:08.439923 by osmWebWizard.py v1_19_0+0000-baa66a0f364
+<configuration>
+    <net-file value="C:\Users\Gabe Piano\Sumo\2024-03-25-15-55-45\osm.net.xml.gz"/>
+    <ptlines-file value="C:\Users\Gabe Piano\Sumo\2024-03-25-15-55-45\osm_ptlines.xml"/>
+    <ptstops-file value="C:\Users\Gabe Piano\Sumo\2024-03-25-15-55-45\osm_stops.add.xml"/>
+    <output-file value="C:\Users\Gabe Piano\Sumo\2024-03-25-15-55-45\osm_pt.rou.xml"/>
+    <stopinfos-file value="C:\Users\Gabe Piano\Sumo\2024-03-25-15-55-45\stopinfos.xml"/>
+    <routes-file value="C:\Users\Gabe Piano\Sumo\2024-03-25-15-55-45\vehroutes.xml"/>
+    <trips-file value="C:\Users\Gabe Piano\Sumo\2024-03-25-15-55-45\trips.trips.xml"/>
+    <min-stops value="0"/>
+    <extend-to-fringe value="True"/>
+    <random-begin value="True"/>
+    <seed value="42"/>
+    <ignore-errors value="True"/>
+    <vtype-prefix value="pt_"/>
+    <verbose value="True"/>
+</configuration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="pt_bus" vClass="bus"/>
+    <vType id="pt_tram" vClass="tram"/>
+    <vType id="pt_train" vClass="rail"/>
+    <vType id="pt_subway" vClass="rail_urban"/>
+    <vType id="pt_light_rail" vClass="rail_urban"/>
+    <vType id="pt_monorail" vClass="rail_urban"/>
+    <vType id="pt_trolleybus" vClass="bus"/>
+    <vType id="pt_minibus" vClass="bus"/>
+    <vType id="pt_share_taxi" vClass="taxi"/>
+    <vType id="pt_aerialway" vClass="rail_urban" length="2.5" width="2" personCapacity="4"/>
+    <vType id="pt_ferry" vClass="ship"/>
+    <route id="pt_bus_Minibus:_Central_Mall_Dasmariñas_→_SaveMore_San_Marino:0" color="white" edges="1103029872 758880904#1 1103029856#1 1103029858#1 1103029863#1 1103029863#2 1103029835#1 1103029835#2 1033118917#0 1033118917#1 651079971 651079972 114213935#1 114213935#2 1090755562#1 662913519#1 892972017#1" >
+        <stop busStop="5263361646" duration="20" until="66.0"/> <!-- SaveMore Salawag -->
+        <stop busStop="669558953" duration="20" until="150.0"/> <!-- Sakada -->
+        <stop busStop="28997085" duration="20" until="222.0"/> <!-- None -->
+        <stop busStop="6205714720" duration="20" until="305.0"/> <!-- Armstrong Village -->
+        <stop busStop="6205714701" duration="20" until="381.0"/> <!-- Avida Sta. Cecilia -->
+    </route>
+    <route id="pt_bus_Minibus:_SaveMore_San_Marino_→_Central_Mall_Dasmariñas:0" color="white" edges="584825959 662913524 660352572#1 660352572#2 660352567 651080033#1 1090755561#1 660352582#1 1198531265 660352585 114213938 1033118918 1103029833#0 1103029833#1 1103029814#1 114213957#1 1103029862#1 544489112 662913537#0 1103029873" >
+        <stop busStop="9849403598" duration="20" until="124.0"/> <!-- Avida Sta. Cecilia -->
+        <stop busStop="1294039033" duration="20" until="211.0"/> <!-- Viva Homes -->
+        <stop busStop="28997041" duration="20" until="279.0"/> <!-- None -->
+    </route>
+    <route id="pt_bus_32:0" edges="109984882#0 -183543979#1 -183543979#0 -282194769 651079976 573710407 993441705 767517245 775185678 894843877#2 -690613619 -690613617 -918082989 -690613625#1 -690613625#0 -690613620#0 -879177024#0 -111987010#0 -111987075 -879177025#1 -879177025#0 -642893603 -872215578 -544489067#0 871213663#0 871213663#1 544489068#1 574917579#1 1103029872 758880904#1 1103029856#1 1103029858#1 1103029863#1 1103029863#2 1103029835#1 1103029835#2 1033118917#0 1033118917#1 651079971 651079972 114213935#1 114213935#2 1090755562#1 662913519#1 892972017#1 -563021933" >
+        <stop busStop="5263361646" duration="20" until="502.0"/> <!-- SaveMore Salawag -->
+        <stop busStop="669558953" duration="20" until="589.0"/> <!-- Sakada -->
+        <stop busStop="28997085" duration="20" until="662.0"/> <!-- None -->
+        <stop busStop="6205714720" duration="20" until="746.0"/> <!-- Armstrong Village -->
+        <stop busStop="6205714701" duration="20" until="823.0"/> <!-- Avida Sta. Cecilia -->
+    </route>
+    <route id="pt_bus_417:0" edges="583701022 584825959 662913524 660352572#1 660352572#2 660352567 651080033#1 1090755561#1 660352582#1 1198531265 660352585 114213938 1033118918 1103029833#0 1103029833#1 1103029814#1 114213957#1 1103029862#1 544489112 662913537#0 1103029873 758887472 574917570#1 574917575#1 870991316 879172124 544489067#1 872215569 879177025#0 879177025#1 111987075 111987010#0 111987010#1 879177024#1 690613620#1 690613625#1 879172096 690613617 690613619 870991328#0 870991328#1 870991319#0 870991319#1 624604435#0 366952449#1 642896772 -797720294 -651079992 690977719 820090516 183543979#1 109971518#1" >
+        <stop busStop="1294039033" duration="20" until="228.0"/> <!-- Viva Homes -->
+        <stop busStop="28997041" duration="20" until="296.0"/> <!-- None -->
+    </route>
+    <route id="pt_bus_417:1" edges="109984882#0 -183543979#1 -183543979#0 -282194769 651079976 573710407 993441705 767517245 775185678 894843877#2 -690613619 -690613617 -918082989 -690613625#1 -690613625#0 -690613620#0 -879177024#0 -111987010#0 -111987075 -879177025#1 -879177025#0 -642893603 -872215578 -544489067#0 871213663#0 871213663#1 544489068#1 574917579#1 1103029872 758880904#1 1103029856#1 1103029858#1 1103029863#1 1103029863#2 1103029835#1 1103029835#2 1033118917#0 1033118917#1 651079971 651079972 114213935#1 114213935#2 1090755562#1 662913519#1 892972017#1" >
+        <stop busStop="5263361646" duration="20" until="504.0"/> <!-- SaveMore Salawag -->
+        <stop busStop="669558953" duration="20" until="589.0"/> <!-- Sakada -->
+        <stop busStop="28997085" duration="20" until="662.0"/> <!-- None -->
+        <stop busStop="6205714720" duration="20" until="746.0"/> <!-- Armstrong Village -->
+        <stop busStop="6205714701" duration="20" until="824.0"/> <!-- Avida Sta. Cecilia -->
+    </route>
+    <route id="pt_bus_32:1" edges="892972017#1 -563021933 583701022 584825959 662913524 660352572#1 660352572#2 660352567 651080033#1 1090755561#1 660352582#1 1198531265 660352585 114213938 1033118918 1103029833#0 1103029833#1 1103029814#1 114213957#1 1103029862#1 544489112 662913537#0 1103029873 758887472 574917570#1 574917575#1 870991316 879172124 544489067#1 872215569 879177025#0 879177025#1 111987075 111987010#0 111987010#1 879177024#1 690613620#1 690613625#1 879172096 690613617 690613619 870991328#0 870991328#1 870991319#0 870991319#1 624604435#0 366952449#1 642896772 -797720294 -651079992 690977719 820090516 183543979#1 109971518#1" >
+        <stop busStop="1044540481" duration="20" until="115.0"/> <!-- Pintong Gubat Elementary School -->
+        <stop busStop="9849403598" duration="20" until="381.0"/> <!-- Avida Sta. Cecilia -->
+        <stop busStop="1294039033" duration="20" until="468.0"/> <!-- Viva Homes -->
+        <stop busStop="28997041" duration="20" until="534.0"/> <!-- None -->
+    </route>
+    <flow id="pt_bus_Minibus:_Central_Mall_Dasmariñas_→_SaveMore_San_Marino:0" type="pt_bus" route="pt_bus_Minibus:_Central_Mall_Dasmariñas_→_SaveMore_San_Marino:0" begin="15.0" end="3615.0" period="600" line="Minibus:_Central_Mall_Dasmariñas_→_SaveMore_San_Marino:0" >
+        <param key="name" value="Minibus: Central Mall Dasmariñas → SaveMore San Marino"/>
+        <param key="completeness" value="0.36"/>
+    </flow>
+    <flow id="pt_bus_Minibus:_SaveMore_San_Marino_→_Central_Mall_Dasmariñas:0" type="pt_bus" route="pt_bus_Minibus:_SaveMore_San_Marino_→_Central_Mall_Dasmariñas:0" begin="133.0" end="3733.0" period="600" line="Minibus:_SaveMore_San_Marino_→_Central_Mall_Dasmariñas:0" >
+        <param key="name" value="Minibus: SaveMore San Marino → Central Mall Dasmariñas"/>
+        <param key="completeness" value="0.27"/>
+    </flow>
+    <flow id="pt_bus_32:0" type="pt_bus" route="pt_bus_32:0" begin="165.0" end="3765.0" period="600" line="32:0" >
+        <param key="name" value="City Bus Route 32: PITX → Gen. Mariano Alvarez"/>
+        <param key="completeness" value="0.19"/>
+    </flow>
+    <flow id="pt_bus_417:0" type="pt_bus" route="pt_bus_417:0" begin="406.0" end="4006.0" period="600" line="417:0" >
+        <param key="name" value="Jeepney Route 417: Paliparan Site → PITX"/>
+        <param key="completeness" value="0.11"/>
+    </flow>
+    <flow id="pt_bus_417:1" type="pt_bus" route="pt_bus_417:1" begin="441.0" end="4041.0" period="600" line="417:1" >
+        <param key="name" value="Jeepney Route 417: PITX → Paliparan Site"/>
+        <param key="completeness" value="0.24"/>
+    </flow>
+    <flow id="pt_bus_32:1" type="pt_bus" route="pt_bus_32:1" begin="383.0" end="3983.0" period="600" line="32:1" >
+        <param key="name" value="City Bus Route 32: General Mariano Alvarez → PITX"/>
+        <param key="completeness" value="0.19"/>
+    </flow>
+</routes>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2024-03-25 15:56:08.049915 by $Id: ptlines2flows.py v1_3_1+0313-ccb31df3eb jakob.erdmann@dlr.de 2019-09-02 13:26:32 +0200 $ v1_19_0+0000-baa66a0f364
+<configuration>
+    <net-file value="C:\Users\Gabe Piano\Sumo\2024-03-25-15-55-45\osm.net.xml.gz"/>
+    <ptlines-file value="C:\Users\Gabe Piano\Sumo\2024-03-25-15-55-45\osm_ptlines.xml"/>
+    <ptstops-file value="C:\Users\Gabe Piano\Sumo\2024-03-25-15-55-45\osm_stops.add.xml"/>
+    <output-file value="C:\Users\Gabe Piano\Sumo\2024-03-25-15-55-45\osm_pt.rou.xml"/>
+    <stopinfos-file value="C:\Users\Gabe Piano\Sumo\2024-03-25-15-55-45\stopinfos.xml"/>
+    <routes-file value="C:\Users\Gabe Piano\Sumo\2024-03-25-15-55-45\vehroutes.xml"/>
+    <trips-file value="C:\Users\Gabe Piano\Sumo\2024-03-25-15-55-45\trips.trips.xml"/>
+    <min-stops value="0"/>
+    <extend-to-fringe value="True"/>
+    <random-begin value="True"/>
+    <seed value="42"/>
+    <ignore-errors value="True"/>
+    <vtype-prefix value="pt_"/>
+    <verbose value="True"/>
+</configuration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="pt_bus" vClass="bus" speedFactor="0.95"/>
+    <vType id="pt_tram" vClass="tram" speedFactor="1.0"/>
+    <vType id="pt_train" vClass="rail"/>
+    <vType id="pt_subway" vClass="rail_urban"/>
+    <vType id="pt_light_rail" vClass="rail_urban"/>
+    <vType id="pt_monorail" vClass="rail_urban"/>
+    <vType id="pt_trolleybus" vClass="bus" speedFactor="0.95"/>
+    <vType id="pt_minibus" vClass="bus" speedFactor="0.95"/>
+    <vType id="pt_share_taxi" vClass="taxi" speedFactor="0.95"/>
+    <vType id="pt_aerialway" vClass="rail_urban" length="2.5" width="2" personCapacity="4"/>
+    <vType id="pt_ferry" vClass="ship"/>
+    <trip id="0_bus_Minibus:_Central_Mall_Dasmariñas_→_SaveMore_San_Marino:0" type="pt_bus" depart="15.0" departLane="best" from="1103029872" to="892972017#1">
+        <stop busStop="5263361646" duration="30"/>
+        <stop busStop="669558953" duration="30"/>
+        <stop busStop="28997085" duration="30"/>
+        <stop busStop="6205714720" duration="30"/>
+        <stop busStop="6205714701" duration="30"/>
+    </trip>
+    <trip id="1_bus_Minibus:_SaveMore_San_Marino_→_Central_Mall_Dasmariñas:0" type="pt_bus" depart="133.0" departLane="best" from="584825959" to="1103029873">
+        <stop busStop="9849403598" duration="30"/>
+        <stop busStop="1294039033" duration="30"/>
+        <stop busStop="28997041" duration="30"/>
+    </trip>
+    <trip id="2_bus_32:0" type="pt_bus" depart="165.0" departLane="best" from="109984882#0" to="-563021933">
+        <stop busStop="5263361646" duration="30"/>
+        <stop busStop="669558953" duration="30"/>
+        <stop busStop="28997085" duration="30"/>
+        <stop busStop="6205714720" duration="30"/>
+        <stop busStop="6205714701" duration="30"/>
+    </trip>
+    <trip id="3_bus_32:1" type="pt_bus" depart="383.0" departLane="best" from="892972017#1" to="109971518#1">
+        <stop busStop="1044540481" duration="30"/>
+        <stop busStop="9849403598" duration="30"/>
+        <stop busStop="1294039033" duration="30"/>
+        <stop busStop="28997041" duration="30"/>
+    </trip>
+    <trip id="4_bus_417:0" type="pt_bus" depart="406.0" departLane="best" from="583701022" to="109971518#1">
+        <stop busStop="1294039033" duration="30"/>
+        <stop busStop="28997041" duration="30"/>
+    </trip>
+    <trip id="5_bus_417:1" type="pt_bus" depart="441.0" departLane="best" from="109984882#0" to="892972017#1">
+        <stop busStop="5263361646" duration="30"/>
+        <stop busStop="669558953" duration="30"/>
+        <stop busStop="28997085" duration="30"/>
+        <stop busStop="6205714720" duration="30"/>
+        <stop busStop="6205714701" duration="30"/>
+    </trip>
+</routes>

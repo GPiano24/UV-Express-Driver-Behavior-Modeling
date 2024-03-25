@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2024-03-25 15:55:59 by Eclipse SUMO netconvert Version 1.19.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <type-files value="${SUMO_HOME}/data/typemap/osmNetconvert.typ.xml,${SUMO_HOME}/data/typemap/osmNetconvertUrbanDe.typ.xml,${SUMO_HOME}/data/typemap/osmNetconvertPedestrians.typ.xml,${SUMO_HOME}/data/typemap/osmNetconvertBicycle.typ.xml,${SUMO_HOME}/data/typemap/osmNetconvertAerialway.typ.xml"/>
+        <osm-files value="osm_bbox.osm.xml.gz"/>
+    </input>
+
+    <output>
+        <output-file value="osm.net.xml.gz"/>
+        <output.street-names value="true"/>
+        <output.original-names value="true"/>
+        <ptstop-output value="osm_stops.add.xml"/>
+        <ptline-output value="osm_ptlines.xml"/>
+    </output>
+
+    <projection>
+        <proj.utm value="true"/>
+    </projection>
+
+    <processing>
+        <geometry.remove value="true"/>
+        <roundabouts.guess value="true"/>
+    </processing>
+
+    <tls_building>
+        <tls.discard-simple value="true"/>
+        <tls.join value="true"/>
+        <tls.guess-signals value="true"/>
+        <tls.default-type value="actuated"/>
+    </tls_building>
+
+    <ramp_guessing>
+        <ramps.guess value="true"/>
+    </ramp_guessing>
+
+    <junctions>
+        <junctions.join value="true"/>
+        <junctions.corner-detail value="5"/>
+    </junctions>
+
+    <pedestrian>
+        <crossings.guess value="true"/>
+    </pedestrian>
+
+    <railway>
+        <railway.topology.repair value="true"/>
+    </railway>
+
+    <formats>
+        <osm.bike-access value="true"/>
+        <osm.sidewalks value="true"/>
+    </formats>
+
+</configuration>
+-->
+
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+    <busStop id="1044540481" name="Pintong Gubat Elementary School" lane="892972017#1_0" startPos="1131.78" endPos="1146.78" friendlyPos="true"/>
+    <busStop id="1294039033" name="Viva Homes" lane="660352582#1_0" startPos="7.29" endPos="22.29" friendlyPos="true" lines="Minibus: SaveMore San Marino → Central Mall Dasmariñas 32 417">
+        <access lane="1197045455#1_0" pos="29.19" length="21.99" friendlyPos="1"/>
+        <access lane="1203003335#1_0" pos="0.20" length="26.60" friendlyPos="1"/>
+        <access lane="1203003335#2_0" pos="0.00" length="26.85" friendlyPos="1"/>
+        <access lane="645181686_0" pos="14.93" length="9.18" friendlyPos="1"/>
+        <access lane="781309125#0_0" pos="0.00" length="11.70" friendlyPos="1"/>
+    </busStop>
+    <busStop id="28997041" lane="660352585_0" startPos="300.29" endPos="315.29" friendlyPos="true" lines="Minibus: SaveMore San Marino → Central Mall Dasmariñas 32 417">
+        <access lane="1103029881_0" pos="540.99" length="19.05" friendlyPos="1"/>
+        <access lane="662913494#2_0" pos="349.07" length="8.43" friendlyPos="1"/>
+    </busStop>
+    <busStop id="28997085" lane="651079971_0" startPos="525.96" endPos="540.96" friendlyPos="true" lines="Minibus: Central Mall Dasmariñas → SaveMore San Marino 32 417">
+        <access lane="1103029881_0" pos="488.11" length="7.46" friendlyPos="1"/>
+        <access lane="662913494#2_0" pos="397.49" length="20.53" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4248095182" name="Sakada" lane="1103029876_0" startPos="16.21" endPos="41.21" friendlyPos="true"/>
+    <busStop id="5263361646" name="SaveMore Salawag" lane="758880904#1_1" startPos="268.98" endPos="283.98" friendlyPos="true" lines="Minibus: Central Mall Dasmariñas → SaveMore San Marino 32 417"/>
+    <busStop id="5426556393" lane="892972017#1_0" startPos="986.57" endPos="1001.57" friendlyPos="true">
+        <access lane="-574917543#0_0" pos="0.00" length="179.71" friendlyPos="1"/>
+        <access lane="-574917543#1_0" pos="0.00" length="160.30" friendlyPos="1"/>
+        <access lane="574917543#0_0" pos="14.01" length="180.73" friendlyPos="1"/>
+        <access lane="574917543#1_0" pos="14.11" length="157.50" friendlyPos="1"/>
+        <access lane="574917544_0" pos="0.00" length="178.55" friendlyPos="1"/>
+    </busStop>
+    <busStop id="5517683563" name="Savemore San Marino" lane="574917543#1_0" startPos="0.00" endPos="14.11" friendlyPos="true"/>
+    <busStop id="5534125936" name="Vista Mall Daang Hari Terminal" lane="624604436_2" startPos="56.31" endPos="71.31" friendlyPos="true"/>
+    <busStop id="5898227179" name="SoMo Departures" lane="561748189_2" startPos="152.85" endPos="167.85" friendlyPos="true"/>
+    <busStop id="6205711126" lane="662913494#2_0" startPos="336.63" endPos="361.63" friendlyPos="true"/>
+    <busStop id="6205714693" lane="892972017#1_0" startPos="123.13" endPos="138.13" friendlyPos="true">
+        <access lane="1073730516_0" pos="58.67" length="54.22" friendlyPos="1"/>
+        <access lane="1073730518_0" pos="0.00" length="164.13" friendlyPos="1"/>
+        <access lane="347971672_0" pos="0.00" length="138.37" friendlyPos="1"/>
+        <access lane="753312749#1_0" pos="0.00" length="200.37" friendlyPos="1"/>
+        <access lane="855258233#3_0" pos="36.83" length="141.65" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6205714701" name="Avida Sta. Cecilia" lane="892972017#1_0" startPos="29.73" endPos="44.73" friendlyPos="true" lines="Minibus: Central Mall Dasmariñas → SaveMore San Marino 32 417">
+        <access lane="1073730516_0" pos="0.33" length="9.18" friendlyPos="1"/>
+        <access lane="1073730518_0" pos="0.00" length="31.30" friendlyPos="1"/>
+        <access lane="753312749#0_0" pos="0.20" length="60.76" friendlyPos="1"/>
+        <access lane="753312749#1_0" pos="0.00" length="60.45" friendlyPos="1"/>
+        <access lane="855258233#3_0" pos="36.83" length="9.23" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6205714719" name="Armstrong Village" lane="662913487_0" startPos="5.04" endPos="30.04" friendlyPos="true"/>
+    <busStop id="6205714720" name="Armstrong Village" lane="114213935#2_0" startPos="169.34" endPos="184.34" friendlyPos="true" lines="Minibus: Central Mall Dasmariñas → SaveMore San Marino 32 417">
+        <access lane="1157435277#1_0" pos="164.78" length="21.15" friendlyPos="1"/>
+        <access lane="662913487_0" pos="12.02" length="10.28" friendlyPos="1"/>
+        <access lane="662913509#1_0" pos="287.71" length="22.10" friendlyPos="1"/>
+        <access lane="662913543_0" pos="0.00" length="29.31" friendlyPos="1"/>
+    </busStop>
+    <busStop id="669558953" name="Sakada" lane="651079971_0" startPos="39.54" endPos="54.54" friendlyPos="true" lines="Minibus: Central Mall Dasmariñas → SaveMore San Marino 32 417">
+        <access lane="1103029876_0" pos="41.21" length="6.82" friendlyPos="1"/>
+        <access lane="1103029877_0" pos="18.20" length="70.10" friendlyPos="1"/>
+        <access lane="1103029881_0" pos="1.03" length="6.64" friendlyPos="1"/>
+        <access lane="1172898663_0" pos="181.88" length="67.55" friendlyPos="1"/>
+        <access lane="662913494#2_0" pos="883.63" length="22.78" friendlyPos="1"/>
+    </busStop>
+    <busStop id="7087796498" name="SaveMore Salawag" lane="758880902#1_0" startPos="0.00" endPos="25.00" friendlyPos="true"/>
+    <busStop id="7350101785" name="Avida Sta. Cecilia" lane="1073730518_0" startPos="0.00" endPos="22.33" friendlyPos="true"/>
+    <busStop id="7490869131" lane="1103029881_0" startPos="474.49" endPos="499.49" friendlyPos="true"/>
+    <busStop id="7576366593" name="SM City Molino" lane="870991319#0_1" startPos="46.54" endPos="61.54" friendlyPos="true"/>
+    <busStop id="9245751706" name="The District Dasmariñas" lane="574917570#1_1" startPos="37.74" endPos="52.74" friendlyPos="true"/>
+    <busStop id="9245762367" name="Avida Settings" lane="879172124_1" startPos="87.57" endPos="102.57" friendlyPos="true"/>
+    <busStop id="9849403593" name="Viva Homes" lane="645181686_0" startPos="0.00" endPos="19.33" friendlyPos="true"/>
+    <busStop id="9849403595" name="Avida Sta. Cecilia" lane="1073730516_0" startPos="0.00" endPos="25.00" friendlyPos="true"/>
+    <busStop id="9849403598" name="Avida Sta. Cecilia" lane="660352572#1_0" startPos="0.16" endPos="15.16" friendlyPos="true" lines="Minibus: SaveMore San Marino → Central Mall Dasmariñas 32">
+        <access lane="1073730514#0_0" pos="0.00" length="28.08" friendlyPos="1"/>
+        <access lane="1073730518_0" pos="8.00" length="6.57" friendlyPos="1"/>
+        <access lane="753312749#1_0" pos="0.87" length="26.54" friendlyPos="1"/>
+        <access lane="753312749#2_0" pos="0.00" length="25.61" friendlyPos="1"/>
+        <access lane="855258233#3_0" pos="14.27" length="24.09" friendlyPos="1"/>
+    </busStop>
+</additional>

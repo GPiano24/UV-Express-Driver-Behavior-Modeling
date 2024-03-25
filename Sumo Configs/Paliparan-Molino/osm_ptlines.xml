@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2024-03-25 15:55:59 by Eclipse SUMO netconvert Version 1.19.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <type-files value="${SUMO_HOME}/data/typemap/osmNetconvert.typ.xml,${SUMO_HOME}/data/typemap/osmNetconvertUrbanDe.typ.xml,${SUMO_HOME}/data/typemap/osmNetconvertPedestrians.typ.xml,${SUMO_HOME}/data/typemap/osmNetconvertBicycle.typ.xml,${SUMO_HOME}/data/typemap/osmNetconvertAerialway.typ.xml"/>
+        <osm-files value="osm_bbox.osm.xml.gz"/>
+    </input>
+
+    <output>
+        <output-file value="osm.net.xml.gz"/>
+        <output.street-names value="true"/>
+        <output.original-names value="true"/>
+        <ptstop-output value="osm_stops.add.xml"/>
+        <ptline-output value="osm_ptlines.xml"/>
+    </output>
+
+    <projection>
+        <proj.utm value="true"/>
+    </projection>
+
+    <processing>
+        <geometry.remove value="true"/>
+        <roundabouts.guess value="true"/>
+    </processing>
+
+    <tls_building>
+        <tls.discard-simple value="true"/>
+        <tls.join value="true"/>
+        <tls.guess-signals value="true"/>
+        <tls.default-type value="actuated"/>
+    </tls_building>
+
+    <ramp_guessing>
+        <ramps.guess value="true"/>
+    </ramp_guessing>
+
+    <junctions>
+        <junctions.join value="true"/>
+        <junctions.corner-detail value="5"/>
+    </junctions>
+
+    <pedestrian>
+        <crossings.guess value="true"/>
+    </pedestrian>
+
+    <railway>
+        <railway.topology.repair value="true"/>
+    </railway>
+
+    <formats>
+        <osm.bike-access value="true"/>
+        <osm.sidewalks value="true"/>
+    </formats>
+
+</configuration>
+-->
+
+<ptLines xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/ptlines_file.xsd">
+    <ptLine id="14253666" name="Minibus: Central Mall Dasmariñas → SaveMore San Marino" line="Minibus: Central Mall Dasmariñas → SaveMore San Marino" type="bus" vClass="bus" color="white" completeness="0.36">
+        <route edges="1103029872 758880904#1 1103029856#1 1103029858#1 1103029863#1 1103029863#2 1103029835#1 1103029835#2 1033118917#0 1033118917#1 651079971 651079972 114213935#1 114213935#2 1090755562#1 662913519#1 892972017#1"/>
+        <busStop id="5263361646" name="SaveMore Salawag"/>
+        <busStop id="669558953" name="Sakada"/>
+        <busStop id="28997085" name=""/>
+        <busStop id="6205714720" name="Armstrong Village"/>
+        <busStop id="6205714701" name="Avida Sta. Cecilia"/>
+    </ptLine>
+    <ptLine id="8595667" name="Minibus: SaveMore San Marino → Central Mall Dasmariñas" line="Minibus: SaveMore San Marino → Central Mall Dasmariñas" type="bus" vClass="bus" color="white" completeness="0.27">
+        <route edges="584825959 662913524 660352572#1 660352572#2 660352567 651080033#1 1090755561#1 660352582#1 1198531265 660352585 114213938 1033118918 1103029833#0 1103029833#1 1103029814#1 114213957#1 1103029862#1 544489112 662913537#0 1103029873"/>
+        <busStop id="9849403598" name="Avida Sta. Cecilia"/>
+        <busStop id="1294039033" name="Viva Homes"/>
+        <busStop id="28997041" name=""/>
+    </ptLine>
+    <ptLine id="8682278" name="City Bus Route 32: PITX → Gen. Mariano Alvarez" line="32" type="bus" vClass="bus" completeness="0.19">
+        <route edges="109984882#0 -183543979#1 -183543979#0 -282194769 651079976 561748189 573710409#0 651080002 183689805#1 1054125801#0 1054125801#1 651080031 894843877#1 894843877#2 -690613619 -690613617 -918082989 -690613625#1 -690613625#0 -690613620#0 -879177024#0 -111987010#0 -111987075 -879177025#1 -879177025#0 -642893603 -872215578 -544489067#0 871213663#0 871213663#1 544489068#1 574917579#1 1103029872 758880904#1 1103029856#1 1103029858#1 1103029863#1 1103029863#2 1103029835#1 1103029835#2 1033118917#0 1033118917#1 651079971 651079972 114213935#1 114213935#2 1090755562#1 662913519#1 892972017#1 -563021933"/>
+        <busStop id="5263361646" name="SaveMore Salawag"/>
+        <busStop id="669558953" name="Sakada"/>
+        <busStop id="28997085" name=""/>
+        <busStop id="6205714720" name="Armstrong Village"/>
+        <busStop id="6205714701" name="Avida Sta. Cecilia"/>
+    </ptLine>
+    <ptLine id="8682736" name="City Bus Route 32: General Mariano Alvarez → PITX" line="32" type="bus" vClass="bus" completeness="0.19">
+        <route edges="583701022 584825959 662913524 660352572#1 660352572#2 660352567 651080033#1 1090755561#1 660352582#1 1198531265 660352585 114213938 1033118918 1103029833#0 1103029833#1 1103029814#1 114213957#1 1103029862#1 544489112 662913537#0 1103029873 758887472 574917570#1 574917575#1 870991316 879172124 544489067#1 872215569 879177025#0 879177025#1 111987075 111987010#0 111987010#1 879177024#1 690613620#1 690613625#1 879172096 1033158919#1 366949696 665214718#1 561748189 573710409#0 366952449#1 642896772 -797720294 -651079992 690977719 820090516 183543979#1 109971518#1"/>
+        <busStop id="1044540481" name="Pintong Gubat Elementary School"/>
+        <busStop id="9849403598" name="Avida Sta. Cecilia"/>
+        <busStop id="1294039033" name="Viva Homes"/>
+        <busStop id="28997041" name=""/>
+    </ptLine>
+    <ptLine id="8908059" name="Jeepney Route 417: Paliparan Site → PITX" line="417" type="bus" vClass="bus" completeness="0.11">
+        <route edges="583701022 584825959 662913524 660352572#1 660352572#2 660352567 651080033#1 1090755561#1 660352582#1 1198531265 660352585 114213938 1033118918 1103029833#0 1103029833#1 1103029814#1 114213957#1 1103029862#1 544489112 662913537#0 1103029873 758887472 574917570#1 574917575#1 870991316 879172124 544489067#1 872215569 879177025#0 879177025#1 111987075 111987010#0 111987010#1 879177024#1 690613620#1 690613625#1 879172096 690613617 690613619 870991328#0 870991328#1 870991319#0 870991319#1 624604435#0 366952449#1 642896772 -797720294 -651079992 690977719 820090516 183543979#1 109971518#1"/>
+        <busStop id="1294039033" name="Viva Homes"/>
+        <busStop id="28997041" name=""/>
+    </ptLine>
+    <ptLine id="8960283" name="Jeepney Route 417: PITX → Paliparan Site" line="417" type="bus" vClass="bus" completeness="0.24">
+        <route edges="109984882#0 -183543979#1 -183543979#0 -282194769 651079976 573710407 993441705 651079990 183689805#1 1054125801#0 1054125801#1 651080031 894843877#1 894843877#2 -690613619 -690613617 -918082989 -690613625#1 -690613625#0 -690613620#0 -879177024#0 -111987010#0 -111987075 -879177025#1 -879177025#0 -642893603 -872215578 -544489067#0 871213663#0 871213663#1 544489068#1 574917579#1 1103029872 758880904#1 1103029856#1 1103029858#1 1103029863#1 1103029863#2 1103029835#1 1103029835#2 1033118917#0 1033118917#1 651079971 651079972 114213935#1 114213935#2 1090755562#1 662913519#1 892972017#1"/>
+        <busStop id="5263361646" name="SaveMore Salawag"/>
+        <busStop id="669558953" name="Sakada"/>
+        <busStop id="28997085" name=""/>
+        <busStop id="6205714720" name="Armstrong Village"/>
+        <busStop id="6205714701" name="Avida Sta. Cecilia"/>
+    </ptLine>
+</ptLines>
