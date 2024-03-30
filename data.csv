@@ -172,8 +172,8 @@ Vehicle,V,Stop,Left
 Vehicle,V,Go,Left
 Vehicle,V,Stop,Left
 Vehicle,V,Go,Left
-StopLight,S,Stop,Left
-StopLight,S,Go,Left
+Stoplight,S,Stop,Left
+Stoplight,S,Go,Left
 Vehicle,V,ChangeLaneRight,Right
 Vehicle,V,ChangeLaneLeft,Left
 Vehicle,V,ChangeLaneRight,Right
