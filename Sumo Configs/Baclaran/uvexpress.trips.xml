@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+     <vType id="UV1" vClass="passenger" guiShape="passenger/van" maxSpeed="22.2" color="1,0,0"/>
+
+    <trip id="UV_Trip1" type="UV1" depart="1.00" departSpeed="5.55" departLane="first" departPos="base" arrivalLane="5" from="621030728" to="665068136#1"/>
+
+    </routes>
