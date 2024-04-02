@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
-     <vType id="UV1" vClass="passenger" guiShape="passenger/van" maxSpeed="10" personCapacity="16" color="1,0,0" boardingDuration="10"/>
+     <vType id="UV1" vClass="passenger" guiShape="passenger/van" maxSpeed="10" personCapacity="16" color="1,0,0" boardingDuration="10" 
+     laneChangeModel="SL2015" latAlignment="right" lcPushy=".5"/>
 
     <trip id="UV_Trip1" type="UV1" depart="1.00" departSpeed="5.55" departLane="first" departPos="base" arrivalLane="5" from="1090755561#1" to="642896772"/>
 
