@@ -11,6 +11,8 @@
         <additional-files value="osm.poly.xml.gz,osm_stops.add.xml"/>
     </input>
 
+    <lateral-resolution value = ".9"/>
+
     <processing>
         <ignore-route-errors value="true"/>
     </processing>
