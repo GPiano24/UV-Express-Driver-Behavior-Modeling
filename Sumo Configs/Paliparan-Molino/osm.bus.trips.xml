@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2024-03-25 15:56:09.981245 by osmWebWizard.py v1_19_0+0000-baa66a0f364
+<!-- generated on 2024-04-02 14:45:12.972120 by osmWebWizard.py v1_19_0+0000-baa66a0f364
 <configuration>
-    <net-file value="C:\Users\Gabe Piano\Sumo\2024-03-25-15-55-45\osm.net.xml.gz"/>
-    <output-trip-file value="C:\Users\Gabe Piano\Sumo\2024-03-25-15-55-45\osm.bus.trips.xml"/>
-    <route-file value="C:\Users\Gabe Piano\Sumo\2024-03-25-15-55-45\osm.bus.rou.xml"/>
+    <net-file value="C:\Users\Gabe Piano\Sumo\2024-04-02-14-45-04\osm.net.xml.gz"/>
+    <output-trip-file value="C:\Users\Gabe Piano\Sumo\2024-04-02-14-45-04\osm.bus.trips.xml"/>
+    <route-file value="C:\Users\Gabe Piano\Sumo\2024-04-02-14-45-04\osm.bus.rou.xml"/>
     <prefix value="bus"/>
     <trip-attributes value="departLane=&quot;best&quot;"/>
     <fringe-start-attributes value="departSpeed=&quot;max&quot;"/>
@@ -20,16 +20,16 @@
 </configuration>
 -->
 
-<!-- generated on 2024-03-25 15:56:09 by Eclipse SUMO duarouter Version 1.19.0
+<!-- generated on 2024-04-02 14:45:12 by Eclipse SUMO duarouter Version 1.19.0
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/duarouterConfiguration.xsd">
 
     <input>
-        <net-file value="C:\Users\Gabe Piano\Sumo\2024-03-25-15-55-45\osm.net.xml.gz"/>
-        <route-files value="C:\Users\Gabe Piano\Sumo\2024-03-25-15-55-45\osm.bus.trips.xml"/>
+        <net-file value="C:\Users\Gabe Piano\Sumo\2024-04-02-14-45-04\osm.net.xml.gz"/>
+        <route-files value="C:\Users\Gabe Piano\Sumo\2024-04-02-14-45-04\osm.bus.trips.xml"/>
     </input>
 
     <output>
-        <output-file value="C:\Users\Gabe Piano\Sumo\2024-03-25-15-55-45\osm.bus.trips.xml.tmp"/>
+        <output-file value="C:\Users\Gabe Piano\Sumo\2024-04-02-14-45-04\osm.bus.trips.xml.tmp"/>
         <alternatives-output value="NUL"/>
         <write-trips value="true"/>
     </output>
@@ -54,231 +54,175 @@
 
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
     <vType id="bus_bus" vClass="bus"/>
-    <trip id="bus1" type="bus_bus" depart="11.19" departLane="best" from="1103029856#1" to="1090755561#1"/>
-    <trip id="bus3" type="bus_bus" depart="33.58" departLane="best" from="573710409#0" to="-544489067#0"/>
-    <trip id="bus4" type="bus_bus" depart="44.78" departLane="best" from="1090755562#1" to="183690512#3"/>
-    <trip id="bus6" type="bus_bus" depart="67.17" departLane="best" departSpeed="max" from="651079954#0" to="561748193"/>
-    <trip id="bus7" type="bus_bus" depart="78.36" departLane="best" departSpeed="max" from="109984882#0" to="574917570#1"/>
-    <trip id="bus8" type="bus_bus" depart="89.56" departLane="best" from="-690613619" to="-111987075"/>
-    <trip id="bus10" type="bus_bus" depart="111.95" departLane="best" from="114213938" to="879177025#1"/>
-    <trip id="bus11" type="bus_bus" depart="123.14" departLane="best" from="690613625#1" to="-651079992"/>
-    <trip id="bus12" type="bus_bus" depart="134.34" departLane="best" from="-690613619" to="660352567"/>
-    <trip id="bus15" type="bus_bus" depart="167.92" departLane="best" from="758880904#1" to="624604434#0"/>
-    <trip id="bus17" type="bus_bus" depart="190.31" departLane="best" from="651080031" to="-563021933"/>
-    <trip id="bus18" type="bus_bus" depart="201.51" departLane="best" departSpeed="max" from="109984882#0" to="1103029835#2"/>
-    <trip id="bus19" type="bus_bus" depart="212.70" departLane="best" from="-690613619" to="1090755562#1"/>
-    <trip id="bus22" type="bus_bus" depart="246.29" departLane="best" departSpeed="max" from="114216292" to="1054125801#0"/>
-    <trip id="bus23" type="bus_bus" depart="257.48" departLane="best" from="1103029835#1" to="871213663#1"/>
-    <trip id="bus24" type="bus_bus" depart="268.68" departLane="best" departSpeed="max" from="651079954#0" to="584825959"/>
-    <trip id="bus25" type="bus_bus" depart="279.87" departLane="best" from="1054125801#0" to="660352567"/>
-    <trip id="bus26" type="bus_bus" depart="291.07" departLane="best" from="1033158925#1" to="1157435279#1"/>
-    <trip id="bus27" type="bus_bus" depart="302.26" departLane="best" from="894843877#2" to="628567782#0"/>
-    <trip id="bus28" type="bus_bus" depart="313.46" departLane="best" from="574917570#1" to="651079971"/>
-    <trip id="bus29" type="bus_bus" depart="324.65" departLane="best" departSpeed="max" from="109984882#0" to="-544489067#0"/>
-    <trip id="bus30" type="bus_bus" depart="335.85" departLane="best" from="-111987010#0" to="1103029833#0"/>
-    <trip id="bus31" type="bus_bus" depart="347.04" departLane="best" from="1090755561#1" to="872215569"/>
-    <trip id="bus32" type="bus_bus" depart="358.24" departLane="best" departSpeed="max" from="870991315#0" to="1103029863#2"/>
-    <trip id="bus33" type="bus_bus" depart="369.43" departLane="best" from="870991319#1" to="183543979#1"/>
-    <trip id="bus34" type="bus_bus" depart="380.63" departLane="best" from="1103029835#1" to="109971518#1"/>
-    <trip id="bus35" type="bus_bus" depart="391.82" departLane="best" from="574917575#1" to="1103029814#1"/>
-    <trip id="bus36" type="bus_bus" depart="403.02" departLane="best" departSpeed="max" from="583701022" to="870991316"/>
-    <trip id="bus37" type="bus_bus" depart="414.21" departLane="best" departSpeed="max" from="1157435280#0" to="1072529521"/>
-    <trip id="bus38" type="bus_bus" depart="425.41" departLane="best" from="-690613625#0" to="-563021933"/>
-    <trip id="bus39" type="bus_bus" depart="436.60" departLane="best" from="111987010#1" to="624604435#0"/>
-    <trip id="bus40" type="bus_bus" depart="447.80" departLane="best" from="-642893603" to="1157435279#1"/>
-    <trip id="bus41" type="bus_bus" depart="458.99" departLane="best" from="993441705" to="544489112"/>
-    <trip id="bus42" type="bus_bus" depart="470.19" departLane="best" from="-879177025#1" to="870991314#0"/>
-    <trip id="bus43" type="bus_bus" depart="481.38" departLane="best" from="-183543979#0" to="651080031"/>
-    <trip id="bus44" type="bus_bus" depart="492.58" departLane="best" from="651079972" to="561748189"/>
-    <trip id="bus45" type="bus_bus" depart="503.77" departLane="best" from="1103029835#1" to="628567782#0"/>
-    <trip id="bus46" type="bus_bus" depart="514.97" departLane="best" from="111987010#1" to="180087573"/>
-    <trip id="bus47" type="bus_bus" depart="526.16" departLane="best" departSpeed="max" from="183685560#0" to="-544489067#0"/>
-    <trip id="bus48" type="bus_bus" depart="537.36" departLane="best" departSpeed="max" from="870991315#0" to="1103029814#1"/>
-    <trip id="bus49" type="bus_bus" depart="548.55" departLane="best" from="544489112" to="1033118918"/>
-    <trip id="bus50" type="bus_bus" depart="559.75" departLane="best" from="870991319#0" to="870991314#1"/>
-    <trip id="bus51" type="bus_bus" depart="570.94" departLane="best" from="1103029863#2" to="628567782#0"/>
-    <trip id="bus52" type="bus_bus" depart="582.14" departLane="best" from="624604434#0" to="-879177025#0"/>
-    <trip id="bus53" type="bus_bus" depart="593.33" departLane="best" departSpeed="max" from="665214722" to="544489112"/>
-    <trip id="bus54" type="bus_bus" depart="604.53" departLane="best" from="-111987010#0" to="1103029873"/>
-    <trip id="bus55" type="bus_bus" depart="615.72" departLane="best" from="-183543979#1" to="871213663#0"/>
-    <trip id="bus57" type="bus_bus" depart="638.11" departLane="best" from="1103029873" to="-563021933"/>
-    <trip id="bus58" type="bus_bus" depart="649.30" departLane="best" departSpeed="max" from="870991315#0" to="879172096"/>
-    <trip id="bus59" type="bus_bus" depart="660.50" departLane="best" from="879177024#1" to="183690512#3"/>
-    <trip id="bus61" type="bus_bus" depart="682.89" departLane="best" departSpeed="max" from="665214722" to="-690613625#1"/>
-    <trip id="bus62" type="bus_bus" depart="694.08" departLane="best" from="1103029835#1" to="870991314#1"/>
-    <trip id="bus65" type="bus_bus" depart="727.67" departLane="best" from="993441705" to="628567782#1"/>
-    <trip id="bus66" type="bus_bus" depart="738.86" departLane="best" departSpeed="max" from="183685560#0" to="-872215578"/>
-    <trip id="bus67" type="bus_bus" depart="750.06" departLane="best" from="-879177025#1" to="1090755561#1"/>
-    <trip id="bus68" type="bus_bus" depart="761.25" departLane="best" from="114213935#2" to="574917570#1"/>
-    <trip id="bus69" type="bus_bus" depart="772.45" departLane="best" departSpeed="max" from="109984882#0" to="1072529521"/>
-    <trip id="bus70" type="bus_bus" depart="783.64" departLane="best" departSpeed="max" from="109984882#0" to="870991319#0"/>
-    <trip id="bus72" type="bus_bus" depart="806.03" departLane="best" departSpeed="max" from="109984882#0" to="628567782#1"/>
-    <trip id="bus73" type="bus_bus" depart="817.23" departLane="best" from="1090755561#1" to="-797720294"/>
-    <trip id="bus76" type="bus_bus" depart="850.81" departLane="best" from="660352572#2" to="642896772"/>
-    <trip id="bus77" type="bus_bus" depart="862.01" departLane="best" from="894843877#1" to="-651079992"/>
-    <trip id="bus78" type="bus_bus" depart="873.20" departLane="best" departSpeed="max" from="1157435280#0" to="111987010#1"/>
-    <trip id="bus79" type="bus_bus" depart="884.40" departLane="best" from="820090516" to="109971518#1"/>
-    <trip id="bus80" type="bus_bus" depart="895.59" departLane="best" departSpeed="max" from="1059676183#0" to="180087573"/>
-    <trip id="bus81" type="bus_bus" depart="906.79" departLane="best" from="573710409#0" to="1103029835#1"/>
-    <trip id="bus82" type="bus_bus" depart="917.98" departLane="best" from="1103029814#1" to="870991328#1"/>
-    <trip id="bus83" type="bus_bus" depart="929.18" departLane="best" departSpeed="max" from="183685560#0" to="870991314#0"/>
-    <trip id="bus85" type="bus_bus" depart="951.57" departLane="best" from="-879177025#1" to="871213663#0"/>
-    <trip id="bus86" type="bus_bus" depart="962.76" departLane="best" from="767517245" to="1033118917#0"/>
-    <trip id="bus87" type="bus_bus" depart="973.96" departLane="best" departSpeed="max" from="1157435280#0" to="-563021933"/>
-    <trip id="bus89" type="bus_bus" depart="996.35" departLane="best" from="1103029835#1" to="683268239"/>
-    <trip id="bus92" type="bus_bus" depart="1029.93" departLane="best" from="574917570#1" to="651080031"/>
-    <trip id="bus93" type="bus_bus" depart="1041.13" departLane="best" from="1033158923#0" to="1103029858#1"/>
-    <trip id="bus96" type="bus_bus" depart="1074.71" departLane="best" from="544489112" to="820090516"/>
-    <trip id="bus97" type="bus_bus" depart="1085.91" departLane="best" from="1033158925#0" to="-879177025#0"/>
-    <trip id="bus98" type="bus_bus" depart="1097.10" departLane="best" departSpeed="max" from="583701022" to="642896772"/>
-    <trip id="bus99" type="bus_bus" depart="1108.30" departLane="best" departSpeed="max" from="109984882#0" to="-690613625#0"/>
-    <trip id="bus100" type="bus_bus" depart="1119.49" departLane="best" departSpeed="max" from="870991315#0" to="109971518#1"/>
-    <trip id="bus101" type="bus_bus" depart="1130.69" departLane="best" departSpeed="max" from="583701022" to="624604434#1"/>
-    <trip id="bus103" type="bus_bus" depart="1153.08" departLane="best" from="573710409#0" to="871213663#1"/>
-    <trip id="bus104" type="bus_bus" depart="1164.27" departLane="best" departSpeed="max" from="109984882#0" to="1157435279#1"/>
-    <trip id="bus105" type="bus_bus" depart="1175.47" departLane="best" from="651079954#1" to="1103029858#1"/>
-    <trip id="bus106" type="bus_bus" depart="1186.66" departLane="best" from="-111987010#0" to="660352585"/>
-    <trip id="bus107" type="bus_bus" depart="1197.86" departLane="best" from="690613617" to="183543979#1"/>
-    <trip id="bus108" type="bus_bus" depart="1209.05" departLane="best" from="1103029835#1" to="871213663#1"/>
-    <trip id="bus109" type="bus_bus" depart="1220.25" departLane="best" departSpeed="max" from="114216292" to="879177025#1"/>
-    <trip id="bus111" type="bus_bus" depart="1242.63" departLane="best" departSpeed="max" from="651079954#0" to="111987075"/>
-    <trip id="bus112" type="bus_bus" depart="1253.83" departLane="best" from="-690613625#0" to="1103029858#1"/>
-    <trip id="bus113" type="bus_bus" depart="1265.02" departLane="best" departSpeed="max" from="651079954#0" to="872215569"/>
-    <trip id="bus114" type="bus_bus" depart="1276.22" departLane="best" from="1033118917#0" to="879177024#1"/>
-    <trip id="bus115" type="bus_bus" depart="1287.41" departLane="best" from="544489067#1" to="573710409#0"/>
-    <trip id="bus119" type="bus_bus" depart="1332.19" departLane="best" from="767517245" to="-642893603"/>
-    <trip id="bus120" type="bus_bus" depart="1343.39" departLane="best" from="573710409#0" to="1103029833#1"/>
-    <trip id="bus121" type="bus_bus" depart="1354.58" departLane="best" from="-111987010#0" to="662913537#0"/>
-    <trip id="bus123" type="bus_bus" depart="1376.97" departLane="best" from="660352585" to="573710409#0"/>
-    <trip id="bus124" type="bus_bus" depart="1388.17" departLane="best" from="180087572" to="-111987075"/>
-    <trip id="bus125" type="bus_bus" depart="1399.36" departLane="best" from="-690613617" to="870991314#1"/>
-    <trip id="bus128" type="bus_bus" depart="1432.95" departLane="best" from="1103029873" to="870991316"/>
-    <trip id="bus130" type="bus_bus" depart="1455.34" departLane="best" from="870991315#1" to="1054125801#0"/>
-    <trip id="bus131" type="bus_bus" depart="1466.53" departLane="best" from="1103029814#1" to="690613617"/>
-    <trip id="bus132" type="bus_bus" depart="1477.73" departLane="best" departSpeed="max" from="665214722" to="870991314#1"/>
-    <trip id="bus133" type="bus_bus" depart="1488.92" departLane="best" departSpeed="max" from="1157435280#0" to="624604434#1"/>
-    <trip id="bus134" type="bus_bus" depart="1500.12" departLane="best" from="1033158923#0" to="871213663#0"/>
-    <trip id="bus136" type="bus_bus" depart="1522.51" departLane="best" from="-690613619" to="870991314#1"/>
-    <trip id="bus137" type="bus_bus" depart="1533.70" departLane="best" from="-282194769" to="660352572#1"/>
-    <trip id="bus138" type="bus_bus" depart="1544.90" departLane="best" from="114213935#1" to="871213663#0"/>
-    <trip id="bus139" type="bus_bus" depart="1556.09" departLane="best" from="-690613617" to="870991314#1"/>
-    <trip id="bus140" type="bus_bus" depart="1567.29" departLane="best" from="-690613619" to="1103029814#1"/>
-    <trip id="bus141" type="bus_bus" depart="1578.48" departLane="best" departSpeed="max" from="665214722" to="-690613619"/>
-    <trip id="bus142" type="bus_bus" depart="1589.68" departLane="best" departSpeed="max" from="109984882#0" to="-282194769"/>
-    <trip id="bus143" type="bus_bus" depart="1600.87" departLane="best" departSpeed="max" from="183685560#0" to="1103029862#1"/>
-    <trip id="bus146" type="bus_bus" depart="1634.46" departLane="best" from="114213935#1" to="870991314#1"/>
-    <trip id="bus147" type="bus_bus" depart="1645.65" departLane="best" from="-879177025#0" to="1103029835#1"/>
-    <trip id="bus148" type="bus_bus" depart="1656.85" departLane="best" from="892972017#1" to="561748189"/>
-    <trip id="bus149" type="bus_bus" depart="1668.04" departLane="best" from="871213663#1" to="879177024#1"/>
-    <trip id="bus150" type="bus_bus" depart="1679.24" departLane="best" from="-879177025#1" to="1033118918"/>
-    <trip id="bus151" type="bus_bus" depart="1690.43" departLane="best" from="-879177025#0" to="1103029814#1"/>
-    <trip id="bus152" type="bus_bus" depart="1701.63" departLane="best" from="111987010#1" to="180087573"/>
-    <trip id="bus153" type="bus_bus" depart="1712.82" departLane="best" from="660352572#2" to="1103029863#2"/>
-    <trip id="bus154" type="bus_bus" depart="1724.02" departLane="best" from="584825959" to="366952449#1"/>
-    <trip id="bus156" type="bus_bus" depart="1746.41" departLane="best" from="1103029833#0" to="651080002"/>
-    <trip id="bus157" type="bus_bus" depart="1757.60" departLane="best" from="111987010#0" to="870991328#1"/>
-    <trip id="bus159" type="bus_bus" depart="1779.99" departLane="best" from="662913519#1" to="642896772"/>
-    <trip id="bus161" type="bus_bus" depart="1802.38" departLane="best" departSpeed="max" from="651079954#0" to="111987010#0"/>
-    <trip id="bus163" type="bus_bus" depart="1824.77" departLane="best" from="660352567" to="1103029858#1"/>
-    <trip id="bus165" type="bus_bus" depart="1847.16" departLane="best" departSpeed="max" from="1157435280#0" to="1103029858#1"/>
-    <trip id="bus167" type="bus_bus" depart="1869.55" departLane="best" from="870991315#1" to="624604434#0"/>
-    <trip id="bus169" type="bus_bus" depart="1891.94" departLane="best" from="-111987010#0" to="1103029835#2"/>
-    <trip id="bus172" type="bus_bus" depart="1925.52" departLane="best" departSpeed="max" from="183685560#0" to="1054125801#1"/>
-    <trip id="bus175" type="bus_bus" depart="1959.11" departLane="best" from="879177024#1" to="366952449#1"/>
-    <trip id="bus177" type="bus_bus" depart="1981.50" departLane="best" from="-690613625#1" to="660352585"/>
-    <trip id="bus178" type="bus_bus" depart="1992.69" departLane="best" from="651079971" to="1090755561#1"/>
-    <trip id="bus180" type="bus_bus" depart="2015.08" departLane="best" departSpeed="max" from="109984882#0" to="183690512#2"/>
-    <trip id="bus182" type="bus_bus" depart="2037.47" departLane="best" from="1198531265" to="624604435#0"/>
-    <trip id="bus184" type="bus_bus" depart="2059.86" departLane="best" from="544489067#1" to="109971518#1"/>
-    <trip id="bus185" type="bus_bus" depart="2071.06" departLane="best" departSpeed="max" from="651079954#0" to="111987010#0"/>
-    <trip id="bus186" type="bus_bus" depart="2082.25" departLane="best" from="662913524" to="662913537#0"/>
-    <trip id="bus188" type="bus_bus" depart="2104.64" departLane="best" from="1054125801#1" to="-690613620#0"/>
-    <trip id="bus189" type="bus_bus" depart="2115.84" departLane="best" from="573710407" to="-563021933"/>
-    <trip id="bus191" type="bus_bus" depart="2138.23" departLane="best" departSpeed="max" from="183685560#0" to="-690613625#0"/>
-    <trip id="bus192" type="bus_bus" depart="2149.42" departLane="best" from="651079954#1" to="894843877#1"/>
-    <trip id="bus193" type="bus_bus" depart="2160.62" departLane="best" departSpeed="max" from="583701022" to="879172124"/>
-    <trip id="bus194" type="bus_bus" depart="2171.81" departLane="best" departSpeed="max" from="870991315#0" to="584825959"/>
-    <trip id="bus195" type="bus_bus" depart="2183.01" departLane="best" from="660352567" to="183690512#3"/>
-    <trip id="bus197" type="bus_bus" depart="2205.40" departLane="best" departSpeed="max" from="870991315#0" to="660352572#2"/>
-    <trip id="bus199" type="bus_bus" depart="2227.79" departLane="best" departSpeed="max" from="109984882#0" to="628567782#0"/>
-    <trip id="bus200" type="bus_bus" depart="2238.98" departLane="best" departSpeed="max" from="665214722" to="-872215578"/>
-    <trip id="bus201" type="bus_bus" depart="2250.18" departLane="best" from="624604436" to="1103029833#1"/>
-    <trip id="bus202" type="bus_bus" depart="2261.37" departLane="best" from="-690613619" to="1103029835#2"/>
-    <trip id="bus203" type="bus_bus" depart="2272.57" departLane="best" from="1103029835#2" to="1103029872"/>
-    <trip id="bus205" type="bus_bus" depart="2294.96" departLane="best" departSpeed="max" from="109984882#0" to="651079976"/>
-    <trip id="bus207" type="bus_bus" depart="2317.35" departLane="best" departSpeed="max" from="1157435280#0" to="561748193"/>
-    <trip id="bus208" type="bus_bus" depart="2328.54" departLane="best" from="1198531265" to="1054125801#0"/>
-    <trip id="bus210" type="bus_bus" depart="2350.93" departLane="best" from="775185678" to="662913524"/>
-    <trip id="bus212" type="bus_bus" depart="2373.32" departLane="best" departSpeed="max" from="114216292" to="660352585"/>
-    <trip id="bus215" type="bus_bus" depart="2406.91" departLane="best" departSpeed="max" from="109984882#0" to="1072529521"/>
-    <trip id="bus216" type="bus_bus" depart="2418.10" departLane="best" departSpeed="max" from="183685560#0" to="-544489067#0"/>
-    <trip id="bus217" type="bus_bus" depart="2429.30" departLane="best" departSpeed="max" from="1157435280#0" to="1033118917#0"/>
-    <trip id="bus218" type="bus_bus" depart="2440.49" departLane="best" from="183685561" to="-690613625#1"/>
-    <trip id="bus221" type="bus_bus" depart="2474.07" departLane="best" from="-544489067#0" to="628567782#1"/>
-    <trip id="bus224" type="bus_bus" depart="2507.66" departLane="best" from="1090755561#1" to="1103029873"/>
-    <trip id="bus225" type="bus_bus" depart="2518.85" departLane="best" from="665214718#1" to="1157435279#1"/>
-    <trip id="bus228" type="bus_bus" depart="2552.44" departLane="best" from="-183543979#1" to="561748189"/>
-    <trip id="bus229" type="bus_bus" depart="2563.63" departLane="best" from="993441705" to="114213935#1"/>
-    <trip id="bus230" type="bus_bus" depart="2574.83" departLane="best" departSpeed="max" from="651079954#0" to="683268239"/>
-    <trip id="bus231" type="bus_bus" depart="2586.02" departLane="best" departSpeed="max" from="651079954#0" to="660352585"/>
-    <trip id="bus232" type="bus_bus" depart="2597.22" departLane="best" from="-183543979#1" to="-879177025#0"/>
-    <trip id="bus233" type="bus_bus" depart="2608.41" departLane="best" from="-918082989" to="628567782#1"/>
-    <trip id="bus234" type="bus_bus" depart="2619.61" departLane="best" from="574917575#1" to="1072529521"/>
-    <trip id="bus235" type="bus_bus" depart="2630.80" departLane="best" from="651080002" to="662913524"/>
-    <trip id="bus236" type="bus_bus" depart="2642.00" departLane="best" from="662913524" to="879177024#1"/>
-    <trip id="bus237" type="bus_bus" depart="2653.19" departLane="best" from="-690613625#1" to="-879177025#0"/>
-    <trip id="bus240" type="bus_bus" depart="2686.78" departLane="best" from="-690613620#0" to="1157435279#1"/>
-    <trip id="bus244" type="bus_bus" depart="2731.56" departLane="best" from="879177025#1" to="894843877#1"/>
-    <trip id="bus245" type="bus_bus" depart="2742.75" departLane="best" departSpeed="max" from="665214722" to="114213935#1"/>
-    <trip id="bus246" type="bus_bus" depart="2753.95" departLane="best" from="180087572" to="1157435279#0"/>
-    <trip id="bus247" type="bus_bus" depart="2765.14" departLane="best" from="561748189" to="-111987075"/>
-    <trip id="bus249" type="bus_bus" depart="2787.53" departLane="best" from="544489067#1" to="879177025#0"/>
-    <trip id="bus251" type="bus_bus" depart="2809.92" departLane="best" from="651080031" to="180087573"/>
-    <trip id="bus252" type="bus_bus" depart="2821.12" departLane="best" from="660352582#1" to="879177025#0"/>
-    <trip id="bus253" type="bus_bus" depart="2832.31" departLane="best" from="1103029835#2" to="690613625#1"/>
-    <trip id="bus255" type="bus_bus" depart="2854.70" departLane="best" departSpeed="max" from="183685560#0" to="660352567"/>
-    <trip id="bus258" type="bus_bus" depart="2888.29" departLane="best" departSpeed="max" from="870991315#0" to="109971518#1"/>
-    <trip id="bus259" type="bus_bus" depart="2899.48" departLane="best" from="183685561" to="584825959"/>
-    <trip id="bus261" type="bus_bus" depart="2921.87" departLane="best" from="1090755561#1" to="690613619"/>
-    <trip id="bus262" type="bus_bus" depart="2933.07" departLane="best" from="114213938" to="870991314#1"/>
-    <trip id="bus263" type="bus_bus" depart="2944.26" departLane="best" from="651080002" to="1103029833#1"/>
-    <trip id="bus264" type="bus_bus" depart="2955.46" departLane="best" from="111987075" to="879172096"/>
-    <trip id="bus265" type="bus_bus" depart="2966.65" departLane="best" from="879177024#1" to="651080031"/>
-    <trip id="bus267" type="bus_bus" depart="2989.04" departLane="best" from="651079990" to="628567782#1"/>
-    <trip id="bus268" type="bus_bus" depart="3000.24" departLane="best" from="544489067#1" to="690613617"/>
-    <trip id="bus269" type="bus_bus" depart="3011.43" departLane="best" from="-690613625#1" to="1090755561#1"/>
-    <trip id="bus270" type="bus_bus" depart="3022.63" departLane="best" from="651079990" to="1103029862#1"/>
-    <trip id="bus271" type="bus_bus" depart="3033.82" departLane="best" departSpeed="max" from="583701022" to="183690512#2"/>
-    <trip id="bus273" type="bus_bus" depart="3056.21" departLane="best" from="662913519#1" to="111987010#0"/>
-    <trip id="bus274" type="bus_bus" depart="3067.40" departLane="best" from="651080002" to="1103029833#0"/>
-    <trip id="bus275" type="bus_bus" depart="3078.60" departLane="best" from="1103029814#1" to="690613620#1"/>
-    <trip id="bus278" type="bus_bus" depart="3112.18" departLane="best" departSpeed="max" from="1059676183#0" to="1072529521"/>
-    <trip id="bus280" type="bus_bus" depart="3134.57" departLane="best" from="884613952" to="544489068#1"/>
-    <trip id="bus281" type="bus_bus" depart="3145.77" departLane="best" from="1103029858#1" to="-651079992"/>
-    <trip id="bus285" type="bus_bus" depart="3190.55" departLane="best" from="651080002" to="-690613625#1"/>
-    <trip id="bus288" type="bus_bus" depart="3224.13" departLane="best" from="183689805#1" to="180087573"/>
-    <trip id="bus290" type="bus_bus" depart="3246.52" departLane="best" from="872215569" to="183690512#3"/>
-    <trip id="bus291" type="bus_bus" depart="3257.72" departLane="best" from="-690613625#1" to="1157435279#1"/>
-    <trip id="bus293" type="bus_bus" depart="3280.11" departLane="best" from="574917575#1" to="1103029862#1"/>
-    <trip id="bus294" type="bus_bus" depart="3291.30" departLane="best" from="894843877#2" to="-690613620#0"/>
-    <trip id="bus297" type="bus_bus" depart="3324.89" departLane="best" from="573710409#0" to="180087573"/>
-    <trip id="bus298" type="bus_bus" depart="3336.08" departLane="best" departSpeed="max" from="183685560#0" to="870991314#0"/>
-    <trip id="bus299" type="bus_bus" depart="3347.28" departLane="best" from="894843877#2" to="1103029862#1"/>
-    <trip id="bus300" type="bus_bus" depart="3358.47" departLane="best" from="624604435#0" to="584825959"/>
-    <trip id="bus301" type="bus_bus" depart="3369.67" departLane="best" from="660352585" to="879172096"/>
-    <trip id="bus302" type="bus_bus" depart="3380.86" departLane="best" departSpeed="max" from="651079954#0" to="879177025#1"/>
-    <trip id="bus304" type="bus_bus" depart="3403.25" departLane="best" from="111987010#0" to="180087573"/>
-    <trip id="bus305" type="bus_bus" depart="3414.45" departLane="best" departSpeed="max" from="583701022" to="1103029856#1"/>
-    <trip id="bus306" type="bus_bus" depart="3425.64" departLane="best" departSpeed="max" from="109984882#0" to="651080025"/>
-    <trip id="bus307" type="bus_bus" depart="3436.84" departLane="best" from="651080025" to="180087573"/>
-    <trip id="bus308" type="bus_bus" depart="3448.03" departLane="best" from="651079976" to="870991328#1"/>
-    <trip id="bus309" type="bus_bus" depart="3459.23" departLane="best" departSpeed="max" from="665214722" to="651080002"/>
-    <trip id="bus310" type="bus_bus" depart="3470.42" departLane="best" departSpeed="max" from="651079954#0" to="871213663#1"/>
-    <trip id="bus311" type="bus_bus" depart="3481.62" departLane="best" from="180087572" to="561748193"/>
-    <trip id="bus312" type="bus_bus" depart="3492.81" departLane="best" departSpeed="max" from="651079954#0" to="870991319#0"/>
-    <trip id="bus314" type="bus_bus" depart="3515.20" departLane="best" from="1033158925#1" to="1103029863#1"/>
-    <trip id="bus315" type="bus_bus" depart="3526.40" departLane="best" from="1103029862#1" to="690613620#1"/>
-    <trip id="bus316" type="bus_bus" depart="3537.59" departLane="best" from="872215569" to="183690512#3"/>
-    <trip id="bus319" type="bus_bus" depart="3571.18" departLane="best" from="111987010#1" to="109971518#1"/>
-    <trip id="bus320" type="bus_bus" depart="3582.37" departLane="best" from="-690613625#0" to="-879177025#0"/>
+    <trip id="bus1" type="bus_bus" depart="15.73" departLane="best" from="114213957#1" to="1090755562#1"/>
+    <trip id="bus3" type="bus_bus" depart="47.20" departLane="best" from="879172124" to="879172096"/>
+    <trip id="bus5" type="bus_bus" depart="78.67" departLane="best" from="1103029863#2" to="540589200"/>
+    <trip id="bus8" type="bus_bus" depart="125.87" departLane="best" from="870991316" to="111987075"/>
+    <trip id="bus9" type="bus_bus" depart="141.60" departLane="best" from="870991316" to="1103029866"/>
+    <trip id="bus10" type="bus_bus" depart="157.34" departLane="best" from="1198531266" to="1054125801#1"/>
+    <trip id="bus11" type="bus_bus" depart="173.07" departLane="best" departSpeed="max" from="918082993" to="-111987075"/>
+    <trip id="bus12" type="bus_bus" depart="188.80" departLane="best" from="870991316" to="684278129"/>
+    <trip id="bus14" type="bus_bus" depart="220.27" departLane="best" from="894843877#2" to="-642893603"/>
+    <trip id="bus15" type="bus_bus" depart="236.00" departLane="best" from="-872215578" to="1103029833#0"/>
+    <trip id="bus16" type="bus_bus" depart="251.74" departLane="best" from="-879177025#1" to="1103029863#2"/>
+    <trip id="bus17" type="bus_bus" depart="267.47" departLane="best" departSpeed="max" from="665787416" to="1154677194#1"/>
+    <trip id="bus19" type="bus_bus" depart="298.94" departLane="best" from="114213938" to="879172096"/>
+    <trip id="bus21" type="bus_bus" depart="330.40" departLane="best" from="1103029814#1" to="684278129"/>
+    <trip id="bus24" type="bus_bus" depart="377.60" departLane="best" from="1103029863#1" to="879177024#1"/>
+    <trip id="bus27" type="bus_bus" depart="424.81" departLane="best" from="894843877#2" to="183690512#3"/>
+    <trip id="bus29" type="bus_bus" depart="456.27" departLane="best" from="660352582#1" to="878958165#1"/>
+    <trip id="bus30" type="bus_bus" depart="472.01" departLane="best" departSpeed="max" from="366882273" to="1090755562#1"/>
+    <trip id="bus31" type="bus_bus" depart="487.74" departLane="best" departSpeed="max" from="993441705" to="540589200"/>
+    <trip id="bus32" type="bus_bus" depart="503.47" departLane="best" from="-879177024#0" to="-642893603"/>
+    <trip id="bus33" type="bus_bus" depart="519.21" departLane="best" from="1033118917#0" to="642896772"/>
+    <trip id="bus36" type="bus_bus" depart="566.41" departLane="best" departSpeed="max" from="993441705" to="540589202"/>
+    <trip id="bus37" type="bus_bus" depart="582.14" departLane="best" departSpeed="max" from="-540589202" to="683268248#1"/>
+    <trip id="bus38" type="bus_bus" depart="597.87" departLane="best" from="-690613625#1" to="-872215578"/>
+    <trip id="bus39" type="bus_bus" depart="613.61" departLane="best" from="114213938" to="642896772"/>
+    <trip id="bus40" type="bus_bus" depart="629.34" departLane="best" from="1033118917#0" to="1203000717"/>
+    <trip id="bus41" type="bus_bus" depart="645.07" departLane="best" from="544489068#1" to="879177025#1"/>
+    <trip id="bus42" type="bus_bus" depart="660.81" departLane="best" departSpeed="max" from="580815653#0" to="1072529521"/>
+    <trip id="bus43" type="bus_bus" depart="676.54" departLane="best" departSpeed="max" from="114216316" to="642896772"/>
+    <trip id="bus44" type="bus_bus" depart="692.28" departLane="best" departSpeed="max" from="864498341" to="544489067#1"/>
+    <trip id="bus45" type="bus_bus" depart="708.01" departLane="best" departSpeed="max" from="870991315#0" to="540589202"/>
+    <trip id="bus46" type="bus_bus" depart="723.74" departLane="best" departSpeed="max" from="-540589202" to="878958179#2"/>
+    <trip id="bus48" type="bus_bus" depart="755.21" departLane="best" from="1197045457" to="690613619"/>
+    <trip id="bus50" type="bus_bus" depart="786.68" departLane="best" from="-690613625#0" to="758880904#1"/>
+    <trip id="bus51" type="bus_bus" depart="802.41" departLane="best" departSpeed="max" from="864498341" to="1033158919#1"/>
+    <trip id="bus52" type="bus_bus" depart="818.14" departLane="best" from="573710409#0" to="544489112"/>
+    <trip id="bus54" type="bus_bus" depart="849.61" departLane="best" from="366949696" to="1090755562#1"/>
+    <trip id="bus55" type="bus_bus" depart="865.34" departLane="best" from="628567782#0" to="684278129"/>
+    <trip id="bus56" type="bus_bus" depart="881.08" departLane="best" from="1103029858#1" to="1111218371#2"/>
+    <trip id="bus57" type="bus_bus" depart="896.81" departLane="best" departSpeed="max" from="993441705" to="651079954#1"/>
+    <trip id="bus58" type="bus_bus" depart="912.54" departLane="best" from="427551889#1-AddedOffRampEdge" to="540589202"/>
+    <trip id="bus59" type="bus_bus" depart="928.28" departLane="best" from="1033118918" to="1090755562#1"/>
+    <trip id="bus61" type="bus_bus" depart="959.75" departLane="best" from="690613620#1" to="642896772"/>
+    <trip id="bus63" type="bus_bus" depart="991.21" departLane="best" from="871213663#1" to="690613620#1"/>
+    <trip id="bus64" type="bus_bus" depart="1006.95" departLane="best" from="111987010#0" to="651080031"/>
+    <trip id="bus66" type="bus_bus" depart="1038.41" departLane="best" from="918082984" to="574917570#1"/>
+    <trip id="bus67" type="bus_bus" depart="1054.15" departLane="best" from="870991316" to="1086988354"/>
+    <trip id="bus68" type="bus_bus" depart="1069.88" departLane="best" from="-879177025#0" to="1198531266"/>
+    <trip id="bus69" type="bus_bus" depart="1085.61" departLane="best" from="366949696" to="183690512#3"/>
+    <trip id="bus71" type="bus_bus" depart="1117.08" departLane="best" departSpeed="max" from="993441705" to="-879177025#0"/>
+    <trip id="bus72" type="bus_bus" depart="1132.81" departLane="best" departSpeed="max" from="366882273" to="114213935#0"/>
+    <trip id="bus73" type="bus_bus" depart="1148.55" departLane="best" from="-642893603" to="1103029835#2"/>
+    <trip id="bus74" type="bus_bus" depart="1164.28" departLane="best" from="1103029835#2" to="183689805#1"/>
+    <trip id="bus75" type="bus_bus" depart="1180.01" departLane="best" from="366949696" to="1103029863#2"/>
+    <trip id="bus76" type="bus_bus" depart="1195.75" departLane="best" from="-111987075" to="878958179#1"/>
+    <trip id="bus77" type="bus_bus" depart="1211.48" departLane="best" from="540589200" to="870991324#1"/>
+    <trip id="bus78" type="bus_bus" depart="1227.22" departLane="best" from="628567807" to="684278128"/>
+    <trip id="bus79" type="bus_bus" depart="1242.95" departLane="best" departSpeed="max" from="918082993" to="878958179#2"/>
+    <trip id="bus80" type="bus_bus" depart="1258.68" departLane="best" from="870991328#1" to="1072529521"/>
+    <trip id="bus81" type="bus_bus" depart="1274.42" departLane="best" from="574917575#1" to="1090755562#1"/>
+    <trip id="bus82" type="bus_bus" depart="1290.15" departLane="best" departSpeed="max" from="366882273" to="690613619"/>
+    <trip id="bus83" type="bus_bus" depart="1305.88" departLane="best" from="158326567#0" to="918082982"/>
+    <trip id="bus86" type="bus_bus" depart="1353.08" departLane="best" from="651079954#1" to="683268248#1"/>
+    <trip id="bus87" type="bus_bus" depart="1368.82" departLane="best" from="1072529522#0" to="1111218371#2"/>
+    <trip id="bus88" type="bus_bus" depart="1384.55" departLane="best" departSpeed="max" from="918082993" to="574917579#1"/>
+    <trip id="bus89" type="bus_bus" depart="1400.28" departLane="best" from="628567782#0" to="690613625#1"/>
+    <trip id="bus90" type="bus_bus" depart="1416.02" departLane="best" from="-690613619" to="574917579#1"/>
+    <trip id="bus91" type="bus_bus" depart="1431.75" departLane="best" departSpeed="max" from="580815653#0" to="870991324#0"/>
+    <trip id="bus92" type="bus_bus" depart="1447.48" departLane="best" from="544489067#1" to="1072529522#0"/>
+    <trip id="bus94" type="bus_bus" depart="1478.95" departLane="best" from="1111218372#0" to="1033118917#1"/>
+    <trip id="bus95" type="bus_bus" depart="1494.68" departLane="best" from="-544489067#0" to="1103029835#1"/>
+    <trip id="bus97" type="bus_bus" depart="1526.15" departLane="best" departSpeed="max" from="366882273" to="574917579#1"/>
+    <trip id="bus98" type="bus_bus" depart="1541.89" departLane="best" from="580815653#2" to="-879172095"/>
+    <trip id="bus99" type="bus_bus" depart="1557.62" departLane="best" from="1103029858#1" to="683268248#1"/>
+    <trip id="bus101" type="bus_bus" depart="1589.09" departLane="best" from="-690613619" to="1111218371#2"/>
+    <trip id="bus103" type="bus_bus" depart="1620.55" departLane="best" from="690613625#1" to="183690512#3"/>
+    <trip id="bus104" type="bus_bus" depart="1636.29" departLane="best" departSpeed="max" from="993441705" to="-918082989"/>
+    <trip id="bus105" type="bus_bus" depart="1652.02" departLane="best" from="-690613625#1" to="1090755562#1"/>
+    <trip id="bus109" type="bus_bus" depart="1714.95" departLane="best" from="665787414#1" to="918082982"/>
+    <trip id="bus110" type="bus_bus" depart="1730.69" departLane="best" from="-684278128" to="-111987075"/>
+    <trip id="bus111" type="bus_bus" depart="1746.42" departLane="best" from="870991319#1" to="1111218371#2"/>
+    <trip id="bus112" type="bus_bus" depart="1762.15" departLane="best" from="-690613617" to="-544489067#0"/>
+    <trip id="bus113" type="bus_bus" depart="1777.89" departLane="best" from="1033158925#0" to="1033118917#0"/>
+    <trip id="bus114" type="bus_bus" depart="1793.62" departLane="best" from="114213957#1" to="624604436"/>
+    <trip id="bus115" type="bus_bus" depart="1809.36" departLane="best" from="863227697" to="1090755562#1"/>
+    <trip id="bus116" type="bus_bus" depart="1825.09" departLane="best" departSpeed="max" from="665787416" to="1103029862#1"/>
+    <trip id="bus117" type="bus_bus" depart="1840.82" departLane="best" from="574917579#1" to="878958165#1"/>
+    <trip id="bus118" type="bus_bus" depart="1856.56" departLane="best" from="894843877#2" to="-879177024#0"/>
+    <trip id="bus119" type="bus_bus" depart="1872.29" departLane="best" from="366949696" to="1103029863#2"/>
+    <trip id="bus120" type="bus_bus" depart="1888.02" departLane="best" from="111987010#0" to="767517245"/>
+    <trip id="bus121" type="bus_bus" depart="1903.76" departLane="best" departSpeed="max" from="665787416" to="1103029858#1"/>
+    <trip id="bus123" type="bus_bus" depart="1935.22" departLane="best" from="366952449#1" to="-111987075"/>
+    <trip id="bus124" type="bus_bus" depart="1950.96" departLane="best" from="-690613625#1" to="871213663#1"/>
+    <trip id="bus125" type="bus_bus" depart="1966.69" departLane="best" from="-879177025#1" to="544489068#1"/>
+    <trip id="bus126" type="bus_bus" depart="1982.42" departLane="best" from="870991324#0" to="574917579#1"/>
+    <trip id="bus128" type="bus_bus" depart="2013.89" departLane="best" departSpeed="max" from="870991315#0" to="870991324#1"/>
+    <trip id="bus129" type="bus_bus" depart="2029.62" departLane="best" from="-879177025#0" to="1090755562#1"/>
+    <trip id="bus131" type="bus_bus" depart="2061.09" departLane="best" from="1072529522#0" to="878958179#2"/>
+    <trip id="bus132" type="bus_bus" depart="2076.83" departLane="best" from="872215569" to="918082981-AddedOnRampEdge"/>
+    <trip id="bus133" type="bus_bus" depart="2092.56" departLane="best" from="870991319#0" to="871213663#1"/>
+    <trip id="bus134" type="bus_bus" depart="2108.29" departLane="best" departSpeed="max" from="-540589202" to="690613617"/>
+    <trip id="bus135" type="bus_bus" depart="2124.03" departLane="best" from="1197045457" to="878958179#2"/>
+    <trip id="bus136" type="bus_bus" depart="2139.76" departLane="best" from="870991315#1" to="870991328#0"/>
+    <trip id="bus137" type="bus_bus" depart="2155.49" departLane="best" from="870991319#0" to="1103029862#1"/>
+    <trip id="bus138" type="bus_bus" depart="2171.23" departLane="best" departSpeed="max" from="870991315#0" to="918082989"/>
+    <trip id="bus140" type="bus_bus" depart="2202.69" departLane="best" from="662913537#0" to="870991314#1"/>
+    <trip id="bus141" type="bus_bus" depart="2218.43" departLane="best" from="544489112" to="1111218371#2"/>
+    <trip id="bus142" type="bus_bus" depart="2234.16" departLane="best" departSpeed="max" from="870991315#0" to="1103029814#1"/>
+    <trip id="bus143" type="bus_bus" depart="2249.89" departLane="best" from="1197045457" to="870991328#0"/>
+    <trip id="bus144" type="bus_bus" depart="2265.63" departLane="best" departSpeed="max" from="918082993" to="1103029866"/>
+    <trip id="bus146" type="bus_bus" depart="2297.09" departLane="best" departSpeed="max" from="993441705" to="540589202"/>
+    <trip id="bus147" type="bus_bus" depart="2312.83" departLane="best" from="918082986" to="1033118917#0"/>
+    <trip id="bus148" type="bus_bus" depart="2328.56" departLane="best" departSpeed="max" from="918082993" to="1072529521"/>
+    <trip id="bus149" type="bus_bus" depart="2344.30" departLane="best" departSpeed="max" from="918082993" to="1103029862#1"/>
+    <trip id="bus150" type="bus_bus" depart="2360.03" departLane="best" from="1033118917#0" to="1203000717"/>
+    <trip id="bus152" type="bus_bus" depart="2391.50" departLane="best" from="665214718#1" to="540589202"/>
+    <trip id="bus153" type="bus_bus" depart="2407.23" departLane="best" from="183689805#1" to="574917575#1"/>
+    <trip id="bus155" type="bus_bus" depart="2438.70" departLane="best" from="-111987010#0" to="878958179#1"/>
+    <trip id="bus158" type="bus_bus" depart="2485.90" departLane="best" from="-690613617" to="-879177024#0"/>
+    <trip id="bus162" type="bus_bus" depart="2548.83" departLane="best" departSpeed="max" from="366882273" to="1111218371#2"/>
+    <trip id="bus163" type="bus_bus" depart="2564.56" departLane="best" from="1033158919#1" to="1154677194#1"/>
+    <trip id="bus166" type="bus_bus" depart="2611.77" departLane="best" departSpeed="max" from="114216316" to="544489112"/>
+    <trip id="bus167" type="bus_bus" depart="2627.50" departLane="best" from="-111987010#0" to="1111218371#1"/>
+    <trip id="bus168" type="bus_bus" depart="2643.23" departLane="best" from="366952449#1" to="574917579#1"/>
+    <trip id="bus169" type="bus_bus" depart="2658.97" departLane="best" from="684278128" to="183690512#3"/>
+    <trip id="bus170" type="bus_bus" depart="2674.70" departLane="best" from="573710409#0" to="878958165#1"/>
+    <trip id="bus171" type="bus_bus" depart="2690.43" departLane="best" departSpeed="max" from="870991315#0" to="1072529521"/>
+    <trip id="bus172" type="bus_bus" depart="2706.17" departLane="best" from="-879172095" to="540589202"/>
+    <trip id="bus173" type="bus_bus" depart="2721.90" departLane="best" departSpeed="max" from="665787416" to="111987075"/>
+    <trip id="bus174" type="bus_bus" depart="2737.63" departLane="best" from="-690613625#0" to="1090755562#1"/>
+    <trip id="bus176" type="bus_bus" depart="2769.10" departLane="best" from="111987010#1" to="183690512#3"/>
+    <trip id="bus177" type="bus_bus" depart="2784.83" departLane="best" from="870991328#1" to="-690613625#0"/>
+    <trip id="bus178" type="bus_bus" depart="2800.57" departLane="best" departSpeed="max" from="366882273" to="642896772"/>
+    <trip id="bus179" type="bus_bus" depart="2816.30" departLane="best" from="1103029835#2" to="662913537#0"/>
+    <trip id="bus180" type="bus_bus" depart="2832.03" departLane="best" departSpeed="max" from="580815653#0" to="1103029835#1"/>
+    <trip id="bus181" type="bus_bus" depart="2847.77" departLane="best" from="-684278128" to="-111987075"/>
+    <trip id="bus182" type="bus_bus" depart="2863.50" departLane="best" departSpeed="max" from="864498341" to="767517245"/>
+    <trip id="bus184" type="bus_bus" depart="2894.97" departLane="best" from="1103029833#0" to="894843877#1"/>
+    <trip id="bus185" type="bus_bus" depart="2910.70" departLane="best" from="580815653#2" to="-684278128"/>
+    <trip id="bus186" type="bus_bus" depart="2926.44" departLane="best" from="111987075" to="684278129"/>
+    <trip id="bus187" type="bus_bus" depart="2942.17" departLane="best" from="544489112" to="870991314#1"/>
+    <trip id="bus188" type="bus_bus" depart="2957.90" departLane="best" from="661088487" to="-879177025#0"/>
+    <trip id="bus191" type="bus_bus" depart="3005.10" departLane="best" from="870991323" to="544489112"/>
+    <trip id="bus192" type="bus_bus" depart="3020.84" departLane="best" from="879177024#1" to="690613620#1"/>
+    <trip id="bus193" type="bus_bus" depart="3036.57" departLane="best" from="573710409#0" to="1103029858#1"/>
+    <trip id="bus194" type="bus_bus" depart="3052.30" departLane="best" from="111987075" to="642896772"/>
+    <trip id="bus195" type="bus_bus" depart="3068.04" departLane="best" departSpeed="max" from="864498341" to="540589202"/>
+    <trip id="bus196" type="bus_bus" depart="3083.77" departLane="best" departSpeed="max" from="665787416" to="1103029863#2"/>
+    <trip id="bus197" type="bus_bus" depart="3099.50" departLane="best" from="-872215578" to="1111218371#1"/>
+    <trip id="bus200" type="bus_bus" depart="3146.71" departLane="best" from="1111218372#0" to="708496109"/>
+    <trip id="bus201" type="bus_bus" depart="3162.44" departLane="best" from="894843877#2" to="-690613620#0"/>
+    <trip id="bus202" type="bus_bus" depart="3178.17" departLane="best" departSpeed="max" from="366882273" to="544489068#1"/>
+    <trip id="bus203" type="bus_bus" depart="3193.91" departLane="best" departSpeed="max" from="366882273" to="1090755562#1"/>
+    <trip id="bus204" type="bus_bus" depart="3209.64" departLane="best" departSpeed="max" from="366882273" to="878958165#1"/>
+    <trip id="bus205" type="bus_bus" depart="3225.37" departLane="best" from="660352582#1" to="662913537#0"/>
+    <trip id="bus207" type="bus_bus" depart="3256.84" departLane="best" from="158466192#1" to="-111987075"/>
+    <trip id="bus209" type="bus_bus" depart="3288.31" departLane="best" from="870991316" to="879177025#1"/>
+    <trip id="bus210" type="bus_bus" depart="3304.04" departLane="best" departSpeed="max" from="366882273" to="-690613625#1"/>
+    <trip id="bus211" type="bus_bus" depart="3319.77" departLane="best" from="628567782#1" to="624604436"/>
+    <trip id="bus212" type="bus_bus" depart="3335.51" departLane="best" from="1103029866" to="1090755562#1"/>
+    <trip id="bus214" type="bus_bus" depart="3366.97" departLane="best" from="1198531265" to="660352585"/>
+    <trip id="bus216" type="bus_bus" depart="3398.44" departLane="best" departSpeed="max" from="-540589202" to="642896772"/>
+    <trip id="bus217" type="bus_bus" depart="3414.18" departLane="best" from="1033158925#0" to="183690512#3"/>
+    <trip id="bus219" type="bus_bus" depart="3445.64" departLane="best" from="1103029863#1" to="111987010#1"/>
+    <trip id="bus220" type="bus_bus" depart="3461.38" departLane="best" departSpeed="max" from="864498341" to="1157435280#0"/>
+    <trip id="bus221" type="bus_bus" depart="3477.11" departLane="best" departSpeed="max" from="864498341" to="870991319#0"/>
+    <trip id="bus223" type="bus_bus" depart="3508.58" departLane="best" departSpeed="max" from="-540589202" to="544489067#1"/>
+    <trip id="bus224" type="bus_bus" depart="3524.31" departLane="best" departSpeed="max" from="993441705" to="114213935#2"/>
+    <trip id="bus226" type="bus_bus" depart="3555.78" departLane="best" departSpeed="max" from="-540589202" to="1054125801#0"/>
+    <trip id="bus227" type="bus_bus" depart="3571.51" departLane="best" from="651079971" to="1090755562#1"/>
+    <trip id="bus228" type="bus_bus" depart="3587.24" departLane="best" departSpeed="max" from="864498341" to="1033118917#0"/>
 </routes>
