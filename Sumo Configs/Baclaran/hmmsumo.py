@@ -10,6 +10,8 @@ from pandas import DataFrame
 from hmmlearn.hmm import GaussianHMM
 from matplotlib import cm, pyplot as plt
 import traci
+import os
+import sys
 np.random.seed(1)
 
 states = ['Passenger', 'Vehicle', 'Stoplight']
@@ -156,8 +158,13 @@ print("Hidden States: ")
 for i in hidden_states[0:100]:
     print(states[i])
 
+if 'SUMO_HOME' in os.environ:
+    sys.path.append(sys.path.append(os.path.join(os.environ['SUMO_HOME'], 'tools')))
+else:
+    sys.exit("Environment variable 'SUMO_HOME' not defined. Please set the 'SUMO_HOME' variable to the root directory of SUMO installation.")
+
 sumo_binary = "sumo"  # Path to SUMO binary
-sumo_cmd = [sumo_binary, "-c", "path/to/your/sumo_config_file.sumocfg"]
+sumo_cmd = [sumo_binary, "-c", os.path.abspath("Baclaran.sumocfg")]
 traci.start(sumo_cmd)
 
 sumo_actions = {
