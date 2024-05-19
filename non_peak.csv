@@ -1,0 +1,904 @@
+Hidden State,Observed State,Current Lane,Timestamp
+Vehicle,Stop,Merging,15:19:45
+Vehicle,Go,Right,15:21:18
+Vehicle,Change Lane Left,Left,15:22:20
+Vehicle,Change Lane Right,Right,15:23:57
+Vehicle,Change Lane Left,Left,15:24:51
+Vehicle,Change Lane Right,Right,15:25:17
+Vehicle,Change Lane Left,Left,15:25:35
+Vehicle,Stop,Left,15:25:51
+Vehicle,Go,Left,15:25:57
+Vehicle,Stop,Left,15:26:06
+Vehicle,Go,Left,15:26:28
+Vehicle,Stop,Left,15:28:32
+Vehicle,Go,Left,15:28:43
+Vehicle,Stop,Left,15:31:03
+Vehicle,Go,Left,15:31:20
+Vehicle,Stop,Left,15:32:00
+Vehicle,Go,Left,15:32:21
+Stoplight,Stop,Left,15:32:38
+Stoplight,Go,Left,15:33:13
+Vehicle,Change Lane Right,Right,15:33:58
+Vehicle,Change Lane Left,Left,15:34:04
+Vehicle,Change Lane Right,Right,15:34:06
+Vehicle,Change Lane Left,Left,15:35:01
+Vehicle,Change Lane Right,Right,15:35:13
+Vehicle,Change Lane Left,Left,15:35:32
+Vehicle,Change Lane Right,Right,15:35:47
+Vehicle,Change Lane Left,Left,15:37:04
+Vehicle,Change Lane Right,Right,15:37:35
+Vehicle,Change Lane Left,Left,15:37:37
+Vehicle,Change Lane Right,Right,15:37:58
+Vehicle,Change Lane Left,Left,15:38:23
+Vehicle,Change Lane Right,Right,15:38:40
+Passenger,Stop,Right,15:40:36
+Passenger,Unload,Right,15:40:36
+Passenger,Go,Right,15:40:50
+Vehicle,Change Lane Left,Left,15:41:08
+Vehicle,Change Lane Right,Middle,15:41:55
+Stoplight,Stop,Middle,15:42:16
+Stoplight,Go,Middle,15:42:43
+Vehicle,Change Lane Left,Left ,15:42:50
+Vehicle,Change Lane Right,Middle,15:43:27
+Passenger,Change Lane Right,Right,15:44:00
+Passenger,Stop,Right,15:44:06
+Passenger,Unload,Right,15:44:06
+Passenger,Go,Right,15:44:14
+Vehicle,Change Lane Left,Middle,15:44:14
+Vehicle,Change Lane Left,Left,15:44:41
+Vehicle,Change Lane Right,Middle,15:45:09
+Vehicle,Change Lane Left,Left,15:45:53
+Vehicle,Change Lane Right,Middle,15:53:01
+Vehicle,Change Lane Left,Left,15:53:05
+Vehicle,Change Lane Right,Middle,15:53:45
+Vehicle,Change Lane Left,Left,15:54:20
+Vehicle,Change Lane Right,Middle,15:54:45
+Stoplight,Change Lane Right,Right,15:55:04
+Stoplight,Stop,Right,15:55:14
+Stoplight,Go,Right,15:55:58
+Vehicle,Change Lane Left,Middle,15:56:06
+Vehicle,Change Lane Left,Left,15:56:08
+Stoplight,Stop,Left,15:57:49
+Stoplight,Go,Left,15:58:55
+Vehicle,Change Lane Right,Middle,15:59:43
+Vehicle,Change Lane Left,Left,16:00:17
+Vehicle,Change Lane Right,Middle,16:01:24
+Vehicle,Change Lane Left,Left,16:01:30
+Vehicle,Change Lane Right,Middle,16:01:45
+Stoplight,Stop,Middle,16:02:03
+Stoplight,Go,Middle,16:02:18
+Vehicle,Change Lane Left,Left,16:03:16
+Vehicle,Change Lane Left,Middle2,16:04:46
+Vehicle,Change Lane Left,Middle1,16:05:06
+Vehicle,Change Lane Left,Left,16:05:18
+Vehicle,Change Lane Right,Middle1,16:12:34
+Vehicle,Change Lane Left,Left,16:12:44
+Vehicle,Change Lane Right,Middle1,16:13:51
+Vehicle,Change Lane Right,Middle2,16:14:09
+Vehicle,Change Lane Right,Right,16:16:27
+Passenger,Stop,Right,16:18:12
+Passenger,Unload,Right,16:18:12
+Passenger,Load,Left,03:47:52
+Vehicle,Change Lane Right,Right,03:49:21
+Vehicle,Change Lane Left,Middle,03:49:53
+Vehicle,Change Lane Left,Left,03:50:14
+Vehicle,Change Lane Right,Middle,03:52:29
+Vehicle,Change Lane Right,Right,03:52:33
+Vehicle,Change Lane Left,Middle,03:52:40
+Vehicle,Change Lane Left,Left,03:52:47
+Vehicle,Change Lane Right,Middle,03:54:50
+Vehicle,Change Lane Left,Left,03:55:04
+Vehicle,Change Lane Right,Middle,03:55:16
+Vehicle,Change Lane Right,Right,03:55:31
+Vehicle,Change Lane Left,Middle,03:55:45
+Vehicle,Change Lane Left,Left,03:56:04
+Vehicle,Change Lane Right,Middle,03:57:17
+Vehicle,Change Lane Left,Left,03:58:01
+Vehicle,Change Lane Right,Middle,03:58:24
+Vehicle,Change Lane Right,Right,03:58:27
+Vehicle,Change Lane Right,Right,03:59:06
+Vehicle,Change Lane Left,Left,04:00:58
+Vehicle,Change Lane Right,Right,04:01:05
+Vehicle,Change Lane Left,Middle,04:01:30
+Vehicle,Change Lane Left,Left,04:01:33
+Vehicle,Change Lane Right,Middle,04:02:13
+Vehicle,Change Lane Right,Right,04:02:46
+Stoplight,Stop,Right,04:03:11
+Stoplight,Go,Right,04:03:41
+Vehicle,Change Lane Left,Middle,04:03:46
+Stoplight,Change Lane Right,Right,04:04:54
+Vehicle,Change Lane Left,Middle,04:05:15
+Vehicle,Change Lane Left,Left,04:05:28
+Vehicle,Change Lane Right,Middle,04:05:50
+Vehicle,Change Lane Right,Right,04:05:53
+Vehicle,Change Lane Left,Middle,04:06:03
+Vehicle,Change Lane Left,Left,04:06:30
+Vehicle,Change Lane Right,Middle,04:06:45
+Vehicle,Change Lane Left,Left,04:07:02
+Vehicle,Change Lane Right,Middle,04:07:07
+Vehicle,Change Lane Left,Left,04:07:50
+Vehicle,Change Lane Right,Middle,04:08:03
+Vehicle,Change Lane Left,Left,04:08:21
+Vehicle,Change Lane Right,Middle,04:09:00
+Vehicle,Change Lane Right,Right,04:10:04
+Stoplight,Stop,Right,04:10:15
+Stoplight,Go,Right,04:10:20
+Vehicle,Change Lane Left,Middle,04:10:34
+Vehicle,Change Lane Left,Left,04:10:41
+Passenger,Change Lane Right,Middle,04:11:13
+Passenger,Change Lane Right,Right,04:11:24
+Passenger,Stop,Right,04:11:30
+Passenger,Unload,Right,04:11:30
+Passenger,Go,Right,04:11:41
+Vehicle,Change Lane Right,Middle,04:11:41
+Passenger,Change Lane Right,Right,04:12:01
+Passenger,Stop,Right,04:12:07
+Passenger,Unload,Right,04:12:07
+Passenger,Go,Right,04:13:46
+Vehicle,Change Lane Left,Left,04:14:46
+Vehicle,Change Lane Right,Middle,04:15:03
+Vehicle,Change Lane Left,Left,04:16:00
+Vehicle,Change Lane Right,Middle,04:16:10
+Vehicle,Change Lane Left,Left,04:16:35
+Vehicle,Change Lane Right,Middle,04:16:47
+Vehicle,Change Lane Right,Right,04:17:22
+Stoplight,Stop,Right,04:17:27
+Stoplight,Go,Right,04:17:33
+Passenger,Change Lane Right,Right,04:21:07
+Passenger,Stop,Right,04:21:12
+Passenger,Unload,Right,04:21:12
+Passenger,Go,Right,04:22:41
+Vehicle,Change Lane Left,Middle,04:22:41
+Vehicle,Change Lane Left,Left,04:22:58
+Stoplight,Stop,Left,04:23:15
+Stoplight,Go,Left,04:24:32
+Passenger,Change Lane Right,Right,04:25:01
+Passenger,Stop,Right,04:25:16
+Passenger,Unload,Right,04:25:16
+Vehicle,Change Lane Left,Left,03:44:06
+Vehicle,Change Lane Right,Right,03:44:11
+Vehicle,Change Lane Left,Left,03:44:55
+Vehicle,Change Lane Right,Right,03:45:35
+Vehicle,Change Lane Left,Left,03:45:57
+Vehicle,Change Lane Right,Right,03:46:41
+Vehicle,Change Lane Left,Left,03:47:14
+Vehicle,Change Lane Right,Right,03:47:31
+Vehicle,Change Lane Left,Left,03:47:55
+Vehicle,Change Lane Right,Right,03:48:10
+Vehicle,Change Lane Left,Left,03:48:27
+Vehicle,Change Lane Right,Right,03:49:20
+Vehicle,Change Lane Left,Left,03:49:30
+Passenger,Stop,Left,03:53:00
+Passenger,Go,Left,04:01:02
+Vehicle,Change Lane Right,Right,04:01:38
+Vehicle,Change Lane Left,Left,04:01:48
+Vehicle,Change Lane Right,Right,04:02:00
+Vehicle,Change Lane Left,Left,04:02:14
+Vehicle,Change Lane Right,Right,04:02:31
+Vehicle,Change Lane Right,Left,04:02:41
+Vehicle,Change Lane Right,Middle,04:10:36
+Vehicle,Change Lane Left,Left,04:10:54
+Vehicle,Change Lane Right,Middle,04:12:12
+Vehicle,Change Lane Left,Left,04:12:50
+Vehicle,Change Lane Right,Middle,04:13:23
+Vehicle,Change Lane Right,Right,04:13:31
+Vehicle,Change Lane Left,Middle,04:19:37
+Vehicle,Change Lane Right,Right,04:19:51
+Vehicle,Change Lane Left,Left,04:19:58
+Vehicle,Change Lane Right,Right,04:21:38
+Vehicle,Change Lane Left,Left,04:21:45
+Vehicle,Change Lane Right,Middle,04:21:53
+Vehicle,Change Lane Right,Right,04:22:54
+Passenger,Stop,Right,04:22:56
+Passenger,Unload,Right,04:22:56
+Passenger,Go,Right,04:23:34
+Vehicle,Change Lane Left,Middle,04:23:44
+Vehicle,Change Lane Left,Left,04:23:55
+Vehicle,Change Lane Right,Middle,04:24:10
+Vehicle,Change Lane Left,Left,04:24:46
+Vehicle,Change Lane Right,Middle,04:25:07
+Vehicle,Change Lane Left,Left,04:25:13
+Vehicle,Change Lane Right,Middle,04:25:08
+Vehicle,Change Lane Right,Right,04:25:19
+Vehicle,Change Lane Left,Left,04:25:35
+Vehicle,Change Lane Right,Middle,04:25:43
+Vehicle,Change Lane Left,Left,04:25:52
+Vehicle,Change Lane Right,Right,04:26:03
+Vehicle,Change Lane Left,Middle,04:26:22
+Vehicle,Change Lane Right,Right,04:27:57
+Passenger,Stop,Right,04:28:07
+Passenger,Unload,Right,04:28:07
+Passenger,Go,Right,04:28:42
+Vehicle,Change Lane Left,Left,04:28:54
+Vehicle,Change Lane Right,Right,04:29:12
+Vehicle,Change Lane Left,Left,04:29:28
+Vehicle,Change Lane Right,Right,04:29:40
+Vehicle,Change Lane Left,Left,04:29:58
+Vehicle,Change Lane Right,Right,04:30:05
+Vehicle,Change Lane Left,Left,04:30:52
+Vehicle,Change Lane Right,Middle,04:31:50
+Vehicle,Change Lane Right,Right,04:33:32
+Passenger,Stop,Right,04:34:22
+Passenger,Unload,Right,04:34:22
+Passenger,Go,Left,04:37:05
+Vehicle,Change Lane Left,Left,04:40:21
+Passenger,Stop,Right,04:40:35
+Passenger,Unload,Right,04:40:35
+Passenger,Go,Right,04:42:07
+Vehicle,Go,Left,06:34:16
+Vehicle,Change Lane Right,Right,06:35:23
+Vehicle,Change Lane Left,Left,06:35:48
+Vehicle,Change Lane Right,Right,06:36:10
+Vehicle,Change Lane Right,Right,06:36:43
+Vehicle,Change Lane Left,Left,06:37:22
+Vehicle,Change Lane Right,Right,06:37:47
+Vehicle,Change Lane Left,Left,06:37:55
+Vehicle,Change Lane Right,Right,06:38:39
+Vehicle,Change Lane Left,Left,06:39:49
+Vehicle,Change Lane Right,Right,06:40:05
+Vehicle,Change Lane Left,Left,06:40:17
+Vehicle,Change Lane Right,Right,06:41:31
+Vehicle,Change Lane Left,Left,06:42:09
+Vehicle,Change Lane Right,Middle,06:43:12
+Vehicle,Change Lane Left,Left,06:43:27
+Vehicle,Change Lane Right,Middle,06:44:45
+Vehicle,Change Lane Left,Left,06:45:21
+Vehicle,Change Lane Right,Right,06:49:14
+Vehicle,Change Lane Left,Middle,06:50:55
+Vehicle,Change Lane Left,Left,06:51:25
+Vehicle,Change Lane Right,Middle,06:53:40
+Vehicle,Change Lane Left,Left,06:54:56
+Vehicle,Change Lane Right,Middle,06:55:05
+Vehicle,Change Lane Right,Right,06:55:35
+Vehicle,Change Lane Right,Right,06:55:49
+Vehicle,Change Lane Left,Middle,06:59:04
+Vehicle,Change Lane Left,Left,06:59:19
+Vehicle,Change Lane Right,Middle,07:00:06
+Vehicle,Change Lane Right,Right,07:00:17
+Vehicle,Change Lane Left,Middle,07:00:21
+Vehicle,Change Lane Left,Left,07:00:25
+Vehicle,Change Lane Right,Middle,07:01:58
+Vehicle,Change Lane Right,Right,07:02:10
+Vehicle,Change Lane Left,Middle,07:19:16
+Vehicle,Change Lane Left,Left,07:21:19
+Vehicle,Change Lane Right,Right,07:21:43
+Vehicle,Change Lane Left,Left,07:22:05
+Vehicle,Change Lane Right,Right,07:22:58
+Vehicle,Change Lane Left,Left,07:23:15
+Vehicle,Change Lane Right,Middle,07:23:30
+Vehicle,Change Lane Right,Right,07:24:01
+Vehicle,Change Lane Left,Middle,07:24:15
+Vehicle,Change Lane Left,Middle,07:24:31
+Vehicle,Change Lane Left,Left,07:24:52
+Vehicle,Change Lane Right,Middle,07:26:20
+Vehicle,Change Lane Left,Left,07:26:24
+Vehicle,Change Lane Right,Middle,07:26:59
+Vehicle,Change Lane Left,Left,07:27:34
+Vehicle,Change Lane Right,Middle,07:28:03
+Vehicle,Change Lane Left,Left,07:28:13
+Vehicle,Change Lane Right,Middle,07:29:05
+Vehicle,Change Lane Left,Left,07:29:36
+Vehicle,Change Lane Right,Right,07:30:07
+Vehicle,Change Lane Left,Middle,07:30:39
+Vehicle,Change Lane Left,Left,07:30:51
+Vehicle,Change Lane Right,Middle,07:31:02
+Vehicle,Change Lane Left,Left,07:31:13
+Vehicle,Change Lane Right,Middle,07:32:18
+Vehicle,Change Lane Left,Left,07:32:36
+Vehicle,Change Lane Right,Middle,07:32:43
+Vehicle,Change Lane Right,Right,07:32:45
+Vehicle,Change Lane Right,Left,07:33:33
+Vehicle,Change Lane Right,Right,07:34:14
+Vehicle,Change Lane Left,Left,07:37:52
+Vehicle,Change Lane Right,Right,07:39:41
+Vehicle,Change Lane Right,Left,07:42:15
+Vehicle,Change Lane Right,Right,07:43:11
+Vehicle,Change Lane Left,Left,07:43:15
+Vehicle,Change Lane Right,Right,07:43:43
+Vehicle,Change Lane Left,Left,07:43:58
+Vehicle,Change Lane Right,Right,07:45:13
+Vehicle,Change Lane Left,Left,07:45:31
+Vehicle,Change Lane Right,Right,07:45:39
+Vehicle,Change Lane Left,Left,07:51:40
+Vehicle,Change Lane Right,Right,07:51:49
+Vehicle,Change Lane Left,Left,08:03:41
+Vehicle,Change Lane Right,Right,08:04:18
+Vehicle,Change Lane Left,Left,08:04:26
+Vehicle,Change Lane Right,Right,08:06:51
+Vehicle,Change Lane Left,Left,08:08:04
+Vehicle,Change Lane Left,Left,08:09:06
+Vehicle,Change Lane Right,Middle,08:09:48
+Vehicle,Change Lane Right,Right,08:09:57
+Vehicle,Change Lane Left,Left,08:10:26
+Vehicle,Change Lane Right,Middle,08:10:39
+Vehicle,Change Lane Left,Left,08:10:44
+Vehicle,Change Lane Right,Middle,08:10:53
+Vehicle,Change Lane Right,Right,08:11:05
+Vehicle,Change Lane Left,Left,08:12:36
+Vehicle,Change Lane Right,Right,08:15:00
+Passenger,Stop,Right,08:18:27
+Passenger,Go,Right,08:18:41
+Vehicle,Change Lane Left,Left,08:18:50
+Vehicle,Change Lane Right,Right,08:19:19
+Vehicle,Change Lane Left,Left,08:19:28
+Vehicle,Change Lane Right,Right,08:21:33
+Vehicle,Change Lane Right,Right,08:22:02
+Vehicle,Change Lane Left,Left,08:35:49
+Vehicle,Change Lane Right,Right,08:51:22
+Vehicle,Change Lane Left,Left,08:52:00
+Vehicle,Change Lane Right,Right,08:54:12
+Vehicle,Change Lane Right,Right,08:57:05
+Vehicle,Change Lane Left,Left,08:57:59
+Vehicle,Change Lane Right,Right,08:58:08
+Vehicle,Change Lane Left,Left,09:00:36
+Vehicle,Change Lane Right,Right,09:00:50
+Vehicle,Change Lane Left,Left,13:57:55
+Vehicle,Change Lane Right,Middle,13:58:41
+Vehicle,Change Lane Right,Right,13:58:50
+Vehicle,Change Lane Right,Right,13:59:24
+Vehicle,Change Lane Left,Right,14:04:48
+Vehicle,Change Lane Right,Right,14:06:27
+Vehicle,Change Lane Left,Left,14:09:05
+Vehicle,Change Lane Right,Right,14:11:32
+Vehicle,Change Lane Left,Left,14:11:46
+Vehicle,Change Lane Right,Right,14:14:22
+Vehicle,Change Lane Left,Left,14:15:39
+Vehicle,Change Lane Right,Right,14:15:55
+Vehicle,Change Lane Left,Left,14:20:27
+Vehicle,Stop,Left,14:22:23
+Vehicle,Change Lane Right,Right,14:43:23
+Vehicle,Change Lane Left,Left,14:46:37
+Vehicle,Change Lane Right,Right,14:46:46
+Vehicle,Change Lane Left,Left,14:47:55
+Vehicle,Change Lane Right,Right,14:48:10
+Vehicle,Change Lane Left,Left,14:50:31
+Vehicle,Change Lane Right,Right,14:51:23
+Vehicle,Change Lane Left,Left,14:51:40
+Vehicle,Change Lane Right,Right,14:52:31
+Vehicle,Change Lane Left,Left,14:52:46
+Vehicle,Change Lane Right,Right,14:52:21
+Vehicle,Change Lane Left,Left,14:53:04
+Vehicle,Change Lane Right,Right,14:53:30
+Vehicle,Change Lane Left,Left,14:53:39
+Vehicle,Change Lane Right,Right,14:53:52
+Vehicle,Change Lane Left,Left,14:54:20
+Vehicle,Change Lane Right,Right,14:55:24
+Vehicle,Change Lane Left,Left,14:55:58
+Vehicle,Change Lane Right,Right,14:56:57
+Vehicle,Change Lane Left,Left,14:57:21
+Vehicle,Change Lane Right,Middle,15:00:27
+Vehicle,Change Lane Left,Left,15:00:31
+Vehicle,Change Lane Left,Right,15:01:09
+Vehicle,Change Lane Left,Left,15:02:58
+Stoplight,Stop,Left,15:03:17
+Stoplight,Go,Left,16:06:55
+Vehicle,Change Lane Left,Left,16:08:30
+Vehicle,Change Lane Left,Left,16:09:27
+Vehicle,Change Lane Right,Right,16:11:31
+Vehicle,Change Lane Left,Left,16:11:40
+Vehicle,Change Lane Right,Right,16:12:17
+Vehicle,Change Lane Left,Left,16:13:04
+Vehicle,Change Lane Right,Right,16:13:38
+Vehicle,Change Lane Left,Left,16:13:56
+Vehicle,Change Lane Right,Right,16:14:12
+Vehicle,Change Lane Left,Left,16:14:32
+Vehicle,Change Lane Right,Right,16:16:35
+Vehicle,Change Lane Left,Left,16:16:40
+Vehicle,Change Lane Right,Right,16:18:25
+Vehicle,Change Lane Left,Left,16:18:29
+Passenger,Go,Right,00:00:00
+Passenger,Change Lane Right,Right,00:00:00
+Passenger,Stop,Right,00:00:00
+Passenger,Go,Right,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Stoplight,Stop,Right,00:00:00
+Passenger,Stop,Right,14:45:48
+Passenger,Load,Right,00:00:00
+Passenger,Go,Right,14:46:16
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Passenger,Change Lane Right,Right,00:00:00
+Passenger,Stop,Right,14:48:44
+Passenger,Load,Right,00:00:00
+Passenger,Go,Right,14:48:58
+Passenger,Change Lane Right,Right,00:00:00
+Passenger,Stop,Right,14:49:30
+Passenger,Load,Right,00:00:00
+Passenger,Go,Right,14:49:47
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Stoplight,Stop,Left,00:00:00
+Stoplight,Go,Left,00:00:00
+Stoplight,Stop,Left,00:00:00
+Stoplight,Go,Left,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Passenger,Change Lane Right,Right,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Stoplight,Stop,Left,00:00:00
+Stoplight,Go,Left,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Passenger,Change Lane Right,Right,00:00:00
+Passenger,Stop,Right,15:19:15
+Passenger,Unload,Right,00:00:00
+Passenger,Go,Right,00:00:00
+Vehicle,Change Lane Left,Middle,15:19:35
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Stoplight,Stop,Middle,00:00:00
+Stoplight,Go,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Stoplight,Stop,Middle,00:00:00
+Stoplight,Go,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Stoplight,Stop,Middle,00:00:00
+Stoplight,Go,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Stoplight,Stop,Left,00:00:00
+Stoplight,Go,Left,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Stoplight,Stop,Left,00:00:00
+Stoplight,Go,Left,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Passenger,Change Lane Right,Right,00:00:00
+Passenger,Stop,Right,00:00:00
+Passenger,Unload,Right,22:29:54
+Passenger,Go,Right,22:30:01
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Stoplight,Stop,Right,00:00:00
+Stoplight,Go,Right,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Stoplight,Stop,Left,00:00:00
+Stoplight,Go,Left,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Passenger,Stop,Right,00:00:00
+Passenger,Unload,Right,00:00:00
+Passenger,Go,Right,22:39:25
+Passenger,Change Lane Right,Right,00:00:00
+Passenger,Stop,Right,00:00:00
+Passenger,Unload,Right,00:00:00
+Passenger,Go,Right,00:00:00
+Passenger,Change Lane Right,Right,00:00:00
+Passenger,Stop,Right,22:43:01
+Passenger,Unload,Right,00:00:00
+Passenger,Go,Right,22:43:25
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Passenger,Change Lane Right,Right,00:00:00
+Passenger,Stop,Right,00:00:00
+Passenger,Unload,Right,00:00:00
+Passenger,Go,Right,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Passenger,Change Lane Right,Right,00:00:00
+Passenger,Stop,Right,22:51:56
+Passenger,Unload,Right,00:00:00
+Passenger,Go,Right,22:52:12
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Passenger,Change Lane Right,Right,00:00:00
+Passenger,Stop,Right,00:00:00
+Passenger,Unload,Right,22:55:45
+Passenger,Go,Right,22:55:56
+Vehicle,Change Lane Left,Left,00:00:00
+Passenger,Change Lane Right,Right,00:00:00
+Passenger,Stop,Right,22:56:42
+Passenger,Unload,Right,00:00:00
+Passenger,Go,Right,22:57:10
+Passenger,Load,,04:36:06
+Passenger,Go,Left,04:37:02
+Vehicle,Change Lane Right,Right,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Stoplight,Stop,Left,00:00:00
+Stoplight,Go,Left,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Stoplight,Stop,Left,00:00:00
+Stoplight,Go,Left,00:00:00
+Stoplight,Stop,Left,00:00:00
+Stoplight,Go,Left,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Passenger,Stop,Right,05:09:37
+Passenger,Unload,Right,00:00:00
+Passenger,Go,Right,05:10:22
+Vehicle,Change Lane Left,Middle,00:00:00
+Passenger,Change Lane Right,Right,00:00:00
+Passenger,Stop,Right,05:11:06
+Passenger,Unload,Right,00:00:00
+Passenger,Go,Right,05:11:27
+Passenger,Load,Right,00:00:00
+Passenger,Go,Right,14:40:09
+Vehicle,Change Lane Left,Left,14:40:23
+Vehicle,Change Lane Right,Right,00:00:00
+Vehicle,Change Lane Left,Left,14:41:45
+Vehicle,Change Lane Right,Right,14:43:17
+Vehicle,Change Lane Left,Left,14:43:39
+Vehicle,Change Lane Right,Right,14:45:31
+Vehicle,Change Lane Left,Left,14:45:44
+Vehicle,Change Lane Right,Right,14:46:45
+Vehicle,Change Lane Left,Left,14:47:23
+Vehicle,Change Lane Right,Right,14:47:51
+Vehicle,Change Lane Left,Left,14:48:57
+Vehicle,Change Lane Right,Right,14:50:06
+Vehicle,Change Lane Left,Left,14:50:15
+Vehicle,Change Lane Right,Middle,14:50:25
+Vehicle,Change Lane Left,Left,14:51:13
+Vehicle,Change Lane Right,Middle,14:51:27
+Vehicle,Change Lane Left,Left,14:51:47
+Vehicle,Change Lane Left,Left,14:53:41
+Vehicle,Change Lane Right,Right,14:53:56
+Vehicle,Change Lane Left,Left,14:54:23
+Vehicle,Change Lane Right,Right,14:55:23
+Vehicle,Change Lane Left,Left,14:55:31
+Vehicle,Change Lane Right,Right,14:56:55
+Vehicle,Change Lane Left,Left,14:59:21
+Vehicle,Change Lane Right,Right,14:59:44
+Vehicle,Change Lane Left,Left,14:59:49
+Passenger,Change Lane Right,Right,15:00:59
+Passenger,Stop,Right,15:01:08
+Passenger,Load,Right,15:01:08
+Passenger,Go,Right,15:01:30
+Vehicle,Change Lane Left,Middle,15:02:23
+Vehicle,Change Lane Left,Left,15:02:33
+Vehicle,Change Lane Right,Middle,15:02:40
+Vehicle,Change Lane Right,Right,15:03:15
+Stoplight,Stop,Right,15:03:28
+Stoplight,Go,Right,15:04:29
+Vehicle,Change Lane Left,Middle,15:04:37
+Vehicle,Change Lane Right,Right,15:04:46
+Vehicle,Change Lane Left,Middle,15:05:01
+Vehicle,Change Lane Left,Left,15:05:12
+Vehicle,Change Lane Right,Middle,15:05:41
+Vehicle,Change Lane Right,Right,15:05:54
+Stoplight,Stop,Right,15:06:05
+Stoplight,Go,Right,15:08:03
+Vehicle,Change Lane Left,Middle,15:08:03
+Vehicle,Change Lane Right,Right,15:08:24
+Vehicle,Change Lane Left,Middle,15:10:28
+Vehicle,Change Lane Right,Right,15:11:18
+Stoplight,Stop,Right,15:11:33
+Stoplight,Go,Right,15:12:11
+Vehicle,Change Lane Left,Middle,15:12:27
+Vehicle,Change Lane Left,Left,15:13:06
+Vehicle,Change Lane Right,Middle,15:13:28
+Vehicle,Change Lane Left,Left,15:14:00
+Stoplight,Stop,Left,15:14:31
+Stoplight,Go,Left,15:15:35
+Vehicle,Change Lane Right,Middle,15:16:18
+Vehicle,Change Lane Right,Right,15:16:43
+Vehicle,Change Lane Left,Left,15:18:37
+Vehicle,Change Lane Right,Right,15:20:38
+Vehicle,Change Lane Left,Middle,15:21:16
+Vehicle,Change Lane Left,Middle,15:22:32
+Vehicle,Change Lane Right,Middle,15:23:50
+Vehicle,Change Lane Left,Middle,15:24:18
+Vehicle,Change Lane Right,Middle,15:25:26
+Vehicle,Change Lane Right,Right,15:25:41
+Vehicle,Change Lane Left,Left,15:26:29
+Vehicle,Change Lane Right,Middle,15:26:44
+Stoplight,Stop,Middle,15:27:15
+Stoplight,Go,Middle,15:29:38
+Passenger,Change Lane Right,Right,15:29:57
+Passenger,Stop,Right,15:30:10
+Passenger,Unload,Right,15:30:10
+Passenger,Go,Right,15:30:18
+Vehicle,Change Lane Left,Middle,15:30:18
+Vehicle,Change Lane Left,Middle,15:30:39
+Passenger,Change Lane Right,Right,15:32:09
+Passenger,Stop,Right,15:32:15
+Passenger,Unload,Right,15:32:15
+Vehicle,Go,Right,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Passenger,Change Lane Right,Right,00:00:00
+Passenger,Stop,Right,00:00:00
+Passenger,Load,Right,00:00:00
+Passenger,Go,Right,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Passenger,Change Lane Right,Right,00:00:00
+Passenger,Stop,Right,00:00:00
+Passenger,Load,Right,00:00:00
+Passenger,Go,Right,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Passenger,Change Lane Right,Right,00:00:00
+Passenger,Stop,Right,00:00:00
+Passenger,Load,Right,00:00:00
+Passenger,Go,Right,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Stoplight,Stop,Right,00:00:00
+Stoplight,Go,Right,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Stoplight,Stop,Right,00:00:00
+Stoplight,Go,Right,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Stoplight,Stop,Right,00:00:00
+Stoplight,Go,Right,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Passenger,Stop,Right,00:00:00
+Passenger,Load,Right,00:00:00
+Passenger,Go,Right,00:00:00
+Stoplight,Stop,Right,00:00:00
+Stoplight,Go,Right,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Passenger,Change Lane Right,Right,00:00:00
+Passenger,Stop,Right,00:00:00
+Passenger,Load,Right,00:00:00
+Passenger,Go,Right,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Stop,Left,00:00:00
+Vehicle,Go,Left,00:00:00
+Stoplight,Stop,Left,00:00:00
+Stoplight,Go,Left,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Passenger,Stop,Right,00:00:00
+Passenger,Load,Right,00:00:00
+Passenger,Go,Right,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Stoplight,Stop,Right,00:00:00
+Stoplight,Go,Right,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Stoplight,Stop,Left,00:00:00
+Stoplight,Go,Left,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Passenger,Stop,Right,00:00:00
+Passenger,Unload,Right,00:00:00
+Passenger,Go,Right,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Stoplight,Stop,Middle,00:00:00
+Stoplight,Go,Middle,00:00:00
+Stoplight,Stop,Middle,00:00:00
+Stoplight,Go,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Stop,Middle,00:00:00
+Vehicle,Go,Middle,00:00:00
+Stoplight,Stop,Middle,00:00:00
+Stoplight,Go,Middle,00:00:00
+Stoplight,Stop,Middle,00:00:00
+Stoplight,Go,Middle,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Passenger,Stop,Right,00:00:00
+Passenger,Unload,Right,00:00:00
+Passenger,Go,Right,00:00:00
+Passenger,Stop,Right,00:00:00
+Passenger,Unload,Right,00:00:00
+Passenger,Unload,Right,00:00:00
+Passenger,Unload,Right,00:00:00
+Passenger,Unload,Right,00:00:00
+Passenger,Load,Right,00:00:00
+Passenger,Load,Right,00:00:00
+Passenger,Load,Right,00:00:00
+Passenger,Load,Right,00:00:00
+Passenger,Load,Right,00:00:00
+Passenger,Load,Right,00:00:00
+Passenger,Load,Right,00:00:00
+Passenger,Load,Right,00:00:00
+Passenger,Load,Right,00:00:00
+Vehicle,Go,Right,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Stoplight,Stop,Middle,00:00:00
+Stoplight,Go,Middle,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Stoplight,Stop,Middle,00:00:00
+Stoplight,Go,Middle,00:00:00
+Stoplight,Stop,Middle,00:00:00
+Stoplight,Go,Middle,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Stoplight,Stop,Right,00:00:00
+Stoplight,Go,Right,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Stoplight,Stop,Right,00:00:00
+Stoplight,Go,Right,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Passenger,Stop,Right,00:00:00
+Passenger,Unload,Right,00:00:00
+Passenger,Go,Right,00:00:00
+Vehicle,Change Lane Left,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Passenger,Stop,Right,00:00:00
+Passenger,Unload,Right,00:00:00
+Passenger,Go,Right,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Passenger,Stop,Right,00:00:00
+Passenger,Unload,Right,00:00:00
+Passenger,Go,Right,00:00:00
+Passenger,Stop,Right,00:00:00
+Passenger,Unload,Right,00:00:00
+Passenger,Go,Right,00:00:00
+Passenger,Stop,Right,00:00:00
+Passenger,Unload,Right,00:00:00
+Passenger,Go,Right,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Passenger,Change Lane Right,Right,00:00:00
+Passenger,Stop,Right,00:00:00
+Passenger,Unload,Right,00:00:00
+Passenger,Go,Right,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Middle,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Passenger,Stop,Right,00:00:00
+Passenger,Unload,Right,00:00:00
+Passenger,Go,Right,00:00:00
+Passenger,Stop,Right,00:00:00
+Passenger,Unload,Right,00:00:00
+Passenger,Go,Right,00:00:00
+Vehicle,Change Lane Left,Left,00:00:00
+Vehicle,Change Lane Right,Right,00:00:00
+Passenger,Stop,Right,00:00:00
+Passenger,Unload,Right,00:00:00
+Passenger,Go,Right,00:00:00
+Vehicle,Stop,Right,00:00:00
