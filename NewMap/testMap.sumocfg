@@ -7,6 +7,12 @@
 
     <input>
         <net-file value="NoPolyGons-Full-route.net.xml"/>
+        <route-files values="NewMap\UV.rou.xml"/>
     </input>
+
+    <time>
+        <begin value="0"/>
+        <end value="500"/>
+    </time>
 
 </configuration>
