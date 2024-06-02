@@ -11,4 +11,7 @@ traci.start(sumoCmd)
 for step in range(1000):
     traci.simulationStep()
 
+    if step == 100:
+        traci.vehicle.changeTarget("UV_1", "628567782")
+
 traci.close()

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2024-06-02 16:38:40 by Eclipse SUMO netedit Version 1.19.0
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <!-- VTypes -->
+    <vType id="UV" maxSpeed="10.00" vClass="passenger" guiShape="passenger/van" color="red" personCapacity="16" boardingDuration="10.00" latAlignment="right" laneChangeModel="LC2013"/>
+    <!-- Routes -->
+    <route id="Route_1" edges="583701022 584825959 660352567 1198531265 1198531266 660352585 114213938 1033118918 1103029833 544489112 662913537#0 1103029873 870991314" color="blue"/>
+    <!-- Vehicles, persons and containers (sorted by depart) -->
+    <vehicle id="UV_1" type="UV" route="Route_1" depart="0.00"/>
+</routes>
