@@ -12,6 +12,7 @@ for step in range(1000):
     traci.simulationStep()
 
     if step == 100:
+        traci.vehicle.add("UV_2", "Route_1", typeID="UV")
         traci.vehicle.changeTarget("UV_1", "628567782")
 
 traci.close()
