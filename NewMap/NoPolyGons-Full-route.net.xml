@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2024-06-03 14:44:30 by Eclipse SUMO netedit Version 1.19.0
+<!-- generated on 2024-06-03 19:46:26 by Eclipse SUMO netedit Version 1.19.0
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/neteditConfiguration.xsd">
 
     <input>
         <sumocfg-file value="C:\Users\Gabe Piano\OneDrive\Documents\GitHub\UV-Express-Driver-Behavior-Modeling\NewMap\testMap.sumocfg"/>
-        <additional-files value=""/>
+        <additional-files value="C:\Users\Gabe Piano\OneDrive\Documents\GitHub\UV-Express-Driver-Behavior-Modeling\NewMap\testMap.add.xml"/>
         <route-files value="C:\Users\Gabe Piano\OneDrive\Documents\GitHub\UV-Express-Driver-Behavior-Modeling\NewMap\UVRoutes.rou.xml"/>
         <sumo-net-file value="C:\Users\Gabe Piano\OneDrive\Documents\GitHub\UV-Express-Driver-Behavior-Modeling\NewMap\NoPolyGons-Full-route.net.xml"/>
     </input>
