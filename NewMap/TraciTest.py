@@ -8,11 +8,20 @@ import traci
 sumoCmd = ["sumo-gui", "-c", "testMap.sumocfg", "-d", "200"]
 traci.start(sumoCmd)
 
+bus_stops = traci.busstop.getIDList()
+
+
 for step in range(1000):
-    traci.simulationStep()
+
+    if step == 10:
+        traci.vehicle.add("UV_1", "Route_1", typeID="UV")
+        traci.vehicle.setBusStop("UV_1", bus_stops[0], 10)
+        print("Number of People in UV_1: ", traci.vehicle.getPersonNumber("UV_1"))
 
     if step == 100:
         traci.vehicle.add("UV_2", "Route_1", typeID="UV")
-        traci.vehicle.changeTarget("UV_1", "628567782")
+        traci.vehicle.setBusStop("UV_2", bus_stops[0], 10)
+
+    traci.simulationStep()
 
 traci.close()

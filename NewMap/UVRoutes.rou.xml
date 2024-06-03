@@ -9,5 +9,4 @@
     <!-- Routes -->
     <route id="Route_1" edges="583701022 584825959 660352567 1198531265 1198531266 660352585 114213938 1033118918 1103029833 544489112 662913537#0 1103029873 870991314" color="blue"/>
     <!-- Vehicles, persons and containers (sorted by depart) -->
-    <vehicle id="UV_1" type="UV" depart="0.00" route="Route_1"/>
 </routes>
