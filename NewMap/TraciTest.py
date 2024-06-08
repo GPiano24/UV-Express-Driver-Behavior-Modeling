@@ -62,6 +62,7 @@ def addVehicle(veh_id, route_id, stops , typeID):
         Vehicle_list.append(Vehicle(veh_id, route_id, "MidTrip",[], stops))     
 
 addVehicle("UV_0", "PB_route", PB_stops, "UV")
+addVehicle("UV_1", "BP_route", BP_stops, "UV")
 
 
 for step in range(6000):
@@ -74,17 +75,17 @@ for step in range(6000):
         stops = traci.vehicle.getNextStops(vehicleID)
         Ids = [stop[2] for stop in stops]
         position = traci.vehicle.getRoadID(vehicleID)
-
+        
         #Change status Of UV
         if vehicle.route == "PB_route":
             if traci.vehicle.getPersonNumber(vehicleID) == 16 and vehicle.status == "PickUp":
                 vehicle.status = "MidTrip"
             elif vehicle.status == "PickUp" and position == "27498964" and vehicle.route == "PB_route":
                 vehicle.status = "MidTrip"
-            elif vehicle.status == "MidTrip" and position.find("621030728") and vehicle.route == "PB_route":
+            elif vehicle.status == "MidTrip" and position.find("621030728") == 0 and vehicle.route == "PB_route":
                 vehicle.status = "DropOff"
         else:
-            if position == "27498964" and vehicle.status == "MidTrip":
+            if position.find("1054315838") == 0 and vehicle.status == "MidTrip":
                 vehicle.status = "DropOff"
 
         #add a new stop if UV is in PickUp mode
