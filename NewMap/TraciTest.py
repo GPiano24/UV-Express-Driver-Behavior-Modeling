@@ -27,9 +27,11 @@ class Vehicle:
         for stop in dropStops:
             self.dropStops.put(stop)
     def getPickup(self):
-        return self.Pickstops.get()
+        if self.Pickstops.empty() == False:
+            return self.Pickstops.get()
     def getDropoff(self):
-        return self.dropStops.get()
+        if self.dropStops.empty() == False:
+            return self.dropStops.get()
 
 
 sorted_bus_stops = sorted(bus_stops, key=get_numeric_part)
@@ -47,7 +49,9 @@ def addVehicle(veh_id, route_id, stops , typeID):
     if route_id == "PB_route":
         PB_pickup = stops[:45]
         PB_dropoff = stops[45:]
-        Vehicle_list.append(Vehicle(veh_id,"PickUp", PB_pickup, PB_dropoff))        
+        Vehicle_list.append(Vehicle(veh_id,"PickUp", PB_pickup, PB_dropoff))
+    else:
+        Vehicle_list.append(Vehicle(veh_id,"DropOff",[], stops))     
 
 addVehicle("UV_0", "PB_route", PB_stops, "UV")
 
@@ -64,12 +68,16 @@ for step in range(6000):
         stops = traci.vehicle.getNextStops(vehicleID)
         Ids = [stop[2] for stop in stops]
         print ("Stops of Vehicle: ", vehicleID, Ids)
-        #add a new stop if UV is in PickUp mode
+
+        #Change status to DropOff if UV has 16 passengers
         if traci.vehicle.getPersonNumber(vehicleID) == 16:
             vehicle.status = "DropOff"
+
+        #add a new stop if UV is in PickUp mode
         if bool(Ids) == False and vehicle.status == "PickUp":
             stopID = vehicle.getPickup()
             traci.vehicle.setBusStop(vehicleID, stopID, 10)
+
         ## Add Drop Off Points
         elif bool(Ids) == False and vehicle.status == "DropOff":
             stopID = vehicle.getDropoff()
