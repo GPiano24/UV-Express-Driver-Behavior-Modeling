@@ -16,9 +16,13 @@ def get_numeric_part(bus_stop_id):
     match = re.search(r'(\d+)$', bus_stop_id)
     return int(match.group(1)) if match else float('inf')
 
+def check_vehicle_exists(vehicleID):
+    return vehicleID in traci.vehicle.getIDList()
+
 class Vehicle:
-    def __init__(self, vehicleID, status, pickStops, dropStops):
+    def __init__(self, vehicleID, route, status, pickStops, dropStops):
         self.vehicle = vehicleID
+        self.route = route
         self.status = status
         self.Pickstops = Queue()
         for stop in pickStops:
@@ -29,9 +33,13 @@ class Vehicle:
     def getPickup(self):
         if self.Pickstops.empty() == False:
             return self.Pickstops.get()
+        else :
+            return "None"
     def getDropoff(self):
         if self.dropStops.empty() == False:
             return self.dropStops.get()
+        else :
+            return "None"
 
 
 sorted_bus_stops = sorted(bus_stops, key=get_numeric_part)
@@ -49,22 +57,20 @@ def addVehicle(veh_id, route_id, stops , typeID):
     if route_id == "PB_route":
         PB_pickup = stops[:45]
         PB_dropoff = stops[45:]
-        Vehicle_list.append(Vehicle(veh_id,"PickUp", PB_pickup, PB_dropoff))
+        Vehicle_list.append(Vehicle(veh_id, route_id, "PickUp", PB_pickup, PB_dropoff))
     else:
-        Vehicle_list.append(Vehicle(veh_id,"MidTrip",[], stops))     
+        Vehicle_list.append(Vehicle(veh_id, route_id, "MidTrip",[], stops))     
 
 addVehicle("UV_0", "PB_route", PB_stops, "UV")
 
-
-#traci.vehicle.add("UV_0","PB_route", typeID="UV")
-#traci.vehicle.setBusStop("UV_0", PB_pickup[0], 10)
-
-#traci.vehicle.add("UV_1","BP_route", typeID="UV")
 
 for step in range(6000):
 
     for vehicle in Vehicle_list:
         vehicleID = vehicle.vehicle
+        if check_vehicle_exists(vehicleID) == False:
+            Vehicle_list.remove(vehicle)
+            continue
         stops = traci.vehicle.getNextStops(vehicleID)
         Ids = [stop[2] for stop in stops]
         position = traci.vehicle.getRoadID(vehicleID)
@@ -75,7 +81,7 @@ for step in range(6000):
                 vehicle.status = "MidTrip"
             elif vehicle.status == "PickUp" and position == "27498964" and vehicle.route == "PB_route":
                 vehicle.status = "MidTrip"
-            elif vehicle.status == "MidTrip" and position == "1690267947":
+            elif vehicle.status == "MidTrip" and position.find("621030728") and vehicle.route == "PB_route":
                 vehicle.status = "DropOff"
         else:
             if position == "27498964" and vehicle.status == "MidTrip":
@@ -84,20 +90,28 @@ for step in range(6000):
         #add a new stop if UV is in PickUp mode
         if bool(Ids) == False and vehicle.status == "PickUp":
             stopID = vehicle.getPickup()
-            traci.vehicle.setBusStop(vehicleID, stopID, 10)
+            if stopID != "None":
+                traci.vehicle.setBusStop(vehicleID, stopID, 10)
+            else:
+                vehicle.status = "MidTrip"
 
         ## Add Drop Off Points
         elif bool(Ids) == False and vehicle.status == "DropOff":
             stopID = vehicle.getDropoff()
-            traci.vehicle.setBusStop(vehicleID, stopID, 10)
+            if stopID != "None":
+                traci.vehicle.setBusStop(vehicleID, stopID, 10)
+            else:
+                vehicle.status = "MidTrip"
 
         #Change UV Stats
-        if vehicle.status == "MidTrip":
+        if vehicle.status == "PickUp":
+            traci.vehicle.setMaxSpeed(vehicleID, 11.11)
+
+        elif vehicle.status == "MidTrip":
             traci.vehicle.setMaxSpeed(vehicleID, 22.22)
 
         elif vehicle.status == "DropOff":
             traci.vehicle.setMaxSpeed(vehicleID, 11.11)
-
 
     traci.simulationStep()
 
