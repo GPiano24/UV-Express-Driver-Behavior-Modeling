@@ -51,7 +51,7 @@ def addVehicle(veh_id, route_id, stops , typeID):
         PB_dropoff = stops[45:]
         Vehicle_list.append(Vehicle(veh_id,"PickUp", PB_pickup, PB_dropoff))
     else:
-        Vehicle_list.append(Vehicle(veh_id,"DropOff",[], stops))     
+        Vehicle_list.append(Vehicle(veh_id,"MidTrip",[], stops))     
 
 addVehicle("UV_0", "PB_route", PB_stops, "UV")
 
@@ -67,11 +67,19 @@ for step in range(6000):
         vehicleID = vehicle.vehicle
         stops = traci.vehicle.getNextStops(vehicleID)
         Ids = [stop[2] for stop in stops]
-        print ("Stops of Vehicle: ", vehicleID, Ids)
+        position = traci.vehicle.getRoadID(vehicleID)
 
-        #Change status to DropOff if UV has 16 passengers
-        if traci.vehicle.getPersonNumber(vehicleID) == 16:
-            vehicle.status = "DropOff"
+        #Change status Of UV
+        if vehicle.route == "PB_route":
+            if traci.vehicle.getPersonNumber(vehicleID) == 16 and vehicle.status == "PickUp":
+                vehicle.status = "MidTrip"
+            elif vehicle.status == "PickUp" and position == "27498964" and vehicle.route == "PB_route":
+                vehicle.status = "MidTrip"
+            elif vehicle.status == "MidTrip" and position == "1690267947":
+                vehicle.status = "DropOff"
+        else:
+            if position == "27498964" and vehicle.status == "MidTrip":
+                vehicle.status = "DropOff"
 
         #add a new stop if UV is in PickUp mode
         if bool(Ids) == False and vehicle.status == "PickUp":
@@ -82,6 +90,14 @@ for step in range(6000):
         elif bool(Ids) == False and vehicle.status == "DropOff":
             stopID = vehicle.getDropoff()
             traci.vehicle.setBusStop(vehicleID, stopID, 10)
+
+        #Change UV Stats
+        if vehicle.status == "MidTrip":
+            traci.vehicle.setMaxSpeed(vehicleID, 22.22)
+
+        elif vehicle.status == "DropOff":
+            traci.vehicle.setMaxSpeed(vehicleID, 11.11)
+
 
     traci.simulationStep()
 
