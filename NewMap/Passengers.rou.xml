@@ -191,63 +191,84 @@
 
     <personFlow id="pass_46" begin="0" number="10">
         <walk from="761980615" busStop="bs_51" duration="1" />
-        <ride from="761980615" busStop="bs_0"/>
+        <ride from="761980615" busStop="bs_70"/>
     </personFlow>
     <personFlow id="pass_47" begin="0" number="2">
         <walk from="761980615" busStop="bs_51" duration="1" />
-        <ride from="761980615" busStop="bs_22"/>
+        <ride from="761980615" busStop="bs_83"/>
     </personFlow>
     <personFlow id="pass_48" begin="0" number="2">
         <walk from="761980615" busStop="bs_51" duration="1" />
-        <ride from="761980615" busStop="bs_14"/>
+        <ride from="761980615" busStop="bs_55"/>
     </personFlow>
     <personFlow id="pass_49" begin="0" number="2">
         <walk from="761980615" busStop="bs_51" duration="1" />
-        <ride from="761980615" busStop="bs_36"/>
+        <ride from="761980615" busStop="bs_92"/>
     </personFlow>
     <personFlow id="pass_50" begin="0" number="2">
         <walk from="761980615" busStop="bs_51" duration="1" />
-        <ride from="761980615" busStop="bs_9"/>
+        <ride from="761980615" busStop="bs_62"/>
     </personFlow>
     <personFlow id="pass_51" begin="0" number="2">
         <walk from="761980615" busStop="bs_51" duration="1" />
-        <ride from="761980615" busStop="bs_27"/>
+        <ride from="761980615" busStop="bs_85"/>
     </personFlow>
     <personFlow id="pass_52" begin="0" number="2">
         <walk from="761980615" busStop="bs_51" duration="1" />
-        <ride from="761980615" busStop="bs_40"/>
+        <ride from="761980615" busStop="bs_59"/>
     </personFlow>
     <personFlow id="pass_53" begin="0" number="2">
         <walk from="761980615" busStop="bs_51" duration="1" />
-        <ride from="761980615" busStop="bs_3"/>
+        <ride from="761980615" busStop="bs_79"/>
     </personFlow>
     <personFlow id="pass_54" begin="0" number="2">
         <walk from="761980615" busStop="bs_51" duration="1" />
-        <ride from="761980615" busStop="bs_18"/>
+        <ride from="761980615" busStop="bs_94"/>
     </personFlow>
     <personFlow id="pass_55" begin="0" number="2">
         <walk from="761980615" busStop="bs_51" duration="1" />
-        <ride from="761980615" busStop="bs_25"/>
+        <ride from="761980615" busStop="bs_52"/>
     </personFlow>
     <personFlow id="pass_56" begin="0" number="2">
         <walk from="761980615" busStop="bs_51" duration="1" />
-        <ride from="761980615" busStop="bs_8"/>
+        <ride from="761980615" busStop="bs_68"/>
     </personFlow>
     <personFlow id="pass_57" begin="0" number="2">
         <walk from="761980615" busStop="bs_51" duration="1" />
-        <ride from="761980615" busStop="bs_29"/>
+        <ride from="761980615" busStop="bs_75"/>
     </personFlow>
     <personFlow id="pass_58" begin="0" number="2">
         <walk from="761980615" busStop="bs_51" duration="1" />
-        <ride from="761980615" busStop="bs_12"/>
+        <ride from="761980615" busStop="bs_91"/>
     </personFlow>
     <personFlow id="pass_59" begin="0" number="2">
         <walk from="761980615" busStop="bs_51" duration="1" />
-        <ride from="761980615" busStop="bs_44"/>
+        <ride from="761980615" busStop="bs_54"/>
     </personFlow>
     <personFlow id="pass_60" begin="0" number="2">
         <walk from="761980615" busStop="bs_51" duration="1" />
-        <ride from="761980615" busStop="bs_17"/>
+        <ride from="761980615" busStop="bs_86"/>
     </personFlow>
+    <personFlow id="pass_61" begin="0" number="2">
+        <walk from="761980615" busStop="bs_51" duration="1" />
+        <ride from="761980615" busStop="bs_72"/>
+    </personFlow>
+    <personFlow id="pass_62" begin="0" number="2">
+        <walk from="761980615" busStop="bs_51" duration="1" />
+        <ride from="761980615" busStop="bs_63"/>
+    </personFlow>
+    <personFlow id="pass_63" begin="0" number="2">
+        <walk from="761980615" busStop="bs_51" duration="1" />
+        <ride from="761980615" busStop="bs_88"/>
+    </personFlow>
+    <personFlow id="pass_64" begin="0" number="2">
+        <walk from="761980615" busStop="bs_51" duration="1" />
+        <ride from="761980615" busStop="bs_73"/>
+    </personFlow>
+    <personFlow id="pass_65" begin="0" number="2">
+        <walk from="761980615" busStop="bs_51" duration="1" />
+        <ride from="761980615" busStop="bs_93"/>
+    </personFlow>
+
 
 </routes>
