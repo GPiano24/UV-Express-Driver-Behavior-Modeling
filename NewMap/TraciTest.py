@@ -108,7 +108,7 @@ for step in range(6000):
             if stopID != "None":
                 traci.vehicle.setBusStop(vehicleID, stopID, 10)
 
-        if vehicle.status == "PickUp" and len(Ids) == len(PB_dropoff) or len(Ids) == len(BP_Dropoff):  
+        elif vehicle.status == "PickUp" and len(Ids) == len(PB_dropoff) or len(Ids) == len(BP_Dropoff):  
             stopID = vehicle.getPickup()
             if stopID != "None":
                 print (stopID)
