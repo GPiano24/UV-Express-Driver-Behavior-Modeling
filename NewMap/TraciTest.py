@@ -75,7 +75,7 @@ for step in range(6000):
     
     if step%100 == 0:
         addVehicle("PB" + str(step), "PB_route", PB_stops, "UV")
-        addVehicle("BP" + str(step+1), "BP_route", BP_stops, "UV")
+        #addVehicle("BP" + str(step+1), "BP_route", BP_stops, "UV")
 
     for vehicle in Vehicle_list:
         vehicleID = vehicle.vehicle
@@ -96,7 +96,6 @@ for step in range(6000):
             elif vehicle.status == "MidTrip" and position.find("621030728") == 0 and vehicle.route == "PB_route":
                 vehicle.status = "DropOff"
         else:
-            print("UV ID: ", vehicleID, "Status: ")
             if traci.vehicle.getPersonNumber(vehicleID) == 16 and vehicle.status == "PickUp":
                 vehicle.status = "MidTrip"
             elif position.find("1054315838") == 0 and vehicle.status == "MidTrip":
@@ -106,18 +105,17 @@ for step in range(6000):
         if vehicle.firstFlag == False and vehicle.status == "PickUp":
             vehicle.firstFlag = True
             stopID = vehicle.getPickup()
-            print(Ids)
-            print("Adding Stop: ", stopID, "To UV: ", vehicleID)
             if stopID != "None":
                 traci.vehicle.setBusStop(vehicleID, stopID, 10)
 
         if vehicle.status == "PickUp" and len(Ids) == len(PB_dropoff) or len(Ids) == len(BP_Dropoff):  
-            print("doing this") 
-            print("Ids: ", len(Ids))
-            print(len(BP_Dropoff))
             stopID = vehicle.getPickup()
             if stopID != "None":
-                traci.vehicle.setBusStop(vehicleID, stopID, 10)
+                print (stopID)
+                personWaiting = traci.busstop.getPersonCount(stopID)
+                print ("Stop ", stopID, " : ", personWaiting)
+                if (personWaiting > 0):
+                    traci.vehicle.setBusStop(vehicleID, stopID, 10)
             else:
                 print("No more Pickups")
                 vehicle.status = "MidTrip"

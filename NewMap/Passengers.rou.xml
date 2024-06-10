@@ -7,10 +7,7 @@
         <ride from = "583701022" busStop = "bs_45"/>
     </personFlow>
 
-    <personFlow id="pass_2" begin="0" number="10">
-        <walk from = "583701022" busStop= "bs_1" duration = "1" />
-        <ride from = "583701022" busStop = "bs_46"/>
-    </personFlow>
+    
 
     <personFlow id="pass_3" begin="0" number="10">
         <walk from = "583701022" busStop= "bs_2" duration = "1" />
