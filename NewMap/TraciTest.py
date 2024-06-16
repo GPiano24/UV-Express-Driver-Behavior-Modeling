@@ -242,7 +242,7 @@ def get_observed_state_from_sumo(vehicle_id):
     return None
 
 def addVehicle(veh_id, route_id, stops , typeID):
-    traci.vehicle.add(veh_id, route_id, typeID=typeID)
+    traci.vehicle.add(veh_id, route_id, typeID=typeID, line="UV")
     if route_id == "PB_route":
         PB_pickup = stops[:45]
         PB_dropoff = stops[45:]
@@ -260,7 +260,7 @@ def addVehicle(veh_id, route_id, stops , typeID):
 def addRandomVehicle(vehID):
     options = ["Car", "Bus"]
     typeID = random.choice(options)
-    routes = [f"r_{i}" for i in range(1, 51)]  # Create a list of routes r_1 to r_50
+    routes = [f"r_{i}" for i in range(1, 31)]  # Create a list of routes r_1 to r_50
     route_id = random.choice(routes)  # Randomly select one route
     departTime = random.randint(0,5000)
     try:
@@ -272,7 +272,7 @@ def addRandomVehicle(vehID):
         print(f"Error adding vehicle {vehID} to route {route_id}")
         return
 
-for i in range(70):
+for i in range(200):
     addRandomVehicle(f"Random_{i}")
 
 #Add Random People
@@ -288,10 +288,11 @@ def addRandomPeople(p_id, edgelist):
         destination = random.choice(edges)
         edge_length = traci.lane.getLength(f"{start}_0")
         position = random.uniform(0, edge_length - 1)
+        endposition = random.uniform(0, edge_length - 1)
         departTime = random.randint(0,5000)
         try:
             traci.person.add(p_id, start,pos=position, depart= departTime)
-            traci.person.appendWalkingStage(p_id, destination, 0)
+            traci.person.appendWalkingStage(p_id, start, endposition)
             print("Added random walking person")
         except traci.exceptions.TraCIException:
             print(f"Error adding person {p_id} to edge {start}")
@@ -307,6 +308,7 @@ def addRandomPeople(p_id, edgelist):
         stop = random.choice(near_stops)
         departTime = random.randint(0,5000)
         flag = "Valid"
+        Lines = ""
         if stop in PB_pickup:
             destination = random.choice(PB_dropoff)
             dest_edge = traci.lane.getEdgeID(traci.busstop.getLaneID(destination))
@@ -321,7 +323,7 @@ def addRandomPeople(p_id, edgelist):
             try:
                 traci.person.add(p_id, start,position, depart= departTime)
                 traci.person.appendWalkingStage(p_id, start, 0, stopID = stop)
-                traci.person.appendDrivingStage(p_id, dest_edge , "UV", destination)
+                traci.person.appendDrivingStage(p_id, dest_edge, "UV",stopID= destination)
                 print("Added random person to UV")
             except traci.exceptions.TraCIException:
                 print(f"Error adding person {p_id} to edge {start} for UV")
@@ -344,7 +346,7 @@ for stops in sorted_bus_stops:
 
     pedestrian_edges.append(PedestrianEdges(edge, Stop))
 
-for i in range (70):
+for i in range (2000):
     addRandomPeople(f"Person_{i}", pedestrian_edges)
 
 
@@ -383,17 +385,19 @@ for step in range(6000):
             vehicle.firstFlag = True
             stopID = vehicle.getPickup()
             if stopID != "None":
-                traci.vehicle.setBusStop(vehicleID, stopID, 10)
+                traci.vehicle.setBusStop(vehicleID, stopID, 50)
 
         elif vehicle.status == "PickUp" and len(Ids) == len(PB_dropoff) or len(Ids) == len(BP_Dropoff):  
             stopID = vehicle.getPickup()
             if stopID != "None":
-                print (stopID)
-                personWaiting = traci.busstop.getPersonCount(stopID)
-                print ("Stop ", stopID, " : ", personWaiting)
-                if (personWaiting > 0):
-                    traci.vehicle.setBusStop(vehicleID, stopID, 10)
-            else:
+                traci.vehicle.setBusStop(vehicleID, stopID, 10)
+            #if stopID != "None":
+            #    print (stopID)
+            #    personWaiting = traci.busstop.getPersonCount(stopID)
+            #    print ("Stop ", stopID, " : ", personWaiting)
+            #   if (personWaiting > 0):
+            #        traci.vehicle.setBusStop(vehicleID, stopID, 10)
+            if stopID == "None":
                 print("No more Pickups")
                 vehicle.status = "MidTrip"
 
