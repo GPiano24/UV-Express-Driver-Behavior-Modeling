@@ -353,8 +353,8 @@ for i in range (2000):
 for step in range(6000):
     
     if step%100 == 0:
-        addVehicle("PB" + str(len(Vehicle_list)), "PB_route", PB_stops, "UV")
-        addVehicle("BP" + str(len(Vehicle_list)+1), "BP_route", BP_stops, "UV")
+        addVehicle("PB" + str(step), "PB_route", PB_stops, "UV")
+        addVehicle("BP" + str(step+1), "BP_route", BP_stops, "UV")
 
     for vehicle in Vehicle_list:
         vehicleID = vehicle.vehicle
