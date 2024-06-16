@@ -13,6 +13,7 @@ from matplotlib import cm, pyplot as plt
 import traci
 import os
 import sys
+import random
 np.random.seed(1)
 
 states = ['Passenger', 'Vehicle', 'Stoplight']
@@ -246,18 +247,36 @@ def addVehicle(veh_id, route_id, stops , typeID):
         Vehicle_list.append(Vehicle(veh_id, route_id, "PickUp", PB_pickup, PB_dropoff, False))
         for stop in PB_dropoff:
             traci.vehicle.setBusStop(veh_id, stop, 10)
-    else:
+    elif route_id == "BP_route":
         BP_Pickup = BP_stops[:1]
         BP_Dropoff = BP_stops[1:]
         Vehicle_list.append(Vehicle(veh_id, route_id, "PickUp",BP_Pickup, BP_Dropoff, False))
         for stop in BP_Dropoff:
             traci.vehicle.setBusStop(veh_id, stop, 10)
 
+def addRandomVehicle(vehID):
+    options = ["Car", "Bus"]
+    typeID = random.choice(options)
+    routes = [f"r_{i}" for i in range(1, 51)]  # Create a list of routes r_1 to r_50
+    route_id = random.choice(routes)  # Randomly select one route
+    departTime = random.randint(0,5000)
+    try:
+        traci.vehicle.add(vehID, route_id, typeID=typeID, depart= departTime)
+        print(f"Added vehicle v_{i}")
+        print("departTime: ", departTime)
+        print("Type: ", typeID)
+    except traci.exceptions.TraCIException:
+        print(f"Error adding vehicle {vehID} to route {route_id}")
+        return
+
+for i in range(70):
+    addRandomVehicle(f"Random_{i}")
+
 for step in range(6000):
     
     if step%100 == 0:
-        addVehicle("PB" + str(step), "PB_route", PB_stops, "UV")
-        #addVehicle("BP" + str(step+1), "BP_route", BP_stops, "UV")
+        addVehicle("PB" + str(len(Vehicle_list)), "PB_route", PB_stops, "UV")
+        addVehicle("BP" + str(len(Vehicle_list)+1), "BP_route", BP_stops, "UV")
 
     for vehicle in Vehicle_list:
         vehicleID = vehicle.vehicle
