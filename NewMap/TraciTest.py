@@ -176,11 +176,13 @@ def check_vehicle_exists(vehicleID):
         return True
 
 class Vehicle:
-    def __init__(self, vehicleID, route, status, pickStops, dropStops, firstFlag):
+    def __init__(self, vehicleID, route, status, pickStops, dropStops, firstFlag, previousHiddenState, previousObservation):
         self.vehicle = vehicleID
         self.route = route
         self.status = status
         self.firstFlag = firstFlag
+        self.previousHiddenState = previousHiddenState
+        self.previousObservation = previousObservation
         self.Pickstops = Queue()
         for stop in pickStops:
             self.Pickstops.put(stop)
@@ -197,6 +199,10 @@ class Vehicle:
             return self.dropStops.get()
         else :
             return "None"
+    def getPreviousHiddenState(self):
+        return self.previousHiddenState
+    def getPreviousObservation(self):
+        return self.previousObservation
 
 
 sorted_bus_stops = sorted(bus_stops, key=get_numeric_part)
@@ -218,6 +224,13 @@ def get_observed_state_from_sumo(vehicle_id):
     # Retrieve the vehicle's lane index
     lane_index = traci.vehicle.getLaneIndex(vehicle_id)
     
+    # Check if there's a pedestrian ahead (assuming pedestrians are represented as passengers)
+    for veh_id in traci.vehicle.getIDList():
+        if veh_id != vehicle_id:  # Ignore the current vehicle
+            veh_position = traci.vehicle.getPosition(veh_id)
+            if veh_position[0] == vehicle_position[0] and lane_index == traci.vehicle.getLaneIndex(veh_id):
+                return 'Passenger'
+            
     # Check if there's a traffic light ahead
     if traci.vehicle.getNextTLS(vehicle_id) is not None:
         return 'Stoplight'
@@ -230,13 +243,6 @@ def get_observed_state_from_sumo(vehicle_id):
         # If the distance between the vehicle and the leading vehicle is less than a threshold, consider it as detecting a vehicle
         if leading_vehicle_position[0] - vehicle_position[0] < 20:  # Adjust the threshold as needed
             return 'Vehicle'
-    
-    # Check if there's a pedestrian ahead (assuming pedestrians are represented as passengers)
-    for veh_id in traci.vehicle.getIDList():
-        if veh_id != vehicle_id:  # Ignore the current vehicle
-            veh_position = traci.vehicle.getPosition(veh_id)
-            if veh_position[0] == vehicle_position[0] and lane_index == traci.vehicle.getLaneIndex(veh_id):
-                return 'Passenger'
     
     # If none of the conditions are met, return None
     return None
@@ -366,6 +372,35 @@ for step in range(6000):
         Ids = [stop[2] for stop in stops]
         position = traci.vehicle.getRoadID(vehicleID)
         
+        observed_state = get_observed_state_from_sumo(vehicleID)
+
+        if observed_state is not None:
+            current_hidden_state = observed_state
+            previous_hidden_state = vehicle.getPreviousHiddenState()
+
+            previous_observation = None
+            if previous_hidden_state is not None:
+                previous_observation = vehicle.getPreviousObservation()
+
+            current_hidden_state_index = state_labels[current_hidden_state]
+            previous_hidden_state_index = state_labels[previous_hidden_state] if previous_hidden_state is not None else None
+
+            previous_observation_index = observations.index(previous_observation) if previous_observation is not None else None
+
+            if previous_hidden_state_index is not None and previous_observation_index is not None:
+                next_hidden_state = np.argmax(transition_probability[previous_hidden_state_index])
+            else:
+                next_hidden_state = np.argmax(transition_probability[current_hidden_state_index])
+
+            emission_probabilities_next_state = emission_probability[next_hidden_state]
+
+            next_observation_index = np.random.choice(len(observations), p=emission_probabilities_next_state)
+            predicted_next_observation = observations[next_observation_index]
+
+            vehicle.previousHiddenState = current_hidden_state
+            vehicle.previousObservation = predicted_next_observation
+            next_action = None #TODO: Convert predicted_next_observation to a SUMO action
+
         #Change status Of UV
         if vehicle.route == "PB_route":
             if traci.vehicle.getPersonNumber(vehicleID) == 16 and vehicle.status == "PickUp":
