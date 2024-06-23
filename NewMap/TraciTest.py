@@ -11,6 +11,7 @@ import traci
 import numpy as np
 import matplotlib.pyplot as plt
 from hmmlearn import hmm
+import sumolib
 from matplotlib import cm, pyplot as plt
 import traci
 import os
@@ -218,6 +219,33 @@ BP_Dropoff = BP_stops[1:]
 
 Vehicle_list = []
 
+def is_vehicle_in_front(vehicleID, distance_threshold=10):
+    # Get current lane ID and lane position of the vehicle
+    current_lane_id = traci.vehicle.getLaneID(vehicleID)
+    current_lane_position = traci.vehicle.getLanePosition(vehicleID)
+    
+    # Get list of all vehicles known to TraCI
+    nearby_vehicles = traci.vehicle.getIDList()
+    
+    for nearby_vehicle in nearby_vehicles:
+        if nearby_vehicle == vehicleID:
+            continue  # Skip checking against itself
+        
+        # Get lane ID and lane position of the nearby vehicle
+        nearby_lane_id = traci.vehicle.getLaneID(nearby_vehicle)
+        nearby_lane_position = traci.vehicle.getLanePosition(nearby_vehicle)
+        
+        # Check if the nearby vehicle is on the same lane and in front
+        if nearby_lane_id == current_lane_id and nearby_lane_position > current_lane_position:
+            # Calculate the distance between the current vehicle and the nearby vehicle
+            distance = nearby_lane_position - current_lane_position
+            
+            # Check if the nearby vehicle is within the distance threshold
+            if distance < distance_threshold:
+                return True
+    
+    return False
+
 def get_observed_state_from_sumo(vehicle_id):
     # Retrieve the vehicle's position
     vehicle_position = traci.vehicle.getPosition(vehicle_id)
@@ -225,11 +253,34 @@ def get_observed_state_from_sumo(vehicle_id):
     lane_index = traci.vehicle.getLaneIndex(vehicle_id)
     
     # Check if there's a pedestrian ahead (assuming pedestrians are represented as passengers)
-    for veh_id in traci.vehicle.getIDList():
-        if veh_id != vehicle_id:  # Ignore the current vehicle
-            veh_position = traci.vehicle.getPosition(veh_id)
-            if veh_position[0] == vehicle_position[0] and lane_index == traci.vehicle.getLaneIndex(veh_id):
-                return 'Passenger'
+    for person_id in traci.person.getIDList():
+        person_position = traci.person.getPosition(person_id)
+        # Check if the person is within a certain range (e.g., 10 meters)
+        is_full = len(traci.vehicle.getPersonIDList(vehicleID)) >= 16
+        if not is_full and "waiting for " in (traci.person.getStage(person_id)).description and sumolib.geomhelper.distance(traci.vehicle.getPosition(vehicleID), person_position) <= 20:
+            return 'Passenger'
+
+    # Detect if a passenger on board is ready to alight
+    passengers_on_board = traci.vehicle.getPersonIDList(vehicleID)
+    for passenger_id in passengers_on_board:
+        # Get the last destination edge for the passenger
+        edges = traci.person.getEdges(passenger_id, traci.person.getRemainingStages(passenger_id) - 1)
+        # print(passenger_id, " edges: ", edges[0])
+        if edges:
+            passenger_destination_edge_id = edges[0]  # Assuming the last edge is the first in the list
+
+            # Get the length of the lane directly using the edge ID
+            try:
+                passenger_destination_length = traci.lane.getLength(passenger_destination_edge_id)
+                print("Passenger destination length:", passenger_destination_length)
+
+                # Convert length to position (if needed)
+                passenger_destination_pos = traci.simulation.convert2D(passenger_destination_edge_id, passenger_destination_length)
+
+                if sumolib.geomhelper.distance(traci.vehicle.getPosition(vehicleID), passenger_destination_pos) <= 10:
+                    return 'Passenger'
+            except traci.exceptions.TraCIException:
+                None
             
     # Check if there's a traffic light ahead
     if traci.vehicle.getNextTLS(vehicle_id) is not None:
@@ -237,11 +288,7 @@ def get_observed_state_from_sumo(vehicle_id):
 
     # Check if there's a vehicle ahead
     leading_vehicle = traci.vehicle.getLeader(vehicle_id)
-    if leading_vehicle is not None:
-        # Retrieve the position of the leading vehicle
-        leading_vehicle_position = traci.vehicle.getPosition(leading_vehicle)
-        # If the distance between the vehicle and the leading vehicle is less than a threshold, consider it as detecting a vehicle
-        if leading_vehicle_position[0] - vehicle_position[0] < 20:  # Adjust the threshold as needed
+    if is_vehicle_in_front(vehicle_id):
             return 'Vehicle'
     
     # If none of the conditions are met, return None
@@ -252,13 +299,13 @@ def addVehicle(veh_id, route_id, stops , typeID):
     if route_id == "PB_route":
         PB_pickup = stops[:45]
         PB_dropoff = stops[45:]
-        Vehicle_list.append(Vehicle(veh_id, route_id, "PickUp", PB_pickup, PB_dropoff, False))
+        Vehicle_list.append(Vehicle(veh_id, route_id, "PickUp", PB_pickup, PB_dropoff, False, None, None))
         for stop in PB_dropoff:
             traci.vehicle.setBusStop(veh_id, stop, 10)
     elif route_id == "BP_route":
         BP_Pickup = BP_stops[:1]
         BP_Dropoff = BP_stops[1:]
-        Vehicle_list.append(Vehicle(veh_id, route_id, "PickUp",BP_Pickup, BP_Dropoff, False))
+        Vehicle_list.append(Vehicle(veh_id, route_id, "PickUp",BP_Pickup, BP_Dropoff, False, None, None))
         for stop in BP_Dropoff:
             traci.vehicle.setBusStop(veh_id, stop, 10)
 
@@ -364,15 +411,11 @@ for step in range(6000):
 
     for vehicle in Vehicle_list:
         vehicleID = vehicle.vehicle
-        if check_vehicle_exists(vehicleID) == False:
-            print("Vehicle Removed: ", vehicleID)
-            Vehicle_list.remove(vehicle)
-            continue
-        stops = traci.vehicle.getNextStops(vehicleID)
-        Ids = [stop[2] for stop in stops]
         position = traci.vehicle.getRoadID(vehicleID)
         
         observed_state = get_observed_state_from_sumo(vehicleID)
+
+        next_action = None
 
         if observed_state is not None:
             current_hidden_state = observed_state
@@ -394,13 +437,25 @@ for step in range(6000):
 
             emission_probabilities_next_state = emission_probability[next_hidden_state]
 
-            next_observation_index = np.random.choice(len(observations), p=emission_probabilities_next_state)
-            predicted_next_observation = observations[next_observation_index]
+            invalid_obs = True
+            while invalid_obs:
+                next_observation_index = np.random.choice(len(observations), p=emission_probabilities_next_state)
+                predicted_next_observation = observations[next_observation_index]
+                if current_hidden_state == 'Vehicle' and predicted_next_observation in ['ChangeLaneLeft', 'ChangeLaneRight']:
+                    # Check if the vehicle is already at the edge of the lane network
+                    if traci.vehicle.getLaneIndex(vehicleID) == 0 and predicted_next_observation == 'ChangeLaneLeft':
+                        continue  # Skip this prediction, it's invalid
+                    elif traci.vehicle.getLaneIndex(vehicleID) == traci.vehicle.getLaneNumber(vehicleID) - 1 and predicted_next_observation == 'ChangeLaneRight':
+                        continue  # Skip this prediction, it's invalid
+                    else:
+                        invalid_obs = False
+                else:
+                    invalid_obs = False
 
             vehicle.previousHiddenState = current_hidden_state
             vehicle.previousObservation = predicted_next_observation
-            next_action = None #TODO: Convert predicted_next_observation to a SUMO action
-
+            next_action = predicted_next_observation
+            
         #Change status Of UV
         if vehicle.route == "PB_route":
             if traci.vehicle.getPersonNumber(vehicleID) == 16 and vehicle.status == "PickUp":
@@ -415,44 +470,134 @@ for step in range(6000):
             elif position.find("1054315838") == 0 and vehicle.status == "MidTrip":
                 vehicle.status = "DropOff"
 
-        #add a new stop if UV is in PickUp mode
-        if vehicle.firstFlag == False and vehicle.status == "PickUp":
-            vehicle.firstFlag = True
-            stopID = vehicle.getPickup()
-            if stopID != "None":
-                traci.vehicle.setBusStop(vehicleID, stopID, 50)
+        if observed_state == 'Passenger':
+            traci.vehicle.setSpeed(vehicleID, 0)
+            stopped = False
+            # Check if there are passengers within 10 meters to pick up
+            if len(traci.vehicle.getPersonIDList(vehicleID)) < 16:
+                passengers_nearby = traci.person.getIDList()
+                
+                for passenger_id in passengers_nearby:
+                    is_waiting = "waiting for " in (traci.person.getStage(passenger_id)).description
+                    passenger_position = traci.person.getPosition(passenger_id)
+                    is_full = len(traci.vehicle.getPersonIDList(vehicleID)) >= 16
+                    if not is_full and is_waiting and sumolib.geomhelper.distance(traci.vehicle.getPosition(vehicleID), passenger_position) <= 20:
+                        if not stopped:
+                            try:
+                                traci.vehicle.setStop(vehicleID, traci.vehicle.getRoadID(vehicleID), traci.vehicle.getLanePosition(vehicleID) + 10.0, 0, duration=5)
+                                stopped = True
+                            except:
+                                try:
+                                    traci.vehicle.setStop(vehicleID, traci.vehicle.getRoadID(vehicleID), traci.vehicle.getLanePosition(vehicleID) + 10.0, 1, duration=5)
+                                    stopped = True
+                                except:
+                                    None
+                        elif not traci.vehicle.isStopped(vehicleID):
+                            try:
+                                traci.vehicle.setStop(vehicleID, traci.vehicle.getRoadID(vehicleID), traci.vehicle.getLanePosition(vehicleID) + 1.0, 0, duration=5)
+                                stopped = True
+                            except:
+                                try:
+                                    traci.vehicle.setStop(vehicleID, traci.vehicle.getRoadID(vehicleID), traci.vehicle.getLanePosition(vehicleID) + 1.0, 1, duration=5)
+                                    stopped = True
+                                except:
+                                    None
+                            
+                        
+            passengers_on_board = traci.vehicle.getPersonIDList(vehicleID)
+            for passenger_id in passengers_on_board:
+                # Example: Get the current stage of the passenger
+                current_stage = traci.person.getStage(passenger_id)
+                
+                # Example: Check if the passenger is ready to drop off (adjust condition based on your logic)
+                if current_stage and "waiting for" not in current_stage.description:
+                    # Example: Get the last edge where the passenger wants to alight (replace with actual logic)
+                    edges = traci.person.getEdges(passenger_id, traci.person.getRemainingStages(passenger_id) - 1)
+                    if edges:
+                        passenger_destination_edge_id = edges[0]  # Assuming the last edge is the first in the list
+                        
+                        # Example: Get the number of lanes for the destination edge
+                        try:
+                            num_lanes = traci.edge.getLaneNumber(passenger_destination_edge_id)
+                        except traci.exceptions.TraCIException as e:
+                            print(f"Failed to get number of lanes: {e}")
+                            continue  # Skip this passenger and continue with others
+                        
+                        # Example: Construct the lane ID (assuming we want the first lane, index 0)
+                        passenger_destination_lane_id = f"{passenger_destination_edge_id}_0"
+                        
+                        # Example: Get the length of the lane
+                        try:
+                            passenger_destination_length = traci.lane.getLength(passenger_destination_lane_id)
+                        except traci.exceptions.TraCIException as e:
+                            print(f"Failed to get lane length: {e}")
+                            continue  # Skip this passenger and continue with others
+                        
+                        # Example: Convert length to position (if needed)
+                        passenger_destination_pos = traci.simulation.convert2D(passenger_destination_edge_id, passenger_destination_length)
+                        
+                        # Example: Calculate distance between vehicle and drop-off point
+                        vehicle_position = traci.vehicle.getPosition(vehicleID)
+                        distance_to_destination = sumolib.geomhelper.distance(vehicle_position, passenger_destination_pos)
+                        
+                        # Check if vehicle is close enough to the drop-off point
+                        if distance_to_destination <= 10:
+                            print(traci.vehicle.getRoadID(vehicleID), " alights passenger ", passenger_id, " at ", passenger_destination_pos)
+                            
+                            # Set a stop near the drop-off point (example using lane position)
+                            try:
+                                traci.vehicle.setStop(vehicleID, traci.vehicle.getRoadID(vehicleID), traci.vehicle.getLanePosition(vehicleID), 0, duration=3)
+                            except traci.exceptions.TraCIException as e:
+                                print(f"Failed to set stop: {e}")
+                                continue  # Skip this passenger and continue with others
+                            
+                            # Perform drop-off actions
+                            try:
+                                # Example: Append walking stage for the passenger to reach their destination
+                                traci.person.appendWalkingStage(passenger_id, [passenger_destination_edge_id], arrivalPos=passenger_destination_length)
+                                
+                                # Example: Optionally move the vehicle precisely to the drop-off position
+                                traci.vehicle.moveToXY(vehicleID, passenger_destination_edge_id, 0, passenger_destination_pos[0], passenger_destination_pos[1])
+                            except traci.exceptions.TraCIException as e:
+                                print(f"Failed to perform drop-off actions: {e}")
+                                continue  # Skip this passenger and continue with others
+                            
+                    traci.vehicle.setSpeed(vehicleID, 11.11)
 
-        elif vehicle.status == "PickUp" and len(Ids) == len(PB_dropoff) or len(Ids) == len(BP_Dropoff):  
-            stopID = vehicle.getPickup()
-            if stopID != "None":
-                traci.vehicle.setBusStop(vehicleID, stopID, 10)
-            #if stopID != "None":
-            #    print (stopID)
-            #    personWaiting = traci.busstop.getPersonCount(stopID)
-            #    print ("Stop ", stopID, " : ", personWaiting)
-            #   if (personWaiting > 0):
-            #        traci.vehicle.setBusStop(vehicleID, stopID, 10)
-            if stopID == "None":
-                print("No more Pickups")
-                vehicle.status = "MidTrip"
+        if observed_state == 'Vehicle':
+            if next_action == 'ChangeLaneLeft':
+                traci.vehicle.changeLane(vehicleID, traci.vehicle.getLaneIndex(vehicleID) - 1, 500)
+            elif next_action == 'ChangeLaneRight':
+                traci.vehicle.changeLane(vehicleID, traci.vehicle.getLaneIndex(vehicleID) + 1, 500)
+            elif next_action == 'Stop':
+                traci.vehicle.setSpeed(vehicleID, 0)
+            elif next_action == 'Go':
+                traci.vehicle.setSpeed(vehicleID, traci.vehicle.getAllowedSpeed(vehicleID))
+            elif next_action == 'Load':
+                # Implement loading logic
+                passengers_nearby = traci.vehicle.getPersonIDList(vehicleID)
+                for passenger_id in passengers_nearby:
+                    passenger_position = traci.person.getPosition(passenger_id)
+                    if sumolib.geomhelper.distance(traci.vehicle.getPosition(vehicleID), passenger_position) <= 10:
+                        traci.person.appendWalkingStage(passenger_id, [traci.vehicle.getRoadID(vehicleID)])
+                        traci.person.moveTo(passenger_id, vehicleID)
+            elif next_action == 'Unload':
+                # Implement unloading logic
+                passengers_on_board = traci.vehicle.getPersonIDList(vehicleID)
+                for passenger_id in passengers_on_board:
+                    passenger_destination = traci.person.getGoal(passenger_id)
+                    if sumolib.geomhelper.distance(traci.vehicle.getPosition(vehicleID), passenger_destination) <= 10:
+                        traci.person.appendWalkingStage(passenger_id, [passenger_destination])
+                        traci.vehicle.moveToXY(vehicleID, "", 0, *passenger_destination)
 
-        ## Add Drop Off Points
-        #elif bool(Ids) == False and vehicle.status == "DropOff":
-        #    stopID = vehicle.getDropoff()
-        #    if stopID != "None":
-        #        traci.vehicle.setBusStop(vehicleID, stopID, 10)
-        #    else:
-        #        vehicle.status = "MidTrip"
+        if traci.vehicle.getSpeed(vehicleID) == 0 and not is_vehicle_in_front(vehicleID):
+            traci.vehicle.setSpeed(vehicleID, traci.vehicle.getAllowedSpeed(vehicleID))
 
         #Change UV Stats
-        if vehicle.status == "PickUp":
+        if vehicle.status == "PickUp" or vehicle.status == "DropOff":
             traci.vehicle.setMaxSpeed(vehicleID, 11.11)
-
         elif vehicle.status == "MidTrip":
             traci.vehicle.setMaxSpeed(vehicleID, 22.22)
-
-        elif vehicle.status == "DropOff":
-            traci.vehicle.setMaxSpeed(vehicleID, 11.11)
 
     traci.simulationStep()
 
