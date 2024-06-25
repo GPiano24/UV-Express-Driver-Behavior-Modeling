@@ -217,6 +217,8 @@ PB_dropoff = PB_stops[45:]
 BP_Pickup = BP_stops[:1]
 BP_Dropoff = BP_stops[1:]
 
+jeep_stops = sorted_bus_stops[:45] + sorted_bus_stops[52:]
+
 Vehicle_list = []
 
 def is_vehicle_in_front(vehicleID, distance_threshold=10):
@@ -319,6 +321,10 @@ def addRandomVehicle(type, vehID):
     elif typeID == "Motor":
         route_id = random.choice(routes)
         vehID = vehID.replace("Random", "Motor")
+    elif typeID == "Jeep":
+        route_id = "jeep_route"
+        vehID = vehID.replace("Random", "Jeep")
+        stops = jeep_stops
     elif typeID == "Bus":
         vehID = vehID.replace("Random", "Bus")
         choices = ["PB_route", "BP_route"]
@@ -333,7 +339,7 @@ def addRandomVehicle(type, vehID):
         print(f"Added vehicle v_{i}")
         print("departTime: ", departTime)
         print("Type: ", typeID)
-        if typeID == "Bus":
+        if typeID == "Bus" or typeID == "Jeep":
            for stop in stops:
                 traci.vehicle.setBusStop(vehID, stop, 10)
     except traci.exceptions.TraCIException:
@@ -342,16 +348,16 @@ def addRandomVehicle(type, vehID):
 
 for i in range(150):
     addRandomVehicle("Car", f"Random_{i}")
-
 for i in range(200):
     addRandomVehicle("Motor", f"Random_{i}")
-
+for i in range(50):
+    addRandomVehicle("Jeep", f"Random_{i}")
 for i in range(20):
     addRandomVehicle("Bus", f"Random_{i}")
 
 #Add Random People
 def addRandomPeople(p_id, edgelist):
-    options = ["UV", "Walk", "Bus"]
+    options = ["UV", "Walk", "Bus", "Jeep"]
     p_action = random.choice(options)
     edges = []
     for edge in edgelist:
@@ -436,6 +442,41 @@ def addRandomPeople(p_id, edgelist):
                 traci.person.setColor(p_id, (0, 255, 0, 255))
             except traci.exceptions.TraCIException:
                 print(f"Error adding person {p_id} to edge {start} for Bus")
+    elif p_action == "Jeep":
+        p_id = p_id.replace("Person", "JeepRider")
+        start = random.choice(edges)
+        edge_length = traci.lane.getLength(f"{start}_0")
+        position = random.uniform(0, edge_length - 1)
+        near_stops = []
+        for edge in edgelist:
+            if edge.getEdge() == start:
+                near_stops.append(edge.getBusStop())
+        stop = random.choice(near_stops)
+        departTime = random.randint(0,5000)
+        flag = "Valid"
+        eligible_stops = []
+        for stops in jeep_stops:
+            if get_numeric_part(stop) < 45:
+                if get_numeric_part(stops) > get_numeric_part(stop):
+                    eligible_stops.append(stops)
+            elif get_numeric_part(stop) > 44:
+                if get_numeric_part(stops) > get_numeric_part(stop):
+                    eligible_stops.append(stops)
+        if (eligible_stops == []):
+            flag = "Invalid"
+        else:
+            destination = random.choice(eligible_stops)
+            dest_edge = traci.lane.getEdgeID(traci.busstop.getLaneID(destination))
+            print (f"Start: {start}, Stop: {stop}, Destination: {destination}")
+        if (flag == "Valid"):
+            try:
+                traci.person.add(p_id, start,position, depart= departTime)
+                traci.person.appendWalkingStage(p_id, start, 0, stopID = stop)
+                traci.person.appendDrivingStage(p_id, dest_edge, "Jeep",stopID= destination)
+                print("Added random person to Jeep")
+                traci.person.setColor(p_id, (255, 0, 255, 255))
+            except traci.exceptions.TraCIException:
+                print(f"Error adding person {p_id} to edge {start} for Jeep")
     
 
 class PedestrianEdges:
