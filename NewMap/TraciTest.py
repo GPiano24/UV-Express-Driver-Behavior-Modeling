@@ -314,13 +314,26 @@ def addRandomVehicle(vehID):
     options = ["Car", "Bus"]
     typeID = random.choice(options)
     routes = [f"r_{i}" for i in range(1, 31)]  # Create a list of routes r_1 to r_50
-    route_id = random.choice(routes)  # Randomly select one route
+    if typeID == "Car":
+        route_id = random.choice(routes)  # Randomly select one route
+        vehID = vehID.replace("Random", "Car")
+    elif typeID == "Bus":
+        vehID = vehID.replace("Random", "Bus")
+        choices = ["PB_route", "BP_route"]
+        route_id = random.choice(choices)
+        if route_id == "PB_route":
+            stops = PB_stops
+        else:
+            stops = BP_stops
     departTime = random.randint(0,5000)
     try:
         traci.vehicle.add(vehID, route_id, typeID=typeID, depart= departTime)
         print(f"Added vehicle v_{i}")
         print("departTime: ", departTime)
         print("Type: ", typeID)
+        if typeID == "Bus":
+           for stop in stops:
+                traci.vehicle.setBusStop(vehID, stop, 10)
     except traci.exceptions.TraCIException:
         print(f"Error adding vehicle {vehID} to route {route_id}")
         return
