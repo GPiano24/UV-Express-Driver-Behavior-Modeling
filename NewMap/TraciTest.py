@@ -19,6 +19,7 @@ import sys
 import random
 np.random.seed(1)
 
+validation = True
 states = ['Passenger', 'Vehicle', 'Stoplight']
 n_states = len(states)
 
@@ -346,15 +347,6 @@ def addRandomVehicle(type, vehID):
         print(f"Error adding vehicle {vehID} to route {route_id}")
         return
 
-for i in range(150):
-    addRandomVehicle("Car", f"Random_{i}")
-for i in range(200):
-    addRandomVehicle("Motor", f"Random_{i}")
-for i in range(50):
-    addRandomVehicle("Jeep", f"Random_{i}")
-for i in range(20):
-    addRandomVehicle("Bus", f"Random_{i}")
-
 #Add Random People
 def addRandomPeople(p_id, edgelist):
     options = ["UV", "Walk", "Bus", "Jeep"]
@@ -496,15 +488,29 @@ for stops in sorted_bus_stops:
 
     pedestrian_edges.append(PedestrianEdges(edge, Stop))
 
-for i in range (2000):
-    addRandomPeople(f"Person_{i}", pedestrian_edges)
+## Add Randoms 
+if not validation:
+    for i in range(150):
+        addRandomVehicle("Car", f"Random_{i}")
+    for i in range(200):
+        addRandomVehicle("Motor", f"Random_{i}")
+    for i in range(50):
+        addRandomVehicle("Jeep", f"Random_{i}")
+    for i in range(20):
+        addRandomVehicle("Bus", f"Random_{i}")
+
+    for i in range (2000):
+        addRandomPeople(f"Person_{i}", pedestrian_edges)
+else:
+    addVehicle("PB0", "PB_route", PB_stops, "UV")
 
 
 for step in range(6000):
     
-    if step%100 == 0:
-        addVehicle("PB" + str(step), "PB_route", PB_stops, "UV")
-        addVehicle("BP" + str(step+1), "BP_route", BP_stops, "UV")
+    if not validation:
+        if step%100 == 0:
+            addVehicle("PB" + str(step), "PB_route", PB_stops, "UV")
+            addVehicle("BP" + str(step+1), "BP_route", BP_stops, "UV")
 
     for vehicle in Vehicle_list:
         vehicleID = vehicle.vehicle
