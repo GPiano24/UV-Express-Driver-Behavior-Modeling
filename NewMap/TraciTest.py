@@ -613,10 +613,10 @@ for step in range(6000):
                         #             None
                 if to_pickup_count != 0:
                     try:
-                        traci.vehicle.setStop(vehicleID, traci.vehicle.getRoadID(vehicleID), traci.vehicle.getLanePosition(vehicleID) + 10.0, 0, duration=(5*to_pickup_count))
+                        traci.vehicle.setStop(vehicleID, traci.vehicle.getRoadID(vehicleID), traci.vehicle.getLanePosition(vehicleID) + 10.0, 0, duration=(10*to_pickup_count))
                     except:
                         try:
-                            traci.vehicle.setStop(vehicleID, traci.vehicle.getRoadID(vehicleID), traci.vehicle.getLanePosition(vehicleID) + 10.0, 1, duration=(5*to_pickup_count))
+                            traci.vehicle.setStop(vehicleID, traci.vehicle.getRoadID(vehicleID), traci.vehicle.getLanePosition(vehicleID) + 10.0, 1, duration=(10*to_pickup_count))
                         except:
                             None
                             
@@ -627,7 +627,7 @@ for step in range(6000):
                 current_stage = traci.person.getStage(passenger_id)
                 
                 # Example: Check if the passenger is ready to drop off (adjust condition based on your logic)
-                if current_stage and "waiting for" not in current_stage.description:
+                if current_stage and "driving" in current_stage.description:
                     # Example: Get the last edge where the passenger wants to alight (replace with actual logic)
                     edges = traci.person.getEdges(passenger_id, traci.person.getRemainingStages(passenger_id) - 1)
                     if edges:
@@ -663,7 +663,7 @@ for step in range(6000):
                             
                             # Set a stop near the drop-off point (example using lane position)
                             try:
-                                traci.vehicle.setStop(vehicleID, traci.vehicle.getRoadID(vehicleID), traci.vehicle.getLanePosition(vehicleID), 0, duration=3)
+                                traci.vehicle.setStop(vehicleID, traci.vehicle.getRoadID(vehicleID), traci.vehicle.getLanePosition(vehicleID), 0, duration=10)
                             except traci.exceptions.TraCIException as e:
                                 print(f"Failed to set stop: {e}")
                                 continue  # Skip this passenger and continue with others
