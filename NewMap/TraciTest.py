@@ -222,7 +222,7 @@ jeep_stops = sorted_bus_stops[:45] + sorted_bus_stops[52:]
 
 Vehicle_list = []
 
-def is_vehicle_in_front(vehicleID, distance_threshold=10):
+def is_vehicle_in_front(vehicleID, leading_vehicle, distance_threshold=10):
     # Get current lane ID and lane position of the vehicle
     current_lane_id = traci.vehicle.getLaneID(vehicleID)
     current_lane_position = traci.vehicle.getLanePosition(vehicleID)
@@ -230,22 +230,26 @@ def is_vehicle_in_front(vehicleID, distance_threshold=10):
     # Get list of all vehicles known to TraCI
     nearby_vehicles = traci.vehicle.getIDList()
     
-    for nearby_vehicle in nearby_vehicles:
-        if nearby_vehicle == vehicleID:
-            continue  # Skip checking against itself
+    # for nearby_vehicle in nearby_vehicles:
+    #     if nearby_vehicle == vehicleID:
+    #         continue  # Skip checking against itself
         
-        # Get lane ID and lane position of the nearby vehicle
-        nearby_lane_id = traci.vehicle.getLaneID(nearby_vehicle)
-        nearby_lane_position = traci.vehicle.getLanePosition(nearby_vehicle)
+    #     # Get lane ID and lane position of the nearby vehicle
+    #     nearby_lane_id = traci.vehicle.getLaneID(nearby_vehicle)
+    #     nearby_lane_position = traci.vehicle.getLanePosition(nearby_vehicle)
         
-        # Check if the nearby vehicle is on the same lane and in front
-        if nearby_lane_id == current_lane_id and nearby_lane_position > current_lane_position:
-            # Calculate the distance between the current vehicle and the nearby vehicle
-            distance = nearby_lane_position - current_lane_position
+    #     # Check if the nearby vehicle is on the same lane and in front
+    #     if nearby_lane_id == current_lane_id and nearby_lane_position > current_lane_position:
+    #         # Calculate the distance between the current vehicle and the nearby vehicle
+    #         distance = nearby_lane_position - current_lane_position
             
-            # Check if the nearby vehicle is within the distance threshold
-            if distance < distance_threshold:
-                return True
+    #         # Check if the nearby vehicle is within the distance threshold
+    #         if distance < distance_threshold:
+    #             return True
+            
+    lead_id, distance = leading_vehicle
+    if distance <= distance_threshold:
+        return True
     
     return False
 
@@ -290,9 +294,9 @@ def get_observed_state_from_sumo(vehicle_id):
         return 'Stoplight'
 
     # Check if there's a vehicle ahead
-    leading_vehicle = traci.vehicle.getLeader(vehicle_id)
-    if is_vehicle_in_front(vehicle_id):
-            return 'Vehicle'
+    leading_vehicle = traci.vehicle.getLeader(vehicle_id, 10)
+    if is_vehicle_in_front(vehicle_id, leading_vehicle):
+        return 'Vehicle'
     
     # If none of the conditions are met, return None
     return None
