@@ -224,33 +224,34 @@ Vehicle_list = []
 
 def is_vehicle_in_front(vehicleID, leading_vehicle, distance_threshold=10):
     # Get current lane ID and lane position of the vehicle
-    current_lane_id = traci.vehicle.getLaneID(vehicleID)
-    current_lane_position = traci.vehicle.getLanePosition(vehicleID)
-    
-    # Get list of all vehicles known to TraCI
-    nearby_vehicles = traci.vehicle.getIDList()
-    
-    # for nearby_vehicle in nearby_vehicles:
-    #     if nearby_vehicle == vehicleID:
-    #         continue  # Skip checking against itself
+    if leading_vehicle is not None:
+        current_lane_id = traci.vehicle.getLaneID(vehicleID)
+        current_lane_position = traci.vehicle.getLanePosition(vehicleID)
         
-    #     # Get lane ID and lane position of the nearby vehicle
-    #     nearby_lane_id = traci.vehicle.getLaneID(nearby_vehicle)
-    #     nearby_lane_position = traci.vehicle.getLanePosition(nearby_vehicle)
+        # Get list of all vehicles known to TraCI
+        nearby_vehicles = traci.vehicle.getIDList()
         
-    #     # Check if the nearby vehicle is on the same lane and in front
-    #     if nearby_lane_id == current_lane_id and nearby_lane_position > current_lane_position:
-    #         # Calculate the distance between the current vehicle and the nearby vehicle
-    #         distance = nearby_lane_position - current_lane_position
+        # for nearby_vehicle in nearby_vehicles:
+        #     if nearby_vehicle == vehicleID:
+        #         continue  # Skip checking against itself
             
-    #         # Check if the nearby vehicle is within the distance threshold
-    #         if distance < distance_threshold:
-    #             return True
+        #     # Get lane ID and lane position of the nearby vehicle
+        #     nearby_lane_id = traci.vehicle.getLaneID(nearby_vehicle)
+        #     nearby_lane_position = traci.vehicle.getLanePosition(nearby_vehicle)
             
-    lead_id, distance = leading_vehicle
-    if distance <= distance_threshold:
-        return True
-    
+        #     # Check if the nearby vehicle is on the same lane and in front
+        #     if nearby_lane_id == current_lane_id and nearby_lane_position > current_lane_position:
+        #         # Calculate the distance between the current vehicle and the nearby vehicle
+        #         distance = nearby_lane_position - current_lane_position
+                
+        #         # Check if the nearby vehicle is within the distance threshold
+        #         if distance < distance_threshold:
+        #             return True
+                
+        lead_id, distance = leading_vehicle
+        if distance <= distance_threshold:
+            return True
+        return False
     return False
 
 def get_observed_state_from_sumo(vehicle_id):
@@ -583,32 +584,41 @@ for step in range(6000):
             # Check if there are passengers within 10 meters to pick up
             if len(traci.vehicle.getPersonIDList(vehicleID)) < 16:
                 passengers_nearby = traci.person.getIDList()
-                
+                to_pickup_count = 0
                 for passenger_id in passengers_nearby:
                     is_waiting = "waiting for " in (traci.person.getStage(passenger_id)).description
                     passenger_position = traci.person.getPosition(passenger_id)
                     is_full = len(traci.vehicle.getPersonIDList(vehicleID)) >= 16
                     if not is_full and is_waiting and sumolib.geomhelper.distance(traci.vehicle.getPosition(vehicleID), passenger_position) <= 20:
-                        if not stopped:
-                            try:
-                                traci.vehicle.setStop(vehicleID, traci.vehicle.getRoadID(vehicleID), traci.vehicle.getLanePosition(vehicleID) + 10.0, 0, duration=5)
-                                stopped = True
-                            except:
-                                try:
-                                    traci.vehicle.setStop(vehicleID, traci.vehicle.getRoadID(vehicleID), traci.vehicle.getLanePosition(vehicleID) + 10.0, 1, duration=5)
-                                    stopped = True
-                                except:
-                                    None
-                        elif not traci.vehicle.isStopped(vehicleID):
-                            try:
-                                traci.vehicle.setStop(vehicleID, traci.vehicle.getRoadID(vehicleID), traci.vehicle.getLanePosition(vehicleID) + 1.0, 0, duration=5)
-                                stopped = True
-                            except:
-                                try:
-                                    traci.vehicle.setStop(vehicleID, traci.vehicle.getRoadID(vehicleID), traci.vehicle.getLanePosition(vehicleID) + 1.0, 1, duration=5)
-                                    stopped = True
-                                except:
-                                    None
+                        to_pickup_count += 1
+                        # if not stopped:
+                        #     try:
+                        #         traci.vehicle.setStop(vehicleID, traci.vehicle.getRoadID(vehicleID), traci.vehicle.getLanePosition(vehicleID) + 10.0, 0, duration=5)
+                        #         stopped = True
+                        #     except:
+                        #         try:
+                        #             traci.vehicle.setStop(vehicleID, traci.vehicle.getRoadID(vehicleID), traci.vehicle.getLanePosition(vehicleID) + 10.0, 1, duration=5)
+                        #             stopped = True
+                        #         except:
+                        #             None
+                        # elif not traci.vehicle.isStopped(vehicleID):
+                        #     try:
+                        #         traci.vehicle.setStop(vehicleID, traci.vehicle.getRoadID(vehicleID), traci.vehicle.getLanePosition(vehicleID) + 1.0, 0, duration=5)
+                        #         stopped = True
+                        #     except:
+                        #         try:
+                        #             traci.vehicle.setStop(vehicleID, traci.vehicle.getRoadID(vehicleID), traci.vehicle.getLanePosition(vehicleID) + 1.0, 1, duration=5)
+                        #             stopped = True
+                        #         except:
+                        #             None
+                if to_pickup_count != 0:
+                    try:
+                        traci.vehicle.setStop(vehicleID, traci.vehicle.getRoadID(vehicleID), traci.vehicle.getLanePosition(vehicleID) + 10.0, 0, duration=(5*to_pickup_count))
+                    except:
+                        try:
+                            traci.vehicle.setStop(vehicleID, traci.vehicle.getRoadID(vehicleID), traci.vehicle.getLanePosition(vehicleID) + 10.0, 1, duration=(5*to_pickup_count))
+                        except:
+                            None
                             
                         
             passengers_on_board = traci.vehicle.getPersonIDList(vehicleID)
@@ -696,8 +706,8 @@ for step in range(6000):
                     if sumolib.geomhelper.distance(traci.vehicle.getPosition(vehicleID), passenger_destination) <= 10:
                         traci.person.appendWalkingStage(passenger_id, [passenger_destination])
                         traci.vehicle.moveToXY(vehicleID, "", 0, *passenger_destination)
-
-        if traci.vehicle.getSpeed(vehicleID) == 0 and not is_vehicle_in_front(vehicleID):
+        leading_vehicle = traci.vehicle.getLeader(vehicleID, 10)
+        if traci.vehicle.getSpeed(vehicleID) == 0 and not is_vehicle_in_front(vehicleID, leading_vehicle):
             traci.vehicle.setSpeed(vehicleID, traci.vehicle.getAllowedSpeed(vehicleID))
 
         #Change UV Stats
