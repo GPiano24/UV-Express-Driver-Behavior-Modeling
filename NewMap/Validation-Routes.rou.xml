@@ -6,7 +6,7 @@
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
     <!-- VTypes -->
     <vType id="valid-Bus" vClass="bus" color="blue"/>
-    <vType id="valid-Car" vClass="passenger" color="yellow"/>
+    <vType id="valid-Car" vClass="passenger" color="yellow" maxSpeed= "3.0"/>
     <vType id="valid-Jeep" vClass="passenger" color="magenta"/>
     <vType id="valid-Motor" vClass="motorcycle" color="green" maxSpeed= "4.0"/>
     <!-- Routes -->
@@ -22,20 +22,20 @@
     <!-- Create Flows -->
     <flow id="Avida-Flow" type="valid-Motor" begin = "530" end = "545" number = "10" route = "valid_avida"/>
 
-    <flow id="SM-Flow" type="valid-Car" begin = "833" end = "3600" number = "1" route = "Valid-SM-Traffic"/>
+    <flow id="SM-Flow" type="valid-Car" begin = "828" end = "830" number = "10" route = "Valid-SM-Traffic"/>
 
-    <flow id="Before-SSI-Flow" type="valid-Car" begin = "928" end = "3600" number = "1" route = "valid-before-ssi"/>
+    <flow id="Before-SSI-Flow" type="valid-Car" begin = "922" end = "928" number = "1" route = "valid-before-ssi"/>
 
-    <flow id="SSI-Flow" type="valid-Car" begin = "1028" end = "3600" number = "1" route = "SSI-Traffic"/>
+    <flow id="SSI-Flow" type="valid-Car" begin = "1020" end = "1028" number = "10" route = "SSI-Traffic"/>
 
     <flow id="Perps-Town-Flow" type="valid-Car" begin = "1056" end = "3600" number = "1" route = "Valid-Perps-Town"/>
 
     <flow id="Blvd-Entrance-Flow" type="valid-Car" begin = "1375" end = "3600" number = "1" route = "Valid-Blvd-Entrance"/>
-    <flow id="Blvd-Entrance-Flow-Motor" type="valid-Motor" begin = "0" end = "3600" number = "1" route = "Valid-Blvd-Entrance"/>
+    <flow id="Blvd-Entrance-Flow-Motor" type="valid-Motor" begin = "1375" end = "3600" number = "1" route = "Valid-Blvd-Entrance"/>
 
-    <flow id="Traffic-Divimart-Flow" type="valid-Car" begin = "1675" end = "3600" number = "1" route = "Valid-Traffic-Divimart"/>
+    <flow id="Traffic-Divimart-Flow" type="valid-Car" begin = "1675" end = "1700" number = "10" route = "Valid-Traffic-Divimart"/>
 
-    <flow id="Traffic-StDOM-Cavitex-Flow" type="valid-Car" begin = "1988" end = "3600" number = "1" route = "Valid-Traffic-StDOM-Cavitex"/>
+    <flow id="Traffic-StDOM-Cavitex-Flow" type="valid-Car" begin = "1988" end = "2100" number = "20" route = "Valid-Traffic-StDOM-Cavitex"/>
 
     <!-- Add Stopped Vehicles sa Road -->
 
