@@ -20,6 +20,7 @@ import random
 np.random.seed(1)
 
 validation = True
+validation_edges = ['-651079992', '109971518#0', '690977719', '879172096', '130048909#0', '1103307016#0', '-797720294', '1103029873']
 states = ['Passenger', 'Vehicle', 'Stoplight']
 n_states = len(states)
 
@@ -520,7 +521,11 @@ for step in range(6000):
     for vehicle in Vehicle_list:
         vehicleID = vehicle.vehicle
         position = traci.vehicle.getRoadID(vehicleID)
-        
+        if validation:
+            if position in validation_edges:
+                if previous != position:
+                    print("Vehicle ", vehicleID, " is at ", position, "at step ", step)
+    
         observed_state = get_observed_state_from_sumo(vehicleID)
 
         next_action = None
@@ -716,6 +721,7 @@ for step in range(6000):
         elif vehicle.status == "MidTrip":
             traci.vehicle.setMaxSpeed(vehicleID, 22.22)
 
+    previous = position
     traci.simulationStep()
 
 traci.close()
