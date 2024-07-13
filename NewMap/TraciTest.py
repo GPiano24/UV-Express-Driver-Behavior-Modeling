@@ -692,8 +692,8 @@ for step in range(6000):
                         traci.person.appendWalkingStage(passenger_id, [passenger_destination])
                         traci.vehicle.moveToXY(vehicleID, "", 0, *passenger_destination)
         
-        leading_vehicle = traci.vehicle.getLeader(vehicleID, 10)
-        if traci.vehicle.getSpeed(vehicleID) == 0 and not is_vehicle_in_front(vehicleID, leading_vehicle):
+        leading_vehicle = traci.vehicle.getLeader(vehicleID, 5)
+        if traci.vehicle.getSpeed(vehicleID) == 0 and not is_vehicle_in_front(vehicleID, leading_vehicle, 5):
             traci.vehicle.setSpeed(vehicleID, traci.vehicle.getMaxSpeed(vehicleID))
 
         #Change UV Stats
