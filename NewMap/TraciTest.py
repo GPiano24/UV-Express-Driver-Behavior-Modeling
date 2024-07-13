@@ -507,15 +507,18 @@ if not validation:
 
     for i in range (2000):
         addRandomPeople(f"Person_{i}", pedestrian_edges)
-else:
-    addVehicle("PB0", "PB_route", PB_stops, "UV")
-
+    
 
 for step in range(6000):
-    
+
     if not validation:
         if step%100 == 0:
             addVehicle("PB" + str(step), "PB_route", PB_stops, "UV")
+            addVehicle("BP" + str(step+1), "BP_route", BP_stops, "UV")
+    else:
+        if step == 0:
+            addVehicle("PB" + str(step), "PB_route", PB_stops, "UV")
+        if step == 50:
             addVehicle("BP" + str(step+1), "BP_route", BP_stops, "UV")
 
     for vehicle in Vehicle_list:

@@ -7,7 +7,7 @@
 
     <input>
         <net-file value="NoPolyGons-Full-route.net.xml"/>
-        <route-files value="UVRoutes.rou.xml, validation.rou.xml, Validation-Routes.rou.xml"/>
+        <route-files value="UVRoutes.rou.xml, validation.rou.xml, Validation-Routes.rou.xml, southbound_validation.rou.xml"/>
         <additional-files value="testMap.add.xml"/>
     </input>
 
