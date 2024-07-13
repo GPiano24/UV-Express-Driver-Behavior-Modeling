@@ -508,7 +508,7 @@ if not validation:
     for i in range (2000):
         addRandomPeople(f"Person_{i}", pedestrian_edges)
     
-
+checked_passengers = []
 for step in range(6000):
 
     if not validation:
@@ -516,18 +516,18 @@ for step in range(6000):
             addVehicle("PB" + str(step), "PB_route", PB_stops, "UV")
             addVehicle("BP" + str(step+1), "BP_route", BP_stops, "UV")
     else:
-        if step == 0:
-            addVehicle("PB" + str(step), "PB_route", PB_stops, "UV")
+        # if step == 0:
+           # addVehicle("PB" + str(step), "PB_route", PB_stops, "UV")
         if step == 50:
             addVehicle("BP" + str(step+1), "BP_route", BP_stops, "UV")
 
     for vehicle in Vehicle_list:
         vehicleID = vehicle.vehicle
         position = traci.vehicle.getRoadID(vehicleID)
-        if validation:
-            if position in validation_edges:
-                if previous != position:
-                    print("Vehicle ", vehicleID, " is at ", position, "at step ", step)
+       # if validation:
+            #if position in validation_edges:
+                #if previous != position:
+                #    print("Vehicle ", vehicleID, " is at ", position, "at step ", step)
     
         observed_state = get_observed_state_from_sumo(vehicleID)
 
@@ -597,8 +597,9 @@ for step in range(6000):
                     is_waiting = "waiting for " in (traci.person.getStage(passenger_id)).description
                     passenger_position = traci.person.getPosition(passenger_id)
                     is_full = len(traci.vehicle.getPersonIDList(vehicleID)) >= 16
-                    if not is_full and is_waiting and sumolib.geomhelper.distance(traci.vehicle.getPosition(vehicleID), passenger_position) <= 20:
+                    if not is_full and is_waiting and sumolib.geomhelper.distance(traci.vehicle.getPosition(vehicleID), passenger_position) <= 20 and passenger_id not in checked_passengers:
                         to_pickup_count += 1
+                        checked_passengers.append(passenger_id)
                 if to_pickup_count != 0:
                     try:
                         traci.vehicle.setStop(vehicleID, traci.vehicle.getRoadID(vehicleID), traci.vehicle.getLanePosition(vehicleID) + 10.0, 0, duration=(10*to_pickup_count))
@@ -705,7 +706,7 @@ for step in range(6000):
         elif vehicle.status == "MidTrip":
             traci.vehicle.setMaxSpeed(vehicleID, 22.22)
 
-    previous = position
+   # previous = position
     traci.simulationStep()
 
 traci.close()

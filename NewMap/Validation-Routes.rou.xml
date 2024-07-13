@@ -24,8 +24,8 @@
     <flow id="Avida-Flow" type="valid-Motor" begin = "500" end = "545" number = "10" route = "valid_avida" departLane = "1" arrivalLane = "current" />
     <flow id="Avida-Flow-1" type="valid-Motor" begin = "530" end = "545" number = "10" route = "valid_avida" departLane = "2" arrivalLane = "current" />
 
-    <flow id="SM-Flow" type="valid-Car" begin = "800" end = "830" number = "10" route = "Valid-SM-Traffic" departLane = "1" arrivalLane = "current" />
-    <flow id="SM-Flow-1" type="valid-Car" begin = "828" end = "830" number = "10" route = "Valid-SM-Traffic" departLane = "2" arrivalLane = "current" />
+    <flow id="SM-Flow" type="valid-Car" begin = "800" end = "830" number = "10" route = "Valid-SM-Traffic" departLane = "0" arrivalLane = "current" />
+    <flow id="SM-Flow-1" type="valid-Car" begin = "828" end = "830" number = "10" route = "Valid-SM-Traffic" departLane = "1" arrivalLane = "current" />
 
     <flow id="Before-SSI-Flow" type="valid-Car" begin = "922" end = "928" number = "10" route = "valid-before-ssi" departLane = "1" arrivalLane = "current" />
     <flow id="Before-SSI-Flow-1" type="valid-Car" begin = "922" end = "928" number = "10" route = "valid-before-ssi" departLane = "2" arrivalLane = "current" />
