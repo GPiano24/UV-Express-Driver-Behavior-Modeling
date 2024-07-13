@@ -596,26 +596,6 @@ for step in range(6000):
                     is_full = len(traci.vehicle.getPersonIDList(vehicleID)) >= 16
                     if not is_full and is_waiting and sumolib.geomhelper.distance(traci.vehicle.getPosition(vehicleID), passenger_position) <= 20:
                         to_pickup_count += 1
-                        # if not stopped:
-                        #     try:
-                        #         traci.vehicle.setStop(vehicleID, traci.vehicle.getRoadID(vehicleID), traci.vehicle.getLanePosition(vehicleID) + 10.0, 0, duration=5)
-                        #         stopped = True
-                        #     except:
-                        #         try:
-                        #             traci.vehicle.setStop(vehicleID, traci.vehicle.getRoadID(vehicleID), traci.vehicle.getLanePosition(vehicleID) + 10.0, 1, duration=5)
-                        #             stopped = True
-                        #         except:
-                        #             None
-                        # elif not traci.vehicle.isStopped(vehicleID):
-                        #     try:
-                        #         traci.vehicle.setStop(vehicleID, traci.vehicle.getRoadID(vehicleID), traci.vehicle.getLanePosition(vehicleID) + 1.0, 0, duration=5)
-                        #         stopped = True
-                        #     except:
-                        #         try:
-                        #             traci.vehicle.setStop(vehicleID, traci.vehicle.getRoadID(vehicleID), traci.vehicle.getLanePosition(vehicleID) + 1.0, 1, duration=5)
-                        #             stopped = True
-                        #         except:
-                        #             None
                 if to_pickup_count != 0:
                     try:
                         traci.vehicle.setStop(vehicleID, traci.vehicle.getRoadID(vehicleID), traci.vehicle.getLanePosition(vehicleID) + 10.0, 0, duration=(10*to_pickup_count))
@@ -684,7 +664,7 @@ for step in range(6000):
                                 print(f"Failed to perform drop-off actions: {e}")
                                 continue  # Skip this passenger and continue with others
                             
-                    traci.vehicle.setSpeed(vehicleID, 11.11)
+                    traci.vehicle.setSpeed(vehicleID, traci.vehicle.getMaxSpeed(vehicleID))
 
         if observed_state == 'Vehicle':
             if next_action == 'ChangeLaneLeft':
@@ -694,7 +674,7 @@ for step in range(6000):
             elif next_action == 'Stop':
                 traci.vehicle.setSpeed(vehicleID, 0)
             elif next_action == 'Go':
-                traci.vehicle.setSpeed(vehicleID, traci.vehicle.getAllowedSpeed(vehicleID))
+                traci.vehicle.setSpeed(vehicleID, traci.vehicle.getMaxSpeed(vehicleID))
             elif next_action == 'Load':
                 # Implement loading logic
                 passengers_nearby = traci.vehicle.getPersonIDList(vehicleID)
@@ -711,9 +691,10 @@ for step in range(6000):
                     if sumolib.geomhelper.distance(traci.vehicle.getPosition(vehicleID), passenger_destination) <= 10:
                         traci.person.appendWalkingStage(passenger_id, [passenger_destination])
                         traci.vehicle.moveToXY(vehicleID, "", 0, *passenger_destination)
+        
         leading_vehicle = traci.vehicle.getLeader(vehicleID, 10)
         if traci.vehicle.getSpeed(vehicleID) == 0 and not is_vehicle_in_front(vehicleID, leading_vehicle):
-            traci.vehicle.setSpeed(vehicleID, traci.vehicle.getAllowedSpeed(vehicleID))
+            traci.vehicle.setSpeed(vehicleID, traci.vehicle.getMaxSpeed(vehicleID))
 
         #Change UV Stats
         if vehicle.status == "PickUp" or vehicle.status == "DropOff":
