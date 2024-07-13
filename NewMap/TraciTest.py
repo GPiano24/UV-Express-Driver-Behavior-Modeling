@@ -20,7 +20,7 @@ import random
 np.random.seed(1)
 
 validation = True
-validation_edges = [ "1054315838#0", "28740343", "352801326", "863419980#0", "111987075", "651079976", "109981573", "762672808"]
+validation_edges = ['-651079992', '109971518#0', '690977719', '879172096', '130048909#0', '1103307016#0', '-797720294', '1103029873', '555020918', '200093474']
 states = ['Passenger', 'Vehicle', 'Stoplight']
 n_states = len(states)
 
@@ -518,16 +518,16 @@ for step in range(6000):
     else:
         if step == 0:
            addVehicle("PB" + str(step), "PB_route", PB_stops, "UV")
-        if step == 50:
-            addVehicle("BP" + str(step+1), "BP_route", BP_stops, "UV")
+        #if step == 50:
+            #addVehicle("BP" + str(step+1), "BP_route", BP_stops, "UV")
 
     for vehicle in Vehicle_list:
         vehicleID = vehicle.vehicle
         position = traci.vehicle.getRoadID(vehicleID)
-        #if validation:
-            #if position in validation_edges:
-                #if previous != position:
-                    #print("Vehicle ", vehicleID, " is at ", position, "at step ", step)
+        if validation:
+            if position in validation_edges:
+                if previous != position:
+                    print("Vehicle ", vehicleID, " is at ", position, "at step ", step)
     
         observed_state = get_observed_state_from_sumo(vehicleID)
 
@@ -576,8 +576,9 @@ for step in range(6000):
         if vehicle.route == "PB_route":
             if traci.vehicle.getPersonNumber(vehicleID) == 16 and vehicle.status == "PickUp":
                 vehicle.status = "MidTrip"
-            elif vehicle.status == "PickUp" and position == "27498964" and vehicle.route == "PB_route":
+            elif vehicle.status == "PickUp" and position == "223959380" and vehicle.route == "PB_route":
                 vehicle.status = "MidTrip"
+                print("Vehicle Status: ", vehicle.status)
             elif vehicle.status == "MidTrip" and position.find("621030728") == 0 and vehicle.route == "PB_route":
                 vehicle.status = "DropOff"
         else:
@@ -716,9 +717,8 @@ for step in range(6000):
             traci.vehicle.setMaxSpeed(vehicleID, 11.11)
         elif vehicle.status == "MidTrip":
             traci.vehicle.setMaxSpeed(vehicleID, 22.22)
-        print(vehicle.status)
 
-    #previous = position
+    previous = position
     traci.simulationStep()
 
 traci.close()
