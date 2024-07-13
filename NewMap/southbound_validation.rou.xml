@@ -2,6 +2,22 @@
 
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
 
+<!-- Vehicles -->
+    <vType id="valid-Bus" vClass="bus" color="blue"/>
+    <vType id="valid-Car" vClass="passenger" color="yellow" maxSpeed= "4.0"/>
+    <vType id="valid-Jeep" vClass="passenger" color="magenta"/>
+    <vType id="valid-Motor" vClass="motorcycle" color="green" maxSpeed= "4.0"/>
+<!-- Routes -->
+
+    <route id="valid-City-Hall" edges="1054315838#0" color="0,128,128"/>
+    <route id="valid-cavitex-Bacoor" edges="28740343 857127171 676675609 676675609-AddedOffRampEdge 650299591 4486322 613962959 2670552 2670552-AddedOffRampEdge 575288141#1 540197124#0 540197124#1 540197124#2 568975568 492209951 1074261077 568975570-AddedOnRampEdge 568975570 563743937-AddedOnRampEdge 563743937 191681722 564221897 109733602 563748264 162328085 164277298" color="0,128,128"/>
+    <route id="valid-cavitex-stDom" edges="352801326 1054315845" color="0,128,128"/>
+    <route id="valid-divimart" edges="863419980#0 665515516#1 665515518#1 533386346 665787499 665787524 532222568" color="0,128,128"/>
+    <route id="valid-end-south" edges="-111987075 -879177025 -642893603 -872215578 871213663 1103029872 1033118917 651079971 660352590 651079972 114213935#1 -563021933" color="0,128,128"/>
+    <route id="valid-south-sm" edges="651079976 573710407 993441705 767517245 775185678 894843877#1 -690613619 -690613617 -918082989 -690613625" color="0,128,128"/>
+    <route id="valid-super8-town" edges="109981573 -183543979 -282194769" color="0,128,128"/>
+    <route id="valid_baclaran-cavitex" edges="762672808 762688381 632727188 909967551 909967551-AddedOffRampEdge 576201844 156782313 644875495-AddedOnRampEdge 644875495 644875492#1 667228839-AddedOnRampEdge 667228839 840378998 644875507#0 644875507#1 644875520 1092898261 1276265244 1276265240 22738849#0 245317928-AddedOnRampEdge 245317928 711708395 1074926268 711708392 711708392-AddedOffRampEdge 245317915#1 688086638-AddedOnRampEdge 688086638 645165804#0 369829194 245317930 245317930-AddedOffRampEdge 245317933#0" color="0,128,128"/>
+
 <!-- Drop Off sa Divimart -->
 
 <person id= "south_p_1" depart = "0">
