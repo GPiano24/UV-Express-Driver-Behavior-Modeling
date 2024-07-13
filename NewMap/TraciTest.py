@@ -583,7 +583,9 @@ for step in range(6000):
         else:
             if traci.vehicle.getPersonNumber(vehicleID) == 16 and vehicle.status == "PickUp":
                 vehicle.status = "MidTrip"
-            elif position.find("1054315838") == 0 and vehicle.status == "MidTrip":
+            elif vehicle.status == "PickUp" and position == "649171196" and vehicle.route == "BP_route":
+                vehicle.status = "MidTrip"
+            elif position.find("1054315838#0") == 0 and vehicle.status == "MidTrip":
                 vehicle.status = "DropOff"
 
         if observed_state == 'Passenger':
@@ -666,9 +668,11 @@ for step in range(6000):
                                 traci.vehicle.moveToXY(vehicleID, passenger_destination_edge_id, 0, passenger_destination_pos[0], passenger_destination_pos[1])
                             except traci.exceptions.TraCIException as e:
                                 print(f"Failed to perform drop-off actions: {e}")
-                                continue  # Skip this passenger and continue with others
-                            
-                    traci.vehicle.setSpeed(vehicleID, traci.vehicle.getMaxSpeed(vehicleID))
+                                continue  # Skip this passenger and continue with others   
+            if vehicle.status == "MidTrip":
+                traci.vehicle.setMaxSpeed(vehicleID, 22.22)
+            else:
+                traci.vehicle.setMaxSpeed(vehicleID, 11.11)
 
         if observed_state == 'Vehicle':
             if next_action == 'ChangeLaneLeft':
@@ -678,7 +682,10 @@ for step in range(6000):
             elif next_action == 'Stop':
                 traci.vehicle.setSpeed(vehicleID, 0)
             elif next_action == 'Go':
-                traci.vehicle.setSpeed(vehicleID, traci.vehicle.getMaxSpeed(vehicleID))
+                if vehicle.status == "MidTrip":
+                    traci.vehicle.setMaxSpeed(vehicleID, 22.22)
+                else:
+                    traci.vehicle.setMaxSpeed(vehicleID, 11.11)
             elif next_action == 'Load':
                 # Implement loading logic
                 passengers_nearby = traci.vehicle.getPersonIDList(vehicleID)
@@ -698,13 +705,17 @@ for step in range(6000):
         
         leading_vehicle = traci.vehicle.getLeader(vehicleID, 5)
         if traci.vehicle.getSpeed(vehicleID) == 0 and not is_vehicle_in_front(vehicleID, leading_vehicle, 5):
-            traci.vehicle.setSpeed(vehicleID, traci.vehicle.getMaxSpeed(vehicleID))
+                if vehicle.status == "MidTrip":
+                    traci.vehicle.setMaxSpeed(vehicleID, 22.22)
+                else:
+                    traci.vehicle.setMaxSpeed(vehicleID, 11.11)
 
         #Change UV Stats
         if vehicle.status == "PickUp" or vehicle.status == "DropOff":
             traci.vehicle.setMaxSpeed(vehicleID, 11.11)
         elif vehicle.status == "MidTrip":
             traci.vehicle.setMaxSpeed(vehicleID, 22.22)
+        print(vehicle.status)
 
     #previous = position
     traci.simulationStep()

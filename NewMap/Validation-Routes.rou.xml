@@ -6,9 +6,9 @@
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
     <!-- VTypes -->
     <vType id="valid-Bus" vClass="bus" color="blue"/>
-    <vType id="valid-Car" vClass="passenger" color="yellow" maxSpeed= "4.0"/>
+    <vType id="valid-Car" vClass="passenger" color="yellow" maxSpeed= "14.0"/>
     <vType id="valid-Jeep" vClass="passenger" color="magenta"/>
-    <vType id="valid-Motor" vClass="motorcycle" color="green" maxSpeed= "4.0"/>
+    <vType id="valid-Motor" vClass="motorcycle" color="green" maxSpeed= "16.0"/>
     <!-- Routes -->
     <route id="SSI-Traffic" edges="-651079992" color="0,128,128"/>
     <route id="Valid-Blvd-Entrance" edges="109971518#0" color="0,128,128"/>
@@ -47,15 +47,15 @@
     <flow id="Traffic-Divimart-Flow-1" type="valid-Car" begin = "1600" end = "1700" number = "10" route = "Valid-Traffic-Divimart" departLane = "2" arrivalLane = "current" />
     <flow id="Traffic-Divimart-Flow-2" type="valid-Car" begin = "1630" end = "1700" number = "10" route = "Valid-Traffic-Divimart" departLane = "3" arrivalLane = "current" />
 
-    <flow id="Traffic-StDOM-Cavitex-Flow" type="valid-Car" begin = "1988" end = "2100" number = "20" route = "Valid-Traffic-StDOM-Cavitex" departLane = "1" arrivalLane = "current" />
-    <flow id="Traffic-StDOM-Cavitex-Flow-1" type="valid-Car" begin = "1988" end = "2100" number = "20" route = "Valid-Traffic-StDOM-Cavitex" departLane = "2" arrivalLane = "current" />
+    <flow id="Traffic-StDOM-Cavitex-Flow" type="valid-Car" begin = "1988" end = "2100" number = "20" route = "Valid-Traffic-StDOM-Cavitex" departLane = "0" arrivalLane = "current" />
+    <flow id="Traffic-StDOM-Cavitex-Flow-1" type="valid-Car" begin = "1988" end = "2100" number = "20" route = "Valid-Traffic-StDOM-Cavitex" departLane = "1" arrivalLane = "current" />
 
-    <flow id="Cavitex-Baclaran-Car" type="valid-Car" begin= "2400" end= "3000" number="50" route = "valid_cavitex_baclaran" departLane = "1" arrivalLane = "current" />
-    <flow id="Cavitex-Baclaran-Bus" type="valid-Bus" begin= "2400" end= "3000" number="10" route = "valid_cavitex_baclaran" departLane = "1" arrivalLane = "current" />
-    <flow id="Cavitex-Baclaran-Car-1" type="valid-Car" begin= "2400" end= "3000" number="50" route = "valid_cavitex_baclaran" departLane = "2" arrivalLane = "current" />
-    <flow id="Cavitex-Baclaran-Bus-1" type="valid-Bus" begin= "2400" end= "3000" number="10" route = "valid_cavitex_baclaran" departLane = "2" arrivalLane = "current" />
-    <flow id="Cavitex-Baclaran-Car-2" type="valid-Car" begin= "2400" end= "3000" number="50" route = "valid_cavitex_baclaran" departLane = "3" arrivalLane = "current" />
-    <flow id="Cavitex-Baclaran-Bus-2" type="valid-Bus" begin= "2400" end= "3000" number="10" route = "valid_cavitex_baclaran" departLane = "3" arrivalLane = "current" />
+    <flow id="Cavitex-Baclaran-Car" type="valid-Car" begin= "2400" end= "3000" number="50" route = "valid_cavitex_baclaran" departLane = "0" arrivalLane = "current" />
+    <flow id="Cavitex-Baclaran-Bus" type="valid-Bus" begin= "2400" end= "3000" number="10" route = "valid_cavitex_baclaran" departLane = "0" arrivalLane = "current" />
+    <flow id="Cavitex-Baclaran-Car-1" type="valid-Car" begin= "2400" end= "3000" number="50" route = "valid_cavitex_baclaran" departLane = "1" arrivalLane = "current" />
+    <flow id="Cavitex-Baclaran-Bus-1" type="valid-Bus" begin= "2400" end= "3000" number="10" route = "valid_cavitex_baclaran" departLane = "1" arrivalLane = "current" />
+    <flow id="Cavitex-Baclaran-Car-2" type="valid-Car" begin= "2400" end= "3000" number="50" route = "valid_cavitex_baclaran" departLane = "2" arrivalLane = "current" />
+    <flow id="Cavitex-Baclaran-Bus-2" type="valid-Bus" begin= "2400" end= "3000" number="10" route = "valid_cavitex_baclaran" departLane = "2" arrivalLane = "current" />
 
 
     <!-- Add Stopped Vehicles sa Road -->
