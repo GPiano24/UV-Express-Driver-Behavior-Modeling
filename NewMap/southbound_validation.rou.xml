@@ -29,40 +29,40 @@
     <flow id="Baclaran-Cavitex-Flow-2" type="valid-Car" begin = "5" end= "200" number = "15" route = "valid_baclaran-cavitex" departLane = "2" arrivalLane = "current" />
     <flow id="Baclaran-Cavitex-Flow-Bus" type="valid-Bus" begin = "10" end= "200" number = "5" route = "valid_baclaran-cavitex" departLane = "0" arrivalLane = "current" />
 
-    <flow id="Cavitex-Bacoor-Flow" type="valid-Car" begin = "1450" end="1600" number = "20" route = "valid-cavitex-Bacoor" departLane = "1" arrivalLane = "current" />
-    <flow id="Cavitex-Bacoor-Flow-Bus" type="valid-Bus" begin = "1420" end="1600" number = "3" route = "valid-cavitex-Bacoor" departLane = "1" arrivalLane = "current" />
-    <flow id="Cavitex-Bacoor-Flow-1" type="valid-Car" begin = "1500" end="1600" number = "20" route = "valid-cavitex-Bacoor" departLane = "2" arrivalLane = "current" />
+    <flow id="Cavitex-Bacoor-Flow" type="valid-Car" begin = "1280" end="1500" number = "20" route = "valid-cavitex-Bacoor" departLane = "1" arrivalLane = "current" />
+    <flow id="Cavitex-Bacoor-Flow-Bus" type="valid-Bus" begin = "1300" end="1500" number = "3" route = "valid-cavitex-Bacoor" departLane = "1" arrivalLane = "current" />
+    <flow id="Cavitex-Bacoor-Flow-1" type="valid-Car" begin = "1350" end="1500" number = "20" route = "valid-cavitex-Bacoor" departLane = "2" arrivalLane = "current" />
 
-    <flow id="Cavitex-stDom-Flow" type="valid-Car" begin = "1720" end= "1900" number = "25" route = "valid-cavitex-stDom" departLane = "1" arrivalLane = "current" />
-    <flow id="Cavitex-stDom-Flow-Bus" type="valid-Bus" begin = "1750"  end= "1900" number = "5" route = "valid-cavitex-stDom" departLane = "1" arrivalLane = "current" />
-    <flow id="Cavitex-stDom-Flow-Motor" type="valid-Motor" begin = "1800"  end= "1900" number = "20" route = "valid-cavitex-stDom" departLane = "1" arrivalLane = "current" />
-    <flow id="Cavitex-stDom-Flow-Motor-1" type="valid-Motor" begin = "1830"  end= "1900" number = "20" route = "valid-cavitex-stDom" departLane = "2" arrivalLane = "current" />
-    <flow id="Cavitex-stDom-Flow-1" type="valid-Car" begin = "1860"  end= "1900" number = "25" route = "valid-cavitex-stDom" departLane = "2" arrivalLane = "current" />
+    <flow id="Cavitex-stDom-Flow" type="valid-Car" begin = "1600" end= "1800" number = "25" route = "valid-cavitex-stDom" departLane = "1" arrivalLane = "current" />
+    <flow id="Cavitex-stDom-Flow-Bus" type="valid-Bus" begin = "1650"  end= "1800" number = "5" route = "valid-cavitex-stDom" departLane = "1" arrivalLane = "current" />
+    <flow id="Cavitex-stDom-Flow-Motor" type="valid-Motor" begin = "1700"  end= "1800" number = "20" route = "valid-cavitex-stDom" departLane = "1" arrivalLane = "current" />
+    <flow id="Cavitex-stDom-Flow-Motor-1" type="valid-Motor" begin = "1730"  end= "1800" number = "20" route = "valid-cavitex-stDom" departLane = "2" arrivalLane = "current" />
+    <flow id="Cavitex-stDom-Flow-1" type="valid-Car" begin = "1680"  end= "1800" number = "25" route = "valid-cavitex-stDom" departLane = "2" arrivalLane = "current" />
 
-    <flow id="City-Hall-Flow" type="valid-Car" begin = "1820" end="2000" number = "50" route = "valid-City-Hall" departLane = "1" arrivalLane = "current" />
-    <flow id="City-Hall-Flow-1" type="valid-Car" begin = "1860" end="2000" number = "50" route = "valid-City-Hall" departLane = "2" arrivalLane = "current" />
-    <flow id="City-Hall-Flow-Motor" type="valid-Motor" begin = "1830" end="2000" number = "30" route = "valid-City-Hall" departLane = "1" arrivalLane = "current" />
-    <flow id="City-Hall-Flow-Motor-1" type="valid-Motor" begin = "1890" end="2000" number = "30" route = "valid-City-Hall" departLane = "2" arrivalLane = "current" />
+    <flow id="City-Hall-Flow" type="valid-Car" begin = "1900" end="2100" number = "50" route = "valid-City-Hall" departLane = "1" arrivalLane = "current" />
+    <flow id="City-Hall-Flow-1" type="valid-Car" begin = "1960" end="2100" number = "50" route = "valid-City-Hall" departLane = "2" arrivalLane = "current" />
+    <flow id="City-Hall-Flow-Motor" type="valid-Motor" begin = "2030" end="2100" number = "30" route = "valid-City-Hall" departLane = "1" arrivalLane = "current" />
+    <flow id="City-Hall-Flow-Motor-1" type="valid-Motor" begin = "1990" end="2100" number = "30" route = "valid-City-Hall" departLane = "2" arrivalLane = "current" />
 
-    <flow id="Divimart-Flow" type="valid-Car" begin = "2000" end= "2200" number = "50" route = "valid-divimart" departLane = "1" arrivalLane = "current" />
-    <flow id="Divimart-Flow-1" type="valid-Car" begin = "2100" end= "2200" number = "50" route = "valid-divimart" departLane = "2" arrivalLane = "current" />
-    <flow id="Divimart-Flow-Motor" type="valid-Motor" begin = "2050" end= "2200" number = "30" route = "valid-divimart" departLane = "1" arrivalLane = "current" />
-    <flow id="Divimart-Flow-Motor-1" type="valid-Motor" begin = "2150" end= "2200" number = "30" route = "valid-divimart" departLane = "2" arrivalLane = "current" />
+    <flow id="Divimart-Flow" type="valid-Car" begin = "2100" end= "2300" number = "50" route = "valid-divimart" departLane = "1" arrivalLane = "current" />
+    <flow id="Divimart-Flow-1" type="valid-Car" begin = "2150" end= "2300" number = "50" route = "valid-divimart" departLane = "2" arrivalLane = "current" />
+    <flow id="Divimart-Flow-Motor" type="valid-Motor" begin = "2200" end= "2300" number = "30" route = "valid-divimart" departLane = "1" arrivalLane = "current" />
+    <flow id="Divimart-Flow-Motor-1" type="valid-Motor" begin = "2230" end= "2300" number = "30" route = "valid-divimart" departLane = "2" arrivalLane = "current" />
 
-    <flow id="Super8-Town-Flow" type="valid-Car" begin = "2400" end="2550" number = "10" route = "valid-super8-town" departLane = "1" arrivalLane = "current" />
-    <flow id="Super8-Town-Flow-1" type="valid-Car" begin = "2450" end="2550" number = "10" route = "valid-super8-town" departLane = "2" arrivalLane = "current" />
-    <flow id="Super8-Town-Flow-Motor" type="valid-Motor" begin = "2500" end="2550" number = "5" route = "valid-super8-town" departLane = "1" arrivalLane = "current" />
-    <flow id="Super8-Town-Flow-Motor-1" type="valid-Motor" begin = "2030" end="2550" number = "5" route = "valid-super8-town" departLane = "2" arrivalLane = "current" />
+    <flow id="Super8-Town-Flow" type="valid-Car" begin = "2500" end="2700" number = "10" route = "valid-super8-town" departLane = "1" arrivalLane = "current" />
+    <flow id="Super8-Town-Flow-1" type="valid-Car" begin = "2550" end="2700" number = "10" route = "valid-super8-town" departLane = "2" arrivalLane = "current" />
+    <flow id="Super8-Town-Flow-Motor" type="valid-Motor" begin = "2580" end="2700" number = "5" route = "valid-super8-town" departLane = "1" arrivalLane = "current" />
+    <flow id="Super8-Town-Flow-Motor-1" type="valid-Motor" begin = "2620" end="2700" number = "5" route = "valid-super8-town" departLane = "2" arrivalLane = "current" />
 
-    <flow id="South-SM-Flow" type="valid-Car" begin = "2700" end="2900" number = "20" route = "valid-south-sm" departLane = "1" arrivalLane = "current" />
-    <flow id="South-SM-Flow-1" type="valid-Car" begin = "2750" end="2900" number = "20" route = "valid-south-sm" departLane = "2" arrivalLane = "current" />
-    <flow id="South-SM-Flow-Motor" type="valid-Motor" begin = "2725" end="2900" number = "10" route = "valid-south-sm" departLane = "1" arrivalLane = "current" />
-    <flow id="South-SM-Flow-Motor-1" type="valid-Motor" begin = "2775" end="2900" number = "10" route = "valid-south-sm" departLane = "2" arrivalLane = "current" />
+    <flow id="South-SM-Flow" type="valid-Car" begin = "2900" end="3100" number = "20" route = "valid-south-sm" departLane = "1" arrivalLane = "current" />
+    <flow id="South-SM-Flow-1" type="valid-Car" begin = "2950" end="3100" number = "20" route = "valid-south-sm" departLane = "2" arrivalLane = "current" />
+    <flow id="South-SM-Flow-Motor" type="valid-Motor" begin = "2850" end="3100" number = "10" route = "valid-south-sm" departLane = "1" arrivalLane = "current" />
+    <flow id="South-SM-Flow-Motor-1" type="valid-Motor" begin = "3000" end="3100" number = "10" route = "valid-south-sm" departLane = "2" arrivalLane = "current" />
 
-    <flow id="End-South-Flow" type="valid-Car" begin = "3000" end= "3200" number = "10" route = "valid-end-south" departLane = "1" arrivalLane = "current" />
-    <flow id="End-South-Flow-1" type="valid-Car" begin = "3050" end= "3200" number = "10" route = "valid-end-south" departLane = "0" arrivalLane = "current" />
-    <flow id="End-South-Flow-Motor" type="valid-Motor" begin = "3025" end= "3200" number = "15" route = "valid-end-south" departLane = "1" arrivalLane = "current" />
-    <flow id="End-South-Flow-Motor-1" type="valid-Motor" begin = "3100" end= "3200" number = "15" route = "valid-end-south" departLane = "0" arrivalLane = "current" />
+    <flow id="End-South-Flow" type="valid-Car" begin = "3200" end= "3400" number = "10" route = "valid-end-south" departLane = "1" arrivalLane = "current" />
+    <flow id="End-South-Flow-1" type="valid-Car" begin = "3250" end= "3400" number = "10" route = "valid-end-south" departLane = "0" arrivalLane = "current" />
+    <flow id="End-South-Flow-Motor" type="valid-Motor" begin = "3225" end= "3400" number = "15" route = "valid-end-south" departLane = "1" arrivalLane = "current" />
+    <flow id="End-South-Flow-Motor-1" type="valid-Motor" begin = "3300" end= "3400" number = "15" route = "valid-end-south" departLane = "0" arrivalLane = "current" />
 
 <!-- Drop Off sa Divimart -->
 
