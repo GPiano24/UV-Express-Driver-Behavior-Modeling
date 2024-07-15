@@ -154,6 +154,8 @@ model.transmat_ = transition_probability
 model.emissionprob_ = emission_probability
 model.fit(events_numerical)
 
+model_transition_probability = model.transmat_
+model_emission_probability = model.emissionprob_
 
 log_probability, hidden_states = model.decode(events_numerical)
 print("Log Probability: ", log_probability)
@@ -547,9 +549,9 @@ for step in range(6000):
             previous_observation_index = observations.index(previous_observation) if previous_observation is not None else None
 
             if previous_hidden_state_index is not None and previous_observation_index is not None:
-                next_hidden_state = np.argmax(transition_probability[previous_hidden_state_index])
+                next_hidden_state = np.argmax(model_transition_probability[previous_hidden_state_index])
             else:
-                next_hidden_state = np.argmax(transition_probability[current_hidden_state_index])
+                next_hidden_state = np.argmax(model_transition_probability[current_hidden_state_index])
 
             emission_probabilities_next_state = emission_probability[next_hidden_state]
 
