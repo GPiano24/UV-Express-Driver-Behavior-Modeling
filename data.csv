@@ -5,7 +5,7 @@ Passenger,P,Stop,Right
 Passenger,P,Load,Right
 Passenger,P,Go,Right
 Vehicle,V,Stop,Right
-Vehicle,V,Load,Right
+Passenger,P,Load,Right
 Vehicle,V,Go,Right
 Passenger,P,Stop,Right
 Passenger,P,Load,Right
