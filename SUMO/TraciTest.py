@@ -21,19 +21,21 @@ np.random.seed(1)
 
 validation = True
 validation_edges = [ "1054315838#0", "28740343", "352801326", "863419980#0", "111987075", "651079976", "109981573", "762672808"]
+
+# HMM model
+# Create List of Possible Hidden States
 states = ['Passenger', 'Vehicle', 'Stoplight']
 n_states = len(states)
-
-# Oberservable states
-observations = ['ChangeLaneLeft', 'ChangeLaneRight', 'Stop', 'Go', 'Load', 'Unload']
-#						0					1		   2      3      4        5
-n_observations = len(observations)
-
 state_labels = {state: i for i, state in enumerate(states)}
+
+# Create List of Possible Oberservable states
+observations = ['ChangeLaneLeft', 'ChangeLaneRight', 'Stop', 'Go', 'Load', 'Unload']
+n_observations = len(observations)
 
 # Load annotated events csv file
 my_file = open('data.csv', 'r', encoding='utf-8-sig')
 
+# Get the data from the file
 observed_states = []
 observed_state_changes = []
 observed_events = []
@@ -44,16 +46,14 @@ for line in my_file:
     observed_state_changes.append(l[1])
     observed_events.append(l[2])
 
+# Calculate the start probabilities
 total_count = len(observed_states)
-
-# Get state probabilities
 sp_passenger = observed_states.count('Passenger') / total_count
 sp_vehicle = observed_states.count('Vehicle') / total_count
 sp_stoplight = observed_states.count('Stoplight') / total_count
-
 state_probability = np.array([sp_passenger, sp_vehicle, sp_stoplight])
 
-# Get transition states
+# Get the transition states
 temp = ''
 transition_state = []
 for cur_state in observed_state_changes:
@@ -65,7 +65,7 @@ for cur_state in observed_state_changes:
             transition_state.append(word)
             temp = cur_state
 
-# Get transition probabilities
+# Calculate transition probabilities
 total_p = transition_state.count('PP') + transition_state.count('PV') + transition_state.count('PS')
 total_v = transition_state.count('VP') + transition_state.count('VV') + transition_state.count('VS')
 total_s = transition_state.count('SP') + transition_state.count('SV') + transition_state.count('SS')
@@ -114,7 +114,7 @@ for i in range(0, total_count):
 
 events_numerical = np.array([temp_events_numerical]).reshape(-1,1)
 
-# Get emission probabilities
+# Calculate emission probabilities
 
 # P to event X emission probabilities
 total_ep = emission.count('Passenger0') + emission.count('Passenger1') + emission.count('Passenger2') + emission.count('Passenger3') + emission.count('Passenger4') + emission.count('Passenger5')
@@ -147,6 +147,7 @@ emission_probability = np.array([[ep_p0, ep_p1, ep_p2, ep_p3, ep_p4, ep_p5],
                                  [ep_v0, ep_v1, ep_v2, ep_v3, ep_v4, ep_v5],
                                  [ep_s0, ep_s1, ep_s2, ep_s3, ep_s4, ep_s5]])
 
+# Create and Train the HMM model
 model = hmm.CategoricalHMM(n_components=len(states), n_features=len(observations), init_params="")
 
 model.startprob_ = state_probability
@@ -157,16 +158,7 @@ model.fit(events_numerical)
 model_transition_probability = model.transmat_
 model_emission_probability = model.emissionprob_
 
-log_probability, hidden_states = model.decode(events_numerical)
-print("Log Probability: ", log_probability)
-print("Hidden States: ")
-for i in hidden_states[0:100]:
-    print(states[i])
-hidden_states = model.predict(events_numerical)
-print("Hidden States: ")
-for i in hidden_states[0:100]:
-    print(states[i])
-
+# Start SUMO
 sumoCmd = ["sumo-gui", "-c", "testMap.sumocfg", "-d", "20"]
 traci.start(sumoCmd)
 
@@ -233,23 +225,6 @@ def is_vehicle_in_front(vehicleID, leading_vehicle, distance_threshold=10):
         
         # Get list of all vehicles known to TraCI
         nearby_vehicles = traci.vehicle.getIDList()
-        
-        # for nearby_vehicle in nearby_vehicles:
-        #     if nearby_vehicle == vehicleID:
-        #         continue  # Skip checking against itself
-            
-        #     # Get lane ID and lane position of the nearby vehicle
-        #     nearby_lane_id = traci.vehicle.getLaneID(nearby_vehicle)
-        #     nearby_lane_position = traci.vehicle.getLanePosition(nearby_vehicle)
-            
-        #     # Check if the nearby vehicle is on the same lane and in front
-        #     if nearby_lane_id == current_lane_id and nearby_lane_position > current_lane_position:
-        #         # Calculate the distance between the current vehicle and the nearby vehicle
-        #         distance = nearby_lane_position - current_lane_position
-                
-        #         # Check if the nearby vehicle is within the distance threshold
-        #         if distance < distance_threshold:
-        #             return True
                 
         lead_id, distance = leading_vehicle
         if distance <= distance_threshold:
@@ -266,7 +241,6 @@ def get_observed_state_from_sumo(vehicle_id):
     # Check if there's a pedestrian ahead (assuming pedestrians are represented as passengers)
     for person_id in traci.person.getIDList():
         person_position = traci.person.getPosition(person_id)
-        # Check if the person is within a certain range (e.g., 10 meters)
         is_full = len(traci.vehicle.getPersonIDList(vehicleID)) >= 16
         if not is_full and "waiting for " in (traci.person.getStage(person_id)).description and sumolib.geomhelper.distance(traci.vehicle.getPosition(vehicleID), person_position) <= 20:
             return 'Passenger'
@@ -274,20 +248,12 @@ def get_observed_state_from_sumo(vehicle_id):
     # Detect if a passenger on board is ready to alight
     passengers_on_board = traci.vehicle.getPersonIDList(vehicleID)
     for passenger_id in passengers_on_board:
-        # Get the last destination edge for the passenger
         edges = traci.person.getEdges(passenger_id, traci.person.getRemainingStages(passenger_id) - 1)
-        # print(passenger_id, " edges: ", edges[0])
         if edges:
-            passenger_destination_edge_id = edges[0]  # Assuming the last edge is the first in the list
-
-            # Get the length of the lane directly using the edge ID
+            passenger_destination_edge_id = edges[0]
             try:
                 passenger_destination_length = traci.lane.getLength(passenger_destination_edge_id)
-                print("Passenger destination length:", passenger_destination_length)
-
-                # Convert length to position (if needed)
                 passenger_destination_pos = traci.simulation.convert2D(passenger_destination_edge_id, passenger_destination_length)
-
                 if sumolib.geomhelper.distance(traci.vehicle.getPosition(vehicleID), passenger_destination_pos) <= 10:
                     return 'Passenger'
             except traci.exceptions.TraCIException:
@@ -616,61 +582,49 @@ for step in range(6000):
                         
             passengers_on_board = traci.vehicle.getPersonIDList(vehicleID)
             for passenger_id in passengers_on_board:
-                # Example: Get the current stage of the passenger
                 current_stage = traci.person.getStage(passenger_id)
                 
-                # Example: Check if the passenger is ready to drop off (adjust condition based on your logic)
                 if current_stage and "driving" in current_stage.description:
-                    # Example: Get the last edge where the passenger wants to alight (replace with actual logic)
                     edges = traci.person.getEdges(passenger_id, traci.person.getRemainingStages(passenger_id) - 1)
                     if edges:
                         passenger_destination_edge_id = edges[0]  # Assuming the last edge is the first in the list
                         
-                        # Example: Get the number of lanes for the destination edge
                         try:
                             num_lanes = traci.edge.getLaneNumber(passenger_destination_edge_id)
                         except traci.exceptions.TraCIException as e:
                             print(f"Failed to get number of lanes: {e}")
-                            continue  # Skip this passenger and continue with others
+                            continue
                         
-                        # Example: Construct the lane ID (assuming we want the first lane, index 0)
                         passenger_destination_lane_id = f"{passenger_destination_edge_id}_0"
                         
-                        # Example: Get the length of the lane
                         try:
                             passenger_destination_length = traci.lane.getLength(passenger_destination_lane_id)
                         except traci.exceptions.TraCIException as e:
                             print(f"Failed to get lane length: {e}")
-                            continue  # Skip this passenger and continue with others
+                            continue
                         
-                        # Example: Convert length to position (if needed)
                         passenger_destination_pos = traci.simulation.convert2D(passenger_destination_edge_id, passenger_destination_length)
                         
-                        # Example: Calculate distance between vehicle and drop-off point
+                        # Calculate distance between vehicle and drop-off point
                         vehicle_position = traci.vehicle.getPosition(vehicleID)
                         distance_to_destination = sumolib.geomhelper.distance(vehicle_position, passenger_destination_pos)
                         
                         # Check if vehicle is close enough to the drop-off point
-                        if distance_to_destination <= 10:
-                            print(traci.vehicle.getRoadID(vehicleID), " alights passenger ", passenger_id, " at ", passenger_destination_pos)
-                            
-                            # Set a stop near the drop-off point (example using lane position)
+                        if distance_to_destination <= 10:                            
+                            # Set a stop near the drop-off point
                             try:
                                 traci.vehicle.setStop(vehicleID, traci.vehicle.getRoadID(vehicleID), traci.vehicle.getLanePosition(vehicleID), 0, duration=10)
                             except traci.exceptions.TraCIException as e:
                                 print(f"Failed to set stop: {e}")
-                                continue  # Skip this passenger and continue with others
+                                continue
                             
-                            # Perform drop-off actions
                             try:
-                                # Example: Append walking stage for the passenger to reach their destination
                                 traci.person.appendWalkingStage(passenger_id, [passenger_destination_edge_id], arrivalPos=passenger_destination_length)
-                                
-                                # Example: Optionally move the vehicle precisely to the drop-off position
+
                                 traci.vehicle.moveToXY(vehicleID, passenger_destination_edge_id, 0, passenger_destination_pos[0], passenger_destination_pos[1])
                             except traci.exceptions.TraCIException as e:
                                 print(f"Failed to perform drop-off actions: {e}")
-                                continue  # Skip this passenger and continue with others   
+                                continue
             if vehicle.status == "MidTrip":
                 traci.vehicle.setMaxSpeed(vehicleID, 22.22)
             else:
