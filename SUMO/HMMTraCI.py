@@ -159,7 +159,7 @@ model_transition_probability = model.transmat_
 model_emission_probability = model.emissionprob_
 
 # Start SUMO
-sumoCmd = ["sumo-gui", "-c", "testMap.sumocfg", "-d", "20"]
+sumoCmd = ["sumo-gui", "-c", "UVExpressSimulation.sumocfg", "-d", "20"]
 traci.start(sumoCmd)
 
 bus_stops = traci.busstop.getIDList()
