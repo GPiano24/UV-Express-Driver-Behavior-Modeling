@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2024-07-12 09:49:05 by Eclipse SUMO netedit Version 1.19.0
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <!-- VTypes -->
+    <vType id="valid-Bus" vClass="bus" color="blue"/>
+    <vType id="valid-Car" vClass="passenger" color="yellow" maxSpeed= "14.0"/>
+    <vType id="valid-Jeep" vClass="passenger" color="magenta"/>
+    <vType id="valid-Motor" vClass="motorcycle" color="green" maxSpeed= "16.0"/>
+    <!-- Routes -->
+    <route id="SSI-Traffic" edges="-651079992" color="0,128,128"/>
+    <route id="Valid-Blvd-Entrance" edges="109971518#0" color="0,128,128"/>
+    <route id="Valid-Perps-Town" edges="690977719" color="0,128,128"/>
+    <route id="Valid-SM-Traffic" edges="879172096 690613617 690613619" color="0,128,128"/>
+    <route id="Valid-Traffic-Divimart" edges="130048909#0" color="0,128,128"/>
+    <route id="Valid-Traffic-StDOM-Cavitex" edges="1103307016#0 555020953#0 564298119#1 200093474" color="0,128,128"/>
+    <route id="valid-before-ssi" edges="-797720294" color="0,128,128"/>
+    <route id="valid_avida" edges="1103029873 870991314" color="0,128,128"/>
+    <route id="valid_cavitex_baclaran" edges="555020918 734379340 23959380 724670137 22730660 724670138 22730634 22730634-AddedOffRampEdge 555020891 568975575#0 568975575#1 568975566 555020886 575293226#0 575293226#1 563743939#0 563743939#1-AddedOnRampEdge 563743939#1 708734828-AddedOnRampEdge 708734828 699824385 4486320 856789357 1210746304 687100199 856789358 856820281 650299588 650299586 563743949 650299587 857127169 650299590 650299590-AddedOffRampEdge 649171195 621030749#0 621030728 245238968 678960768#0 369829204#0 355084527 632555219 22738847 245317925#0 423798481 644875508 840378999 840378999-AddedOffRampEdge 667228840 644875524 775216094 576201832 665068121 791530031 576201831 111735144 918504765 111735143 931457626 709834494 324152520#2 1124732197 230520303 844731941"/>
+    
+    <!-- Create Flows -->
+    <flow id="Avida-Flow" type="valid-Motor" begin = "500" end = "545" number = "10" route = "valid_avida" departLane = "1" arrivalLane = "current" />
+    <flow id="Avida-Flow-1" type="valid-Motor" begin = "530" end = "545" number = "10" route = "valid_avida" departLane = "2" arrivalLane = "current" />
+
+    <flow id="SM-Flow" type="valid-Car" begin = "800" end = "830" number = "10" route = "Valid-SM-Traffic" departLane = "0" arrivalLane = "current" />
+    <flow id="SM-Flow-1" type="valid-Car" begin = "828" end = "830" number = "10" route = "Valid-SM-Traffic" departLane = "1" arrivalLane = "current" />
+
+    <flow id="Before-SSI-Flow" type="valid-Car" begin = "922" end = "928" number = "10" route = "valid-before-ssi" departLane = "1" arrivalLane = "current" />
+    <flow id="Before-SSI-Flow-1" type="valid-Car" begin = "922" end = "928" number = "10" route = "valid-before-ssi" departLane = "2" arrivalLane = "current" />
+
+    <flow id="SSI-Flow" type="valid-Car" begin = "1020" end = "1028" number = "10" route = "SSI-Traffic" departLane = "1" arrivalLane = "current" />
+    <flow id="SSI-Flow-1" type="valid-Car" begin = "1000" end = "1028" number = "10" route = "SSI-Traffic" departLane = "2" arrivalLane = "current" />
+
+    <flow id="Perps-Town-Flow" type="valid-Car" begin = "1056" end = "3600" number = "20" route = "Valid-Perps-Town" departLane = "1" arrivalLane = "current" />
+    <flow id="Perps-Town-Flow-1" type="valid-Car" begin = "1000" end = "3600" number = "20" route = "Valid-Perps-Town" departLane = "2" arrivalLane = "current" />
+
+    <flow id="Blvd-Entrance-Flow" type="valid-Car" begin = "1350" end = "3600" number = "30" route = "Valid-Blvd-Entrance" departLane = "1" arrivalLane = "current" />
+    <flow id="Blvd-Entrance-Flow-Motor" type="valid-Motor" begin = "1375" end = "3600" number = "30" route = "Valid-Blvd-Entrance" departLane = "1" arrivalLane = "current" />
+    <flow id="Blvd-Entrance-Flow-1" type="valid-Car" begin = "1300" end = "3600" number = "30" route = "Valid-Blvd-Entrance" departLane = "2" arrivalLane = "current" />
+    <flow id="Blvd-Entrance-Flow-Motor-1" type="valid-Motor" begin = "1375" end = "3600" number = "30" route = "Valid-Blvd-Entrance" departLane = "2" arrivalLane = "current" />
+    <flow id="Blvd-Entrance-Flow-2" type="valid-Car" begin = "1400" end = "3600" number = "30" route = "Valid-Blvd-Entrance" departLane = "3" arrivalLane = "current" />
+    <flow id="Blvd-Entrance-Flow-Motor-2" type="valid-Motor" begin = "1375" end = "3600" number = "30" route = "Valid-Blvd-Entrance" departLane = "3" arrivalLane = "current" />
+
+    <flow id="Traffic-Divimart-Flow" type="valid-Car" begin = "1675" end = "1700" number = "10" route = "Valid-Traffic-Divimart" departLane = "1" arrivalLane = "current" />
+    <flow id="Traffic-Divimart-Flow-1" type="valid-Car" begin = "1600" end = "1700" number = "10" route = "Valid-Traffic-Divimart" departLane = "2" arrivalLane = "current" />
+    <flow id="Traffic-Divimart-Flow-2" type="valid-Car" begin = "1630" end = "1700" number = "10" route = "Valid-Traffic-Divimart" departLane = "3" arrivalLane = "current" />
+
+    <flow id="Traffic-StDOM-Cavitex-Flow" type="valid-Car" begin = "1988" end = "2100" number = "20" route = "Valid-Traffic-StDOM-Cavitex" departLane = "0" arrivalLane = "current" />
+    <flow id="Traffic-StDOM-Cavitex-Flow-1" type="valid-Car" begin = "1988" end = "2100" number = "20" route = "Valid-Traffic-StDOM-Cavitex" departLane = "1" arrivalLane = "current" />
+
+    <flow id="Cavitex-Baclaran-Car" type="valid-Car" begin= "2400" end= "3000" number="50" route = "valid_cavitex_baclaran" departLane = "0" arrivalLane = "current" />
+    <flow id="Cavitex-Baclaran-Bus" type="valid-Bus" begin= "2400" end= "3000" number="10" route = "valid_cavitex_baclaran" departLane = "0" arrivalLane = "current" />
+    <flow id="Cavitex-Baclaran-Car-1" type="valid-Car" begin= "2400" end= "3000" number="50" route = "valid_cavitex_baclaran" departLane = "1" arrivalLane = "current" />
+    <flow id="Cavitex-Baclaran-Bus-1" type="valid-Bus" begin= "2400" end= "3000" number="10" route = "valid_cavitex_baclaran" departLane = "1" arrivalLane = "current" />
+    <flow id="Cavitex-Baclaran-Car-2" type="valid-Car" begin= "2400" end= "3000" number="50" route = "valid_cavitex_baclaran" departLane = "2" arrivalLane = "current" />
+    <flow id="Cavitex-Baclaran-Bus-2" type="valid-Bus" begin= "2400" end= "3000" number="10" route = "valid_cavitex_baclaran" departLane = "2" arrivalLane = "current" />
+
+
+    <!-- Add Stopped Vehicles sa Road -->
+
+
+
+
+</routes>

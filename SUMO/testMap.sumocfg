@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2024-06-25 23:46:25 by Eclipse SUMO sumo Version 1.19.0
+-->
+
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="NoPolyGons-Full-route.net.xml"/>
+        <route-files value="UVRoutes.rou.xml, validation.rou.xml, Validation-Routes.rou.xml"/>
+        <additional-files value="testMap.add.xml"/>
+    </input>
+
+    <time>
+        <begin value="0"/>
+        <end value="5000"/>
+    </time>
+
+</configuration>
