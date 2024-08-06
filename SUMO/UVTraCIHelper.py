@@ -4,6 +4,18 @@ import Vehicle
 import numpy as np
 
 def is_vehicle_in_front(vehicleID, leading_vehicle, distance_threshold=10):
+    """
+    Checks if there is a vehicle in front of the current vehicle
+
+    Arguments:
+        vehicleID {str} -- the ID of the vehicle to check
+        leading_vehicle {tuple} -- a tuple containing the ID of the leading vehicle and the distance to it
+        distance_threshold {int} -- the distance threshold to consider a vehicle in front
+
+    Returns:
+        bool -- True if there is a vehicle in front, False otherwise
+    """
+
     # Get current lane ID and lane position of the vehicle
     if leading_vehicle is not None:
         current_lane_id = traci.vehicle.getLaneID(vehicleID)
@@ -19,6 +31,16 @@ def is_vehicle_in_front(vehicleID, leading_vehicle, distance_threshold=10):
     return False
 
 def get_observed_state_from_sumo(vehicle_id):
+    """
+    Gets the observed state of a vehicle from SUMO
+
+    Arguments:
+        vehicle_id {str} -- the ID of the vehicle to get the observed state from
+
+    Returns:
+        str -- the observed state of the vehicle
+    """
+
     # Retrieve the vehicle's position
     vehicle_position = traci.vehicle.getPosition(vehicle_id)
     # Retrieve the vehicle's lane index
@@ -58,6 +80,18 @@ def get_observed_state_from_sumo(vehicle_id):
     return None
 
 def addVehicle(Vehicle_list, veh_id, route_id, PB_stops, BP_stops, typeID):
+    """
+    Adds a UV Express vehicle to the simulation
+
+    Arguments:
+        Vehicle_list {List} -- a list of Vehicle objects
+        veh_id {str} -- the ID of the vehicle to add
+        route_id {str} -- the ID of the route to assign to the vehicle
+        PB_stops {List} -- a list of bus stops for the PB route
+        BP_stops {List} -- a list of bus stops for the BP route
+        typeID {str} -- the type of the vehicle to add
+    """
+
     traci.vehicle.add(veh_id, route_id, typeID=typeID, line="UV")
     if route_id == "PB_route":
         PB_pickup = PB_stops[:45]
@@ -73,6 +107,18 @@ def addVehicle(Vehicle_list, veh_id, route_id, PB_stops, BP_stops, typeID):
             traci.vehicle.setBusStop(veh_id, stop, 10)
 
 def UVStep(vehicle, state_labels, model_transition_probability, model_emission_probability, observations, checked_passengers):
+    """
+    Performs a step for a UV Express vehicle in the simulation
+
+    Arguments:
+        vehicle {Vehicle} -- the vehicle to perform a step for
+        state_labels {Dict} -- a dictionary of state labels
+        model_transition_probability {List} -- the transition probabilities of the model
+        model_emission_probability {List} -- the emission probabilities of the model
+        observations {List} -- a list of observations
+        checked_passengers {List} -- a list of passengers that have been checked
+    """
+
     vehicleID = vehicle.vehicle
     position = traci.vehicle.getRoadID(vehicleID)
     #if validation:

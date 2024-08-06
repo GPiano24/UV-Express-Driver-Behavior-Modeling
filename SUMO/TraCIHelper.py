@@ -5,16 +5,44 @@ import random
 
 
 def get_numeric_part(bus_stop_id):
+    """
+    Gets the numeric part of the bus stop ID
+
+    Arguments:
+        bus_stop_id {str} -- The bus stop ID
+
+    Returns:
+        int -- The numeric part of the bus stop ID
+    """
+
     match = re.search(r'(\d+)$', bus_stop_id)
     return int(match.group(1)) if match else float('inf')
 
 def check_vehicle_exists(vehicleID):
+    """
+    Checks if a vehicle exists in the simulation
+
+    Arguments:
+        vehicleID {str} -- The vehicle ID
+    """
+
     if vehicleID in traci.vehicle.getIDList():
         return True
     return False
 
 #Vehicles Other than UVs
 def addRandomVehicle(type, vehID, vehID_num,PB_stops, BP_stops, jeep_stops):
+    """
+    Adds a random vehicle to the simulation
+
+    Arguments:
+        type {str} -- The type of vehicle
+        vehID {str} -- The vehicle ID
+        vehID_num {int} -- The vehicle ID number
+        PB_stops {List} -- List of bus stops for the PB route
+        BP_stops {List} -- List of bus stops for the BP route
+        jeep_stops {List} -- List of bus stops for the jeep route
+    """
     typeID = type
     routes = [f"r_{i}" for i in range(1, 31)]  # Create a list of routes r_1 to r_50
     if typeID == "Car":
@@ -50,6 +78,19 @@ def addRandomVehicle(type, vehID, vehID_num,PB_stops, BP_stops, jeep_stops):
 
 #Add Random People
 def addRandomPeople(p_id, edgelist, PB_pickup, PB_dropoff, BP_Pickup, BP_Dropoff, jeep_stops):
+    """
+    Adds a random person to the simulation
+
+    Arguments:
+        p_id {str} -- The person ID
+        edgelist {List} -- List of pedestrian edges
+        PB_pickup {List} -- List of bus stops for the PB route
+        PB_dropoff {List} -- List of bus stops for the PB route
+        BP_Pickup {List} -- List of bus stops for the BP route
+        BP_Dropoff {List} -- List of bus stops for the BP route
+        jeep_stops {List} -- List of bus stops for the jeep route
+    """
+
     options = ["UV", "Walk", "Bus", "Jeep"]
     p_action = random.choice(options)
     edges = []
@@ -172,6 +213,25 @@ def addRandomPeople(p_id, edgelist, PB_pickup, PB_dropoff, BP_Pickup, BP_Dropoff
                 print(f"Error adding person {p_id} to edge {start} for Jeep")
 
 def addAgents(validation, n_cars, n_motor, n_jeep, n_bus, n_people, PB_stops, BP_stops, jeep_stops, pedestrian_edges, PB_pickup, PB_dropoff, BP_Pickup, BP_Dropoff):
+    """
+    Adds multiple random vehicles and people to the simulation
+    
+    Arguments:
+        validation {bool} -- If True, adds only one vehicle and one person for validation
+        n_cars {int} -- Number of cars to add
+        n_motor {int} -- Number of motorcycles to add
+        n_jeep {int} -- Number of jeeps to add
+        n_bus {int} -- Number of buses to add
+        n_people {int} -- Number of people to add
+        PB_stops {List} -- List of bus stops for the PB route
+        BP_stops {List} -- List of bus stops for the BP route
+        jeep_stops {List} -- List of bus stops for the jeep route
+        pedestrian_edges {List} -- List of pedestrian edges
+        PB_pickup {List} -- List of bus stops for the PB route
+        PB_dropoff {List} -- List of bus stops for the PB route
+        BP_Pickup {List} -- List of bus stops for the BP route
+        BP_Dropoff {List} -- List of bus stops for the BP route
+    """
     if not validation:
         for i in range(n_cars):
             addRandomVehicle("Car", f"Random_{i}", i, PB_stops, BP_stops, jeep_stops)

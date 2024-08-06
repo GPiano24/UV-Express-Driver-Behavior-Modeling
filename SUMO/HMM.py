@@ -7,9 +7,8 @@ class HMM(object):
         """Class constructor for Hidden Markov Model
         Arguments:
             states {List} -- list of states
-            n_states {int} -- number of states
             observations {List} -- list of observations
-            n_observations {int} -- number of observations
+            file_name {str} -- file name of the annotated data
         """
         self.states = states
         self.n_states = len(states)
@@ -113,8 +112,8 @@ class HMM(object):
     def get_emission_states(self, observed_states, observed_events, n_observed_states):
         """Gets the emission states
         Arguments:
-            observed_states {List} -- list of observed states
-            observed_events {List} -- list of observed events
+            observed_states {List} -- list of possible observed states
+            observed_events {List} -- list of recorded observed events
             n_states {int} -- number of states
         Returns:
             emission {List} -- list of emission states
