@@ -156,8 +156,8 @@ def calculate_emission_probabilities(emission):
     
     return emission_probability
 
-# Create and Train the HMM model
-def create_model(state_probability, transition_probability, emission_probability, events_numerical):
+# Create and Train a Categoical HMM
+def train_model(state_probability, transition_probability, emission_probability, events_numerical):
     model = hmm.CategoricalHMM(n_components=len(states), n_features=len(observations), init_params="")
 
     model.startprob_ = state_probability
@@ -166,14 +166,17 @@ def create_model(state_probability, transition_probability, emission_probability
     model.fit(events_numerical)
     return model
 
-observed_states, observed_state_changes, observed_events = load_annotated_data('data.csv')
-start_probabilities = calculate_start_probabilities(observed_states)
-transition_states = get_transition_states(observed_state_changes)
-transition_probabilities = calculate_transition_probabilities(transition_states)
-emission, events_numerical = get_emission_states(observed_states, observed_events, len(observed_states))
-emission_probability = calculate_emission_probabilities(emission)
-model = create_model(start_probabilities, transition_probabilities, emission_probability, events_numerical)
+def create_model(file_name):
+    observed_states, observed_state_changes, observed_events = load_annotated_data('data.csv')
+    start_probabilities = calculate_start_probabilities(observed_states)
+    transition_states = get_transition_states(observed_state_changes)
+    transition_probabilities = calculate_transition_probabilities(transition_states)
+    emission, events_numerical = get_emission_states(observed_states, observed_events, len(observed_states))
+    emission_probability = calculate_emission_probabilities(emission)
+    model = train_model(start_probabilities, transition_probabilities, emission_probability, events_numerical)
+    return model
 
+model = create_model('data.csv') # Create and train the model
 model_transition_probability = model.transmat_
 model_emission_probability = model.emissionprob_
 
