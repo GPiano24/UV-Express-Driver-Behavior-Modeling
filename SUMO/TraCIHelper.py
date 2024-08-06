@@ -24,6 +24,9 @@ def check_vehicle_exists(vehicleID):
 
     Arguments:
         vehicleID {str} -- The vehicle ID
+
+    Returns:
+        bool -- True if the vehicle exists, False otherwise
     """
 
     if vehicleID in traci.vehicle.getIDList():

@@ -35,7 +35,7 @@ def get_observed_state_from_sumo(vehicle_id):
     Gets the observed state of a vehicle from SUMO
 
     Arguments:
-        vehicle_id {str} -- the ID of the vehicle to get the observed state from
+        vehicle_id {str} -- the ID of the UV Express vehicle to get the observed state from
 
     Returns:
         str -- the observed state of the vehicle

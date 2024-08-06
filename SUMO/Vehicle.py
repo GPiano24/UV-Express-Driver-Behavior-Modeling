@@ -6,7 +6,7 @@ class Vehicle:
         """
         The constructor for Vehicle class.
         Arguments:
-            vehicleID {str} -- The identifier or description of the vehicle.
+            vehicleID {str} -- The identifier of the vehicle.
             route {str} -- The route of the vehicle.
             status {str} -- The status of the vehicle.
             pickStops {List} -- The list of pick up stops of the vehicle.
