@@ -17,7 +17,7 @@ Modeling Driver Behavior of UV Express
 
 ## Adviser
 * Dr. Briane Paul V. Samson, PhD. 
-    * ***Email Address:*** 
+    * ***Email Address:*** [briane.samson@dlsu.edu.ph](mailto:briane.samson@dlsu.edu.ph)
 
 ## Repository Structure
 * `EDA and HMM/`<br>
