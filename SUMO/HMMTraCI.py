@@ -541,7 +541,7 @@ for step in range(6000):
             else:
                 next_hidden_state = np.argmax(model_transition_probability[current_hidden_state_index])
 
-            emission_probabilities_next_state = emission_probability[next_hidden_state]
+            emission_probabilities_next_state = model_emission_probability[next_hidden_state]
 
             invalid_obs = True
             while invalid_obs:
