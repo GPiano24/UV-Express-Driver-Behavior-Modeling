@@ -7,8 +7,8 @@
 
     <input>
         <net-file value="NoPolyGons-Full-route.net.xml"/>
-        <route-files value="UVRoutes.rou.xml, validation.rou.xml, Validation-Routes.rou.xml"/>
-        <additional-files value="testMap.add.xml"/>
+        <route-files value="UVRoutes.rou.xml, Passenger_Validation_Routes.rou.xml, Northbound_Validation_Routes.rou.xml"/>
+        <additional-files value="BusStops.add.xml"/>
     </input>
 
     <time>

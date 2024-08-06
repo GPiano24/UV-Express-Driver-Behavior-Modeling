@@ -48,9 +48,9 @@ Modeling Driver Behavior of UV Express
       \- *CSV File containing the annotated data from videos collected from all the trips. Used to train the HMM Model*
     * `NoPolyGons-Full-route.net.xml`<br>
       \- *XML file containing the *
-    * `Passengers.rou.xml`<br>
+    * `Passenger_Routes.rou.xml`<br>
       \- *XML file containing the possible routes of the UV Express passengers, containing their pickup and dropoff points*
-    * `southbound_validation.rou.xml`<br>
+    * `Southbound_Validation_Routes.rou.xml`<br>
       \- *XML file containing the possible routes of different non-UV EXpress vehicle agents during Soutbound validation*
     * `testMap.add.xml`<br>
       \- *XML file containing the bus stops to be added in the simulation*
@@ -58,9 +58,9 @@ Modeling Driver Behavior of UV Express
       \- *SUMO configuration file*
     * `UVRoutes.rou.xml`<br>
       \- *XML file containing the possible routes of all the vehicle agents in the simulation*
-    * `Validation-Routes.rou.xml`<br>
+    * `Northbound_Validation_Routes.rou.xml`<br>
       \- *XML file containing the possible routes of different non-UV EXpress vehicle agents during Northbound validation*
-    * `validation.rou.xml`<br>
+    * `Passenger_Validation_Routes.rou.xml`<br>
       \- *XML file containing the possible routes of the UV Express passengers during validation, containing their pickup and dropoff points*
 
 ## Prerequisites
