@@ -1,41 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2024-06-25 23:46:25 by Eclipse SUMO netedit Version 1.19.0
-<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/neteditConfiguration.xsd">
-
-    <input>
-        <sumocfg-file value="C:\Users\Gabe Piano\OneDrive\Documents\GitHub\UV-Express-Driver-Behavior-Modeling\NewMap\testMap.sumocfg"/>
-        <additional-files value="C:\Users\Gabe Piano\OneDrive\Documents\GitHub\UV-Express-Driver-Behavior-Modeling\NewMap\testMap.add.xml"/>
-        <route-files value="C:\Users\Gabe Piano\OneDrive\Documents\GitHub\UV-Express-Driver-Behavior-Modeling\NewMap\UVRoutes.rou.xml"/>
-        <sumo-net-file value="C:\Users\Gabe Piano\OneDrive\Documents\GitHub\UV-Express-Driver-Behavior-Modeling\NewMap\NoPolyGons-Full-route.net.xml"/>
-    </input>
-
-    <output>
-        <output-file value="C:\Users\Gabe Piano\OneDrive\Documents\GitHub\UV-Express-Driver-Behavior-Modeling\NewMap\NoPolyGons-Full-route.net.xml"/>
-        <output.street-names value="true"/>
-    </output>
-
-    <processing>
-        <geometry.min-radius.fix.railways value="false"/>
-        <geometry.max-grade.fix value="false"/>
-        <offset.disable-normalization value="true"/>
-        <lefthand value="0"/>
-    </processing>
-
-    <junctions>
-        <no-turnarounds value="true"/>
-        <junctions.corner-detail value="5"/>
-        <junctions.limit-turn-speed value="5.50"/>
-        <rectangular-lane-cut value="0"/>
-    </junctions>
-
-    <pedestrian>
-        <walkingareas value="0"/>
-    </pedestrian>
-
-</configuration>
--->
-
 <net version="1.16" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
 
     <location netOffset="-278622.72,-1583295.62" convBoundary="382.04,0.00,9876.11,25513.55" origBoundary="120.947043,14.313092,121.038524,14.549722" projParameter="+proj=utm +zone=51 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"/>
