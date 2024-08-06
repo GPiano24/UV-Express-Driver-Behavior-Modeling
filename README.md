@@ -34,6 +34,16 @@ Modeling Driver Behavior of UV Express
   \- *Folder containing the necessary files to run the simulation in SUMO*
     * `HMMTraCI.py`<br>
       \- *Python script used to run and control the simulation using TraCI, sumolib, and hmmlearn*
+    * `HMM.py`<br>
+      \- *Python module containing the class that is used to create and train an HMM model*
+    * `Vehicle.py`<br>
+      \- *Python module containing the class that represents and is responsible for managing individual UV express vehicle instances and SUMO agents*
+    * `PedestrianEdges.py`<br>
+      \- *Python module containing the class that represents pedestrian edges, and their associated bus stops within the transportation network*
+    * `TraCIHelper.py`<br>
+      \- *Python module that contains functions that handles initialization of different agent in the simulation, such as random vehicles and people into the simulation*  
+    * `UVTraCIHelper.py`<br>
+      \- *Python module that contains functions that handle initialization and behavior handling of the UV Express vehicles within the SUMO environment*      
     * `data.csv`<br>
       \- *CSV File containing the annotated data from videos collected from all the trips. Used to train the HMM Model*
     * `NoPolyGons-Full-route.net.xml`<br>
