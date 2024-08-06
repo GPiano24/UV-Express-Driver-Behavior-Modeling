@@ -1,22 +1,17 @@
 import re
-import os, sys
-from queue import Queue
-
+import os
+import sys
+import random
+import traci
 import traci.exceptions
 if 'SUMO_HOME' in os.environ:
     sys.path.append(sys.path.append(os.path.join(os.environ['SUMO_HOME'], 'tools')))
 else:
     sys.exit("Environment variable 'SUMO_HOME' not defined")
-import traci
 import numpy as np
-import matplotlib.pyplot as plt
 from hmmlearn import hmm
 import sumolib
-from matplotlib import cm, pyplot as plt
-import traci
-import os
-import sys
-import random
+from queue import Queue
 np.random.seed(1)
 
 validation = True
