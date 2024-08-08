@@ -24,15 +24,11 @@ class HMM(object):
         """
         observed_states, observed_state_changes, observed_events = self.load_annotated_data(self.file_name)
         start_probabilities = self.calculate_start_probabilities(observed_states)
-        print(start_probabilities)
         transition_states = self.get_transition_states(observed_state_changes)
         transition_probabilities = self.calculate_transition_probabilities(transition_states)
-        print(transition_probabilities)
         emission, events_numerical = self.get_emission_states(observed_states, observed_events, len(observed_states))
         emission_probabilities = self.calculate_emission_probabilities(emission)
-        print(emission_probabilities)
         model = self.train_model(start_probabilities, transition_probabilities, emission_probabilities, events_numerical)
-        print(model.score(events_numerical))
         return model
 
     def load_annotated_data(self, file_name):

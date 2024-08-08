@@ -18,7 +18,7 @@ from Vehicle import Vehicle
 from UVTraCIHelper import is_vehicle_in_front, get_observed_state_from_sumo, addVehicle, UVStep
 from TraCIHelper import get_numeric_part, check_vehicle_exists, addRandomVehicle, addRandomPeople, addAgents
 
-
+# Initialization of the model
 states = ['Passenger', 'Vehicle', 'Stoplight']
 state_labels = {state: i for i, state in enumerate(states)}
 observations = ['ChangeLaneLeft', 'ChangeLaneRight', 'Stop', 'Go', 'Load', 'Unload']
@@ -33,8 +33,8 @@ validation_edges = [ "1054315838#0", "28740343", "352801326", "863419980#0", "11
 sumoCmd = ["sumo-gui", "-c", "UVExpressSimulation.sumocfg", "-d", "20"]
 traci.start(sumoCmd)
 
+# Constants
 bus_stops = traci.busstop.getIDList()
-
 sorted_bus_stops = sorted(bus_stops, key=get_numeric_part)
 
 PB_stops = sorted_bus_stops[:52]
@@ -58,7 +58,14 @@ for stops in sorted_bus_stops:
 
     pedestrian_edges.append(PedestrianEdges(edge, Stop))
 
-addAgents(validation, 150, 200, 50, 20, 2000, PB_stops, BP_stops, jeep_stops, pedestrian_edges, PB_pickup, PB_dropoff, BP_Pickup, BP_Dropoff)
+# Non-UV Agent Counts
+n_cars = 150            # Number of car agents
+n_motor = 200           # Number of motorcycle agents
+n_buses = 50            # Number of bus agents
+n_jeep = 20             # Number of jeep agents
+n_people = 2000         # Number of pedestrian agents
+
+addAgents(validation, n_cars, n_motor, n_buses, n_jeep, n_people, PB_stops, BP_stops, jeep_stops, pedestrian_edges, PB_pickup, PB_dropoff, BP_Pickup, BP_Dropoff)
     
 checked_passengers = []
 for step in range(6000):

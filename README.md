@@ -52,7 +52,7 @@ Modeling Driver Behavior of UV Express
       \- *XML file containing the possible routes of the UV Express passengers, containing their pickup and dropoff points*
     * `Southbound_Validation_Routes.rou.xml`<br>
       \- *XML file containing the possible routes of different non-UV EXpress vehicle agents during Soutbound validation*
-    * `testMap.add.xml`<br>
+    * `BusStops.add.xml`<br>
       \- *XML file containing the bus stops to be added in the simulation*
     * `UVExpressSimulation.sumocfg`<br>
       \- *SUMO configuration file*
