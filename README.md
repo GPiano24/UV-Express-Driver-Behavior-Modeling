@@ -1,5 +1,5 @@
 # Modeling the Driving Behavior of UV Express in Mixed Traffic Scenarios
-Modeling Driver Behavior of UV Express 
+UV Express Agent-Based Model Simulation is a simulation built using SUMO (Simulation of Urban MObility) and Python. The primary purpose of this system is to simulate the driving behavior of UV Express in mixed traffic scenarios. The program integrates real-world driving data with traffic simulation software, SUMO, to create a detailed model of UV Express operations. This approach enables a comprehensive understanding of driving patterns and interactions in urban environments.
 
 ## Proponents
 * ANG, Audric 
@@ -62,6 +62,8 @@ Modeling Driver Behavior of UV Express
       \- *XML file containing the possible routes of different non-UV EXpress vehicle agents during Northbound validation*
     * `Passenger_Validation_Routes.rou.xml`<br>
       \- *XML file containing the possible routes of the UV Express passengers during validation, containing their pickup and dropoff points*
+* `requirements.txt`
+  \- TXT file that contains the list of Python libraries required by the program used to install the said libraries.
 
 ## Prerequisites
 1. [Python](<https://www.python.org/downloads/release/python-3122/>)
